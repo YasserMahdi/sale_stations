@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace sale_stations.PL
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+          
+            InitializeComponent();
+            
+            
+        }
+
+        private void btnstore_Click(object sender, EventArgs e)
+        {
+            PL.insertMaterial addMaterial = new PL.insertMaterial();
+            addMaterial.Show();
+        }
+
+        private void btnsuplier_Click(object sender, EventArgs e)
+        {
+            PL.suppliers suplier = new PL.suppliers();
+            suplier.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PL.insertCustomer insCus = new PL.insertCustomer();
+            insCus.Show();
+        }
+
+        private void btndept_Click(object sender, EventArgs e)
+        {
+            PL.deptForm dpt = new PL.deptForm();
+            dpt.Show();
+        }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ستكون التقارير متاحه في الاصدارات القادمة", "التقارير", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnSuppilerQuerye_Click(object sender, EventArgs e)
+        {
+            PL.fetchSupplier ftch = new PL.fetchSupplier();
+            ftch.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PL.fetchCustomer ftch = new PL.fetchCustomer();
+            ftch.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PL.FetchMatirial ftch = new PL.FetchMatirial();
+            ftch.Show();
+        }
+    }
+}

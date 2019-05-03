@@ -28,127 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.qte = new System.Windows.Forms.TextBox();
-            this.saleCost = new System.Windows.Forms.TextBox();
-            this.buyCost = new System.Windows.Forms.TextBox();
-            this.noMtr = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(24, 400);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1039, 100);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "العمليات الممكن تنفيذها";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(371, 34);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 32);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "طباعة القائمة";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(525, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 32);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "تعديل معلومات المادة";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(288, 290);
+            this.button1.Location = new System.Drawing.Point(679, 34);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 30);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "ادخال";
+            this.button1.Size = new System.Drawing.Size(148, 32);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "حذف المادة";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // qte
+            // groupBox1
             // 
-            this.qte.Location = new System.Drawing.Point(288, 251);
-            this.qte.Name = "qte";
-            this.qte.Size = new System.Drawing.Size(224, 24);
-            this.qte.TabIndex = 15;
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(24, 63);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1045, 311);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "قائمة المواد";
             // 
-            // saleCost
+            // dataGridView1
             // 
-            this.saleCost.Location = new System.Drawing.Point(288, 221);
-            this.saleCost.Name = "saleCost";
-            this.saleCost.Size = new System.Drawing.Size(224, 24);
-            this.saleCost.TabIndex = 14;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 26;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1032, 282);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // buyCost
+            // textBox1
             // 
-            this.buyCost.Location = new System.Drawing.Point(288, 191);
-            this.buyCost.Name = "buyCost";
-            this.buyCost.Size = new System.Drawing.Size(224, 24);
-            this.buyCost.TabIndex = 13;
-            // 
-            // noMtr
-            // 
-            this.noMtr.Location = new System.Drawing.Point(288, 161);
-            this.noMtr.Name = "noMtr";
-            this.noMtr.Size = new System.Drawing.Size(224, 24);
-            this.noMtr.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(524, 254);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "الكمية";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(521, 224);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "سعر البيع";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(518, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "سعر الشراء";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(518, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "اسم المادة";
+            this.textBox1.Location = new System.Drawing.Point(233, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(431, 24);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(518, 164);
+            this.label1.Location = new System.Drawing.Point(680, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "رقم المادة";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(288, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 24);
-            this.comboBox1.TabIndex = 22;
+            this.label1.Size = new System.Drawing.Size(177, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "اسم الماده المراد البحث عنها";
             // 
             // FetchMatirial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1093, 526);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.qte);
-            this.Controls.Add(this.saleCost);
-            this.Controls.Add(this.buyCost);
-            this.Controls.Add(this.noMtr);
             this.Name = "FetchMatirial";
             this.Text = "FetchMatirial";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,16 +139,13 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox qte;
-        private System.Windows.Forms.TextBox saleCost;
-        private System.Windows.Forms.TextBox buyCost;
-        private System.Windows.Forms.TextBox noMtr;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

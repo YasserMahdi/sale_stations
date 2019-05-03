@@ -71,15 +71,6 @@ namespace sale_stations.DAL
             sqlcmd.ExecuteNonQuery();
         }
 
-        public SqlDataReader readData(string tablename)
-        {
-            connectobject.Open();
-            SqlDataReader DataReader = null;
-            SqlCommand Command = new SqlCommand("select * from " + tablename ,connectobject);
-            DataReader = Command.ExecuteReader();
-            return DataReader;
-            connectobject.Close();
-        }
     }
 
 }

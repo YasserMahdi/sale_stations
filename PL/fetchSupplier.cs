@@ -12,18 +12,12 @@ namespace sale_stations.PL
 {
     public partial class fetchSupplier : Form
     {
+        BL.SupplierClass sup = new BL.SupplierClass();
+
         public fetchSupplier()
         {
             InitializeComponent();
-            BL.SupplierClass fetch = new BL.SupplierClass();
-            comboBox1.DataSource = fetch.getSupplierNmae();
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "NO";
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+            this.dataGridView1.DataSource = sup.getSupplierlInfo();
         }
     }
 }

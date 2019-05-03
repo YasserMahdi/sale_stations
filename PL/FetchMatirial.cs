@@ -12,9 +12,16 @@ namespace sale_stations.PL
 {
     public partial class FetchMatirial : Form
     {
+        BL.MaterialClass mtr = new BL.MaterialClass();
         public FetchMatirial()
         {
             InitializeComponent();
+            this.dataGridView1.DataSource = mtr.getMatirialInfo();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

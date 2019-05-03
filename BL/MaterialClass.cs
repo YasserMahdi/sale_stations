@@ -34,5 +34,18 @@ namespace sale_stations.BL
             DAL.Executecmd("insertMatirials", param);
             DAL.close();
         }
+
+        public DataTable getMatirialInfo()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getMatirialInfo", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
     }
 }

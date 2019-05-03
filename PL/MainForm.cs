@@ -23,25 +23,25 @@ namespace sale_stations.PL
         private void btnstore_Click(object sender, EventArgs e)
         {
             PL.insertMaterial addMaterial = new PL.insertMaterial();
-            addMaterial.Show();
+            addMaterial.ShowDialog();
         }
 
         private void btnsuplier_Click(object sender, EventArgs e)
         {
             PL.suppliers suplier = new PL.suppliers();
-            suplier.Show();
+            suplier.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             PL.insertCustomer insCus = new PL.insertCustomer();
-            insCus.Show();
+            insCus.ShowDialog();
         }
 
         private void btndept_Click(object sender, EventArgs e)
         {
             PL.deptForm dpt = new PL.deptForm();
-            dpt.Show();
+            dpt.ShowDialog();
         }
 
         private void btnreport_Click(object sender, EventArgs e)
@@ -52,19 +52,19 @@ namespace sale_stations.PL
         private void btnSuppilerQuerye_Click(object sender, EventArgs e)
         {
             PL.fetchSupplier ftch = new PL.fetchSupplier();
-            ftch.Show();
+            ftch.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             PL.fetchCustomer ftch = new PL.fetchCustomer();
-            ftch.Show();
+            ftch.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             PL.FetchMatirial ftch = new PL.FetchMatirial();
-            ftch.Show();
+            ftch.ShowDialog();
         }
     }
 }

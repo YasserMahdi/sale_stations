@@ -46,5 +46,17 @@ namespace sale_stations.BL
             return Dt;
 
         }
+
+        public DataTable getSupplierlInfo()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getSupplierlInfo", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
     }
 }

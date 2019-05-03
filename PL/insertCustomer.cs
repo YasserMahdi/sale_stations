@@ -22,6 +22,9 @@ namespace sale_stations.PL
         {
             insCus.insertCus(Convert.ToInt32(textBoxNO.Text), textBoxNmae.Text, textBoxPhone.Text);
             MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBoxNO.Clear();
+            textBoxNmae.Clear();
+            textBoxPhone.Clear();
 
         }
     }

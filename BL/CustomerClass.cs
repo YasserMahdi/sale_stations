@@ -32,26 +32,19 @@ namespace sale_stations.BL
             DAL.close();
         }
 
-        //function to fetch a customer name from the Databast
-        public DataTable getCustomerNmae()
+        //function to fetch a customer information from the Databast
+        public DataTable getCustomerInfo()
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
 
             DataTable Dt = new DataTable();
-            Dt = accessobject.selectData("getCustomerNmae", null);
+            Dt = accessobject.selectData("getCustomerInfo", null);
             accessobject.close();
 
             return Dt;
 
         }
 
-        public SqlDataReader getinformation()
-        {
-            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
-            SqlDataReader SDR = null;
-            SDR = accessobject.readData("customer");
-            return SDR;
-
-        }
+      
     }
 }

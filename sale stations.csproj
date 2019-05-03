@@ -63,17 +63,17 @@
     <Compile Include="PL\deptForm.Designer.cs">
       <DependentUpon>deptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\fetchCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\fetchCustomer.Designer.cs">
-      <DependentUpon>fetchCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\FetchMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\FetchMatirial.Designer.cs">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\fetchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\fetchCustomer.Designer.cs">
+      <DependentUpon>fetchCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\fetchSupplier.cs">
       <SubType>Form</SubType>
@@ -113,11 +113,11 @@
     <EmbeddedResource Include="PL\deptForm.resx">
       <DependentUpon>deptForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\fetchCustomer.resx">
-      <DependentUpon>fetchCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\fetchCustomer.resx">
+      <DependentUpon>fetchCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\fetchSupplier.resx">
       <DependentUpon>fetchSupplier.cs</DependentUpon>

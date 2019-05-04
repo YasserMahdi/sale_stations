@@ -21,7 +21,9 @@ namespace sale_stations.PL
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            dt = mtr.searchProduct(textSearch.Text);
+            this.dataGridView1.DataSource = dt;
         }
     }
 }

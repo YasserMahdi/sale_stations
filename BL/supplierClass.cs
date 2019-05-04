@@ -34,18 +34,7 @@ namespace sale_stations.BL
             DAL.close();
         }
 
-        //function to fetch a supplier name from the Databast
-        public DataTable getSupplierNmae()
-        {
-            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
-
-            DataTable Dt = new DataTable();
-            Dt = accessobject.selectData("getSupplierNmae", null);
-            accessobject.close();
-
-            return Dt;
-
-        }
+     
 
         public DataTable getSupplierlInfo()
         {
@@ -57,6 +46,18 @@ namespace sale_stations.BL
 
             return Dt;
 
+        }
+
+        public DataTable searchSupplier(string name)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("name", SqlDbType.NVarChar, 50);
+            param[0].Value = name;
+            dt = DAL.selectData("searchSupplier", param);
+            DAL.close();
+            return dt;
         }
     }
 }

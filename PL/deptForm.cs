@@ -16,5 +16,17 @@ namespace sale_stations.PL
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PL.repayment rpt = new PL.repayment();
+            rpt.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PL.newDept dpt = new PL.newDept();
+            dpt.ShowDialog();
+        }
     }
 }

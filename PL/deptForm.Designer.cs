@@ -28,115 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxCusNO = new System.Windows.Forms.TextBox();
-            this.customerNo = new System.Windows.Forms.Label();
-            this.customerName = new System.Windows.Forms.Label();
-            this.textBoxCusName = new System.Windows.Forms.TextBox();
-            this.customerOldDept = new System.Windows.Forms.Label();
-            this.textBoxCusOldDept = new System.Windows.Forms.TextBox();
-            this.customerNewDtpt = new System.Windows.Forms.Label();
-            this.textBoxCusNewDept = new System.Windows.Forms.TextBox();
-            this.customerPay = new System.Windows.Forms.Label();
-            this.textBoxCusPay = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxCusNO
+            // groupBox1
             // 
-            this.textBoxCusNO.Location = new System.Drawing.Point(257, 156);
-            this.textBoxCusNO.Name = "textBoxCusNO";
-            this.textBoxCusNO.Size = new System.Drawing.Size(211, 24);
-            this.textBoxCusNO.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(9, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1045, 311);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "لائحة الديون";
             // 
-            // customerNo
+            // dataGridView1
             // 
-            this.customerNo.AutoSize = true;
-            this.customerNo.Location = new System.Drawing.Point(474, 159);
-            this.customerNo.Name = "customerNo";
-            this.customerNo.Size = new System.Drawing.Size(65, 17);
-            this.customerNo.TabIndex = 1;
-            this.customerNo.Text = "رقم الزبون";
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 26;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1037, 282);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // customerName
+            // textBox1
             // 
-            this.customerName.AutoSize = true;
-            this.customerName.Location = new System.Drawing.Point(473, 189);
-            this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(71, 17);
-            this.customerName.TabIndex = 3;
-            this.customerName.Text = "اسم الزبون";
+            this.textBox1.Location = new System.Drawing.Point(243, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(431, 24);
+            this.textBox1.TabIndex = 4;
             // 
-            // textBoxCusName
+            // label1
             // 
-            this.textBoxCusName.Location = new System.Drawing.Point(257, 186);
-            this.textBoxCusName.Name = "textBoxCusName";
-            this.textBoxCusName.Size = new System.Drawing.Size(211, 24);
-            this.textBoxCusName.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(680, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "اسم الزبون المراد البجث عنه";
             // 
-            // customerOldDept
+            // groupBox2
             // 
-            this.customerOldDept.AutoSize = true;
-            this.customerOldDept.Location = new System.Drawing.Point(473, 219);
-            this.customerOldDept.Name = "customerOldDept";
-            this.customerOldDept.Size = new System.Drawing.Size(78, 17);
-            this.customerOldDept.TabIndex = 5;
-            this.customerOldDept.Text = "الدين القديم";
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(9, 405);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1039, 100);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "العمليات";
             // 
-            // textBoxCusOldDept
+            // button3
             // 
-            this.textBoxCusOldDept.Location = new System.Drawing.Point(257, 216);
-            this.textBoxCusOldDept.Name = "textBoxCusOldDept";
-            this.textBoxCusOldDept.Size = new System.Drawing.Size(211, 24);
-            this.textBoxCusOldDept.TabIndex = 4;
+            this.button3.Location = new System.Drawing.Point(131, 34);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 32);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "طباعة معلومات الدين";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // customerNewDtpt
+            // button2
             // 
-            this.customerNewDtpt.AutoSize = true;
-            this.customerNewDtpt.Location = new System.Drawing.Point(475, 249);
-            this.customerNewDtpt.Name = "customerNewDtpt";
-            this.customerNewDtpt.Size = new System.Drawing.Size(79, 17);
-            this.customerNewDtpt.TabIndex = 7;
-            this.customerNewDtpt.Text = "الدين الجديد";
+            this.button2.Location = new System.Drawing.Point(285, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 32);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "تعديل معلومات الدين";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBoxCusNewDept
+            // button1
             // 
-            this.textBoxCusNewDept.Location = new System.Drawing.Point(257, 246);
-            this.textBoxCusNewDept.Name = "textBoxCusNewDept";
-            this.textBoxCusNewDept.Size = new System.Drawing.Size(211, 24);
-            this.textBoxCusNewDept.TabIndex = 6;
+            this.button1.Location = new System.Drawing.Point(439, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 32);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "حذف الدين";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // customerPay
+            // button4
             // 
-            this.customerPay.AutoSize = true;
-            this.customerPay.Location = new System.Drawing.Point(474, 279);
-            this.customerPay.Name = "customerPay";
-            this.customerPay.Size = new System.Drawing.Size(77, 17);
-            this.customerPay.TabIndex = 9;
-            this.customerPay.Text = "مبلغ السداد";
+            this.button4.Location = new System.Drawing.Point(747, 34);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(148, 32);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "ادخال دين جديد";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBoxCusPay
+            // button5
             // 
-            this.textBoxCusPay.Location = new System.Drawing.Point(257, 276);
-            this.textBoxCusPay.Name = "textBoxCusPay";
-            this.textBoxCusPay.Size = new System.Drawing.Size(211, 24);
-            this.textBoxCusPay.TabIndex = 8;
+            this.button5.Location = new System.Drawing.Point(593, 34);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(148, 32);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "سداد الديون";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // deptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.customerPay);
-            this.Controls.Add(this.textBoxCusPay);
-            this.Controls.Add(this.customerNewDtpt);
-            this.Controls.Add(this.textBoxCusNewDept);
-            this.Controls.Add(this.customerOldDept);
-            this.Controls.Add(this.textBoxCusOldDept);
-            this.Controls.Add(this.customerName);
-            this.Controls.Add(this.textBoxCusName);
-            this.Controls.Add(this.customerNo);
-            this.Controls.Add(this.textBoxCusNO);
+            this.ClientSize = new System.Drawing.Size(1077, 519);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "deptForm";
             this.Text = "deptForm";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,15 +162,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxCusNO;
-        private System.Windows.Forms.Label customerNo;
-        private System.Windows.Forms.Label customerName;
-        private System.Windows.Forms.TextBox textBoxCusName;
-        private System.Windows.Forms.Label customerOldDept;
-        private System.Windows.Forms.TextBox textBoxCusOldDept;
-        private System.Windows.Forms.Label customerNewDtpt;
-        private System.Windows.Forms.TextBox textBoxCusNewDept;
-        private System.Windows.Forms.Label customerPay;
-        private System.Windows.Forms.TextBox textBoxCusPay;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

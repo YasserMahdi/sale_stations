@@ -18,5 +18,12 @@ namespace sale_stations.PL
             InitializeComponent();
             this.dataGridView1.DataSource = cus.getCustomerInfo();
         }
+
+        private void searchbox_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = cus.searchCustomer(searchbox.Text);
+            this.dataGridView1.DataSource = dt;
+        }
     }
 }

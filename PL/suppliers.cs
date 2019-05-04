@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace sale_stations.PL
 {
@@ -25,8 +27,17 @@ namespace sale_stations.PL
 
         private void btnSavaSupplier_Click(object sender, EventArgs e)
         {
-            insertSpr.insertSpr(Convert.ToInt32(supplierTxtBox.Text),txtName.Text, txtPhone.Text, txtAddress.Text);
-            MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+  
+            try
+            {
+                insertSpr.insertSpr(Int32.Parse(supplierTxtBox.Text), txtName.Text, txtPhone.Text, txtAddress.Text);
+                MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception sqlEx)
+            {
+                MessageBox.Show("الرجاء ادخال معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+            }
         }
     }
 }

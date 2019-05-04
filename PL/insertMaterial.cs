@@ -21,9 +21,20 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            insMat.insertMtr(Convert.ToInt32(noMtr.Text),nameMtr.Text,Convert.ToInt32(saleCost.Text),Convert.ToInt32(buyCost.Text),Convert.ToInt32(qte.Text));
-            MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            try
+            {
+                insMat.insertMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToInt32(saleCost.Text), Convert.ToInt32(buyCost.Text), Convert.ToInt32(qte.Text));
+                //MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.noMtr.Clear();
+                this.nameMtr.Clear();
+                this.buyCost.Clear();
+                this.saleCost.Clear();
+                this.qte.Clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ادخل معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

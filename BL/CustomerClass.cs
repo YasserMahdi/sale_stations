@@ -45,6 +45,18 @@ namespace sale_stations.BL
 
         }
 
-      
+        public DataTable searchCustomer(string name)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[0].Value = name;
+            dt = DAL.selectData("searchCustomer", param);
+            DAL.close();
+            return dt;
+        }
+
+
     }
 }

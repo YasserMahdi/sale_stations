@@ -34,7 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(291, 34);
+            this.button3.Location = new System.Drawing.Point(273, 36);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 32);
             this.button3.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(445, 34);
+            this.button2.Location = new System.Drawing.Point(427, 36);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 32);
             this.button2.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(599, 34);
+            this.button1.Location = new System.Drawing.Point(581, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 32);
             this.button1.TabIndex = 0;
@@ -101,21 +101,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(1032, 282);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // searchbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(431, 24);
-            this.textBox1.TabIndex = 4;
+            this.searchbox.Location = new System.Drawing.Point(273, 43);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(431, 24);
+            this.searchbox.TabIndex = 4;
+            this.searchbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(696, 22);
+            this.label1.Location = new System.Drawing.Point(738, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "اسم المورد المراد البجث عنه";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fetchSupplier
             // 
@@ -124,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(1094, 529);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Name = "fetchSupplier";
             this.Text = "fetchSupplier";
@@ -144,7 +146,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.Label label1;
     }
 }

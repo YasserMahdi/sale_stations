@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchbox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,18 +44,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(683, 60);
+            this.label1.Location = new System.Drawing.Point(699, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم الزبون المراد البجث عنه";
             // 
-            // textBox1
+            // searchbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(431, 24);
-            this.textBox1.TabIndex = 0;
+            this.searchbox.Location = new System.Drawing.Point(262, 81);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(431, 24);
+            this.searchbox.TabIndex = 0;
+            this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
             // groupBox1
             // 
@@ -92,7 +93,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(291, 34);
+            this.button3.Location = new System.Drawing.Point(280, 32);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 32);
             this.button3.TabIndex = 2;
@@ -101,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(445, 34);
+            this.button2.Location = new System.Drawing.Point(434, 32);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 32);
             this.button2.TabIndex = 1;
@@ -110,7 +111,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(599, 34);
+            this.button1.Location = new System.Drawing.Point(588, 32);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 32);
             this.button1.TabIndex = 0;
@@ -124,7 +125,7 @@
             this.ClientSize = new System.Drawing.Size(1069, 556);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Name = "fetchCustomer";
             this.Text = "Form1";
@@ -139,7 +140,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;

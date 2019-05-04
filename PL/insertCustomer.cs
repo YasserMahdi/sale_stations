@@ -20,11 +20,21 @@ namespace sale_stations.PL
 
         private void btnSaveCustomer_Click(object sender, EventArgs e)
         {
-            insCus.insertCus(Convert.ToInt32(textBoxNO.Text), textBoxNmae.Text, textBoxPhone.Text);
-            MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            textBoxNO.Clear();
-            textBoxNmae.Clear();
-            textBoxPhone.Clear();
+            try
+            {
+         
+                insCus.insertCus(Convert.ToInt32(textBoxNO.Text), textBoxNmae.Text, textBoxPhone.Text);
+                MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxNO.Clear();
+                textBoxNmae.Clear();
+                textBoxPhone.Clear();
+            }
+            catch (Exception sqlEx)
+            {
+                MessageBox.Show("الرجاء ادخال معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            
 
         }
     }

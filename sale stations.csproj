@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\CustomerClass.cs" />
+    <Compile Include="BL\Dept class.cs" />
     <Compile Include="BL\MaterialClass.cs" />
     <Compile Include="BL\supplierClass.cs" />
     <Compile Include="BL\LoginClass.cs" />
@@ -99,6 +100,18 @@
     <Compile Include="PL\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\newDept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\newDept.Designer.cs">
+      <DependentUpon>newDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\repayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\repayment.Designer.cs">
+      <DependentUpon>repayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\newDept.resx">
+      <DependentUpon>newDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\repayment.resx">
+      <DependentUpon>repayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>

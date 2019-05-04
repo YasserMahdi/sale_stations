@@ -18,3 +18,4 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.FetchMatirial.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.repayment.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.newDept.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.orderFrm.resources

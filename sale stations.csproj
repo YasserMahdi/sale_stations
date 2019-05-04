@@ -106,6 +106,12 @@
     <Compile Include="PL\newDept.Designer.cs">
       <DependentUpon>newDept.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\orderFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\orderFrm.Designer.cs">
+      <DependentUpon>orderFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\repayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\newDept.resx">
       <DependentUpon>newDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\orderFrm.resx">
+      <DependentUpon>orderFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\repayment.resx">
       <DependentUpon>repayment.cs</DependentUpon>

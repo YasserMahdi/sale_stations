@@ -66,5 +66,16 @@ namespace sale_stations.PL
             PL.FetchMatirial ftch = new PL.FetchMatirial();
             ftch.ShowDialog();
         }
+
+        private void btninvoive_Click(object sender, EventArgs e)
+        {
+            PL.orderFrm ord = new PL.orderFrm();
+            ord.ShowDialog();
+        }
+
+        private void استعادةنسخةاحياطيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

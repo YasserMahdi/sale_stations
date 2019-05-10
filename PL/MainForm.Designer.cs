@@ -197,6 +197,7 @@
             this.تسجيلالدخولToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.تسجيلالدخولToolStripMenuItem.Text = "تسجيل الدخول";
+            this.تسجيلالدخولToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem_Click);
             // 
             // انشاءنسخةاحتياطيةToolStripMenuItem
             // 

@@ -65,11 +65,8 @@ namespace sale_stations.BL
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
             SqlParameter[] param = new SqlParameter[1];
-
             param[0] = new SqlParameter("@mat_no", SqlDbType.Int);
             param[0].Value = noMtr;
-
-
             DAL.Executecmd("deletMatirials", param);
             DAL.close();
         }

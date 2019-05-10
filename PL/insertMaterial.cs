@@ -23,7 +23,7 @@ namespace sale_stations.PL
         {
             try
             {
-                insMat.insertMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToInt32(saleCost.Text), Convert.ToInt32(buyCost.Text), Convert.ToInt32(qte.Text));
+                insMat.insertMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToInt32(buyCost.Text), Convert.ToInt32(saleCost.Text), Convert.ToInt32(qte.Text));
                 //MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.noMtr.Clear();
                 this.nameMtr.Clear();

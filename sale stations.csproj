@@ -49,6 +49,7 @@
     <Compile Include="BL\CustomerClass.cs" />
     <Compile Include="BL\Dept class.cs" />
     <Compile Include="BL\MaterialClass.cs" />
+    <Compile Include="BL\mutualFunctions.cs" />
     <Compile Include="BL\supplierClass.cs" />
     <Compile Include="BL\LoginClass.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />

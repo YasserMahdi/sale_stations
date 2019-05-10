@@ -77,5 +77,10 @@ namespace sale_stations.PL
         {
 
         }
+
+        private void تسجيلالدخولToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

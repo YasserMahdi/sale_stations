@@ -93,14 +93,14 @@
             this.textBox1.Location = new System.Drawing.Point(6, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 24);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(6, 158);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(234, 24);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 4;
             // 
             // label2
             // 
@@ -116,7 +116,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(7, 128);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 24);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // label3
             // 
@@ -133,7 +133,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(234, 68);
-            this.textBox3.TabIndex = 7;
+            this.textBox3.TabIndex = 1;
             // 
             // label4
             // 
@@ -165,7 +165,7 @@
             this.textBox4.Location = new System.Drawing.Point(79, 51);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(161, 24);
-            this.textBox4.TabIndex = 3;
+            this.textBox4.TabIndex = 5;
             // 
             // label5
             // 
@@ -181,7 +181,7 @@
             this.textBox5.Location = new System.Drawing.Point(6, 88);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(234, 24);
-            this.textBox5.TabIndex = 5;
+            this.textBox5.TabIndex = 7;
             // 
             // label6
             // 
@@ -197,7 +197,7 @@
             this.textBox6.Location = new System.Drawing.Point(6, 131);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(234, 24);
-            this.textBox6.TabIndex = 7;
+            this.textBox6.TabIndex = 8;
             // 
             // label7
             // 
@@ -213,7 +213,7 @@
             this.button1.Location = new System.Drawing.Point(6, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 23);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 6;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -241,7 +241,7 @@
             this.button2.Location = new System.Drawing.Point(829, 519);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 31);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 9;
             this.button2.Text = "حذف المادة المحددة";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -250,7 +250,7 @@
             this.textBox7.Location = new System.Drawing.Point(32, 526);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(234, 24);
-            this.textBox7.TabIndex = 9;
+            this.textBox7.TabIndex = 14;
             // 
             // label8
             // 

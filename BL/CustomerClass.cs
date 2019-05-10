@@ -57,6 +57,16 @@ namespace sale_stations.BL
             return dt;
         }
 
+        public void deletCustomer(int cus_no)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@cus_no", SqlDbType.Int);
+            param[0].Value = cus_no;
+            DAL.Executecmd("deletCustomer", param);
+            DAL.close();
+        }
 
     }
 }

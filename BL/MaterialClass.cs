@@ -10,7 +10,7 @@ namespace sale_stations.BL
 {
     class MaterialClass
     {
-        public void insertMtr(int noMtr,string nameMtr,int buyPrice,int salePrice,int quantity)
+        public void insertMtr(Double noMtr,string nameMtr, Double buyPrice, Double salePrice,int quantity)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -22,10 +22,10 @@ namespace sale_stations.BL
             param[1] = new SqlParameter("@mat_name", SqlDbType.VarChar, 50);
             param[1].Value = nameMtr;
 
-            param[2] = new SqlParameter("@mat_buy_price", SqlDbType.VarChar, 50);
+            param[2] = new SqlParameter("@mat_buy_price", SqlDbType.Money);
             param[2].Value = buyPrice;
 
-            param[3] = new SqlParameter("@mat_sale_price", SqlDbType.VarChar, 50);
+            param[3] = new SqlParameter("@mat_sale_price", SqlDbType.Money);
             param[3].Value = salePrice;
 
             param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
@@ -70,6 +70,45 @@ namespace sale_stations.BL
             DAL.Executecmd("deletMatirials", param);
             DAL.close();
         }
+
+
+        public DataTable verifyProduct(int mat_no)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("mat_no", SqlDbType.NVarChar, 50);
+            param[0].Value = mat_no;
+            dt = DAL.selectData("virifyProduct", param);
+            DAL.close();
+            return dt;
+        }
+
+        public void updateMtr(int noMtr, string nameMtr, Double buyPrice, Double salePrice, int quantity)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[5];
+
+            param[0] = new SqlParameter("@mat_no", SqlDbType.Int);
+            param[0].Value = noMtr;
+
+            param[1] = new SqlParameter("@mat_name", SqlDbType.VarChar, 50);
+            param[1].Value = nameMtr;
+
+            param[2] = new SqlParameter("@mat_buy_price", SqlDbType.Money);
+            param[2].Value = buyPrice;
+
+            param[3] = new SqlParameter("@mat_sale_price", SqlDbType.Money);
+            param[3].Value = salePrice;
+
+            param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
+            param[4].Value = quantity;
+
+            DAL.Executecmd("updateMatirial", param);
+            DAL.close();
+        }
+
 
 
     }

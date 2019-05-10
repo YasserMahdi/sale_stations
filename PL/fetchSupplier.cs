@@ -31,5 +31,19 @@ namespace sale_stations.PL
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                sup.deletSupplier(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.dataGridView1.DataSource = sup.getSupplierlInfo();
+            }
+            else
+            {
+                MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

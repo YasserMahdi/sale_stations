@@ -47,6 +47,7 @@
             this.noMtr.Name = "noMtr";
             this.noMtr.Size = new System.Drawing.Size(224, 24);
             this.noMtr.TabIndex = 0;
+            this.noMtr.Validated += new System.EventHandler(this.noMtr_Validated);
             // 
             // nameMtr
             // 
@@ -156,16 +157,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox noMtr;
-        private System.Windows.Forms.TextBox nameMtr;
-        private System.Windows.Forms.TextBox buyCost;
-        private System.Windows.Forms.TextBox saleCost;
-        private System.Windows.Forms.TextBox qte;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox noMtr;
+        public System.Windows.Forms.TextBox nameMtr;
+        public System.Windows.Forms.TextBox buyCost;
+        public System.Windows.Forms.TextBox saleCost;
+        public System.Windows.Forms.TextBox qte;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Button button1;
     }
 }

@@ -39,5 +39,29 @@ namespace sale_stations.PL
                 MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PL.insertMaterial frm = new PL.insertMaterial();
+
+            frm.state = "update";
+            frm.noMtr.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            frm.nameMtr.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            frm.buyCost.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.saleCost.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            frm.qte.Text= this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            frm.Text = "تحديث المنتوج : " + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            frm.button1.Text = "تحديث";
+            this.dataGridView1.DataSource = mtr.getMatirialInfo();
+
+
+            frm.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

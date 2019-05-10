@@ -25,5 +25,24 @@ namespace sale_stations.PL
             dt = cus.searchCustomer(searchbox.Text);
             this.dataGridView1.DataSource = dt;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                cus.deletCustomer(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.dataGridView1.DataSource = cus.getCustomerInfo();
+            }
+            else
+            {
+                MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

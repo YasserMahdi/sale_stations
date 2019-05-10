@@ -13,7 +13,8 @@ namespace sale_stations.PL
     
     public partial class insertMaterial : Form
     {
-        BL.MaterialClass insMat = new BL.MaterialClass();
+        public string state ="add";
+        BL.MaterialClass Mat = new BL.MaterialClass();
         public insertMaterial()
         {
             InitializeComponent();
@@ -23,17 +24,45 @@ namespace sale_stations.PL
         {
             try
             {
-                insMat.insertMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToInt32(buyCost.Text), Convert.ToInt32(saleCost.Text), Convert.ToInt32(qte.Text));
-                //MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.noMtr.Clear();
-                this.nameMtr.Clear();
-                this.buyCost.Clear();
-                this.saleCost.Clear();
-                this.qte.Clear();
+                if (state =="add")
+                {
+                    Mat.insertMtr(Convert.ToDouble(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
+                    //MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.noMtr.Clear();
+                    this.nameMtr.Clear();
+                    this.buyCost.Clear();
+                    this.saleCost.Clear();
+                    this.qte.Clear();
+                }
+                else
+                {
+                    Mat.updateMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
+                    MessageBox.Show("تمت التحديث بناح", "التحديث ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.noMtr.Clear();
+                    this.nameMtr.Clear();
+                    this.buyCost.Clear();
+                    this.saleCost.Clear();
+                    this.qte.Clear();
+                   
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("ادخل معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+        }
+
+        private void noMtr_Validated(object sender, EventArgs e)
+        {
+            if (state == "add")
+            {
+                DataTable dt = new DataTable();
+                dt = Mat.verifyProduct(Convert.ToInt32(noMtr.Text));
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("هذا المعرف موجود مسبقاً", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

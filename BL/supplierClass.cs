@@ -59,5 +59,16 @@ namespace sale_stations.BL
             DAL.close();
             return dt;
         }
+
+        public void deletSupplier(int noMtr)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@supplier_no", SqlDbType.Int);
+            param[0].Value = noMtr;
+            DAL.Executecmd("deletSupplier", param);
+            DAL.close();
+        }
     }
 }

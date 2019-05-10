@@ -10,7 +10,7 @@ namespace sale_stations.BL
 {
     class mutualFunctions
     {
-        //
+        // For inheritance
     }
 
 }

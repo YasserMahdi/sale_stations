@@ -109,6 +109,7 @@
             this.Controls.Add(this.username);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "createAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "createAccount";
             this.ResumeLayout(false);
             this.PerformLayout();

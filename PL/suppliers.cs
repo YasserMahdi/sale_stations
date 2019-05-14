@@ -35,7 +35,7 @@ namespace sale_stations.PL
             }
             catch (Exception sqlEx)
             {
-                MessageBox.Show("الرجاء ادخال معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("الرجاء ادخال معلومات صحيحة", "عملية الاضافة" + sqlEx.Message, MessageBoxButtons.OK, MessageBoxIcon.Information);
                
             }
         }

@@ -32,9 +32,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>deliver_it_icon_EDc_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +60,7 @@
     <Compile Include="BL\Dept class.cs" />
     <Compile Include="BL\MaterialClass.cs" />
     <Compile Include="BL\mutualFunctions.cs" />
+    <Compile Include="BL\orderClass.cs" />
     <Compile Include="BL\supplierClass.cs" />
     <Compile Include="BL\LoginClass.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
@@ -68,8 +79,20 @@
     <Compile Include="PL\FetchMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FetchMatirial.Designer.cs">
+    <Compile Include="PL\FetchMatirial.designer.cs">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\insertMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\insertMaterial.Designer.cs">
+      <DependentUpon>insertMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\listMatirial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\listMatirial.Designer.cs">
+      <DependentUpon>listMatirial.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\fetchCustomer.cs">
       <SubType>Form</SubType>
@@ -89,11 +112,17 @@
     <Compile Include="PL\insertCustomer.Designer.cs">
       <DependentUpon>insertCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\insertMaterial.cs">
+    <Compile Include="PL\listCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\insertMaterial.Designer.cs">
-      <DependentUpon>insertMaterial.cs</DependentUpon>
+    <Compile Include="PL\listCustomer.Designer.cs">
+      <DependentUpon>listCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\MainForm.cs">
       <SubType>Form</SubType>
@@ -127,6 +156,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REPORT\matReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\matReport.Designer.cs">
+      <DependentUpon>matReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\print_single_mat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>print_single_mat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="PL\createAccount.resx">
       <DependentUpon>createAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\insertMaterial.resx">
+      <DependentUpon>insertMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\listMatirial.resx">
+      <DependentUpon>listMatirial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\fetchCustomer.resx">
       <DependentUpon>fetchCustomer.cs</DependentUpon>
@@ -145,8 +192,11 @@
     <EmbeddedResource Include="PL\insertCustomer.resx">
       <DependentUpon>insertCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\insertMaterial.resx">
-      <DependentUpon>insertMaterial.cs</DependentUpon>
+    <EmbeddedResource Include="PL\listCustomer.resx">
+      <DependentUpon>listCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -172,6 +222,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="REPORT\matReport.resx">
+      <DependentUpon>matReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\print_single_mat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>print_single_mat.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -185,6 +242,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="deliver_it_icon_EDc_icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

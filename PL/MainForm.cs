@@ -63,8 +63,10 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             PL.FetchMatirial ftch = new PL.FetchMatirial();
             ftch.ShowDialog();
+           
         }
 
         private void btninvoive_Click(object sender, EventArgs e)
@@ -80,7 +82,18 @@ namespace sale_stations.PL
 
         private void تسجيلالدخولToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            PL.login logFrm = new PL.login();
+            logFrm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

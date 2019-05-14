@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnstore = new System.Windows.Forms.Button();
             this.btnsuplier = new System.Windows.Forms.Button();
             this.btninvoive = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             // 
             // btninvoive
             // 
-            this.btninvoive.BackColor = System.Drawing.Color.Blue;
+            this.btninvoive.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btninvoive.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btninvoive.Location = new System.Drawing.Point(467, 163);
             this.btninvoive.Name = "btninvoive";
@@ -99,7 +100,7 @@
             // 
             // btndept
             // 
-            this.btndept.BackColor = System.Drawing.Color.Red;
+            this.btndept.BackColor = System.Drawing.Color.Salmon;
             this.btndept.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btndept.Location = new System.Drawing.Point(656, 163);
             this.btndept.Name = "btndept";
@@ -220,6 +221,7 @@
             this.خروجToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.خروجToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.خروجToolStripMenuItem.Text = "خروج";
+            this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
             // 
             // المستخدمينToolStripMenuItem
             // 
@@ -233,13 +235,13 @@
             // اضافةمستخدمجديدToolStripMenuItem
             // 
             this.اضافةمستخدمجديدToolStripMenuItem.Name = "اضافةمستخدمجديدToolStripMenuItem";
-            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.اضافةمستخدمجديدToolStripMenuItem.Text = "اضافة مستخدم جديد";
             // 
             // حذفمستخدمToolStripMenuItem
             // 
             this.حذفمستخدمToolStripMenuItem.Name = "حذفمستخدمToolStripMenuItem";
-            this.حذفمستخدمToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.حذفمستخدمToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.حذفمستخدمToolStripMenuItem.Text = "حذف مستخدم";
             // 
             // MainForm
@@ -258,10 +260,12 @@
             this.Controls.Add(this.btnsuplier);
             this.Controls.Add(this.btnstore);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

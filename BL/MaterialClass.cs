@@ -77,7 +77,7 @@ namespace sale_stations.BL
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
             SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("mat_no", SqlDbType.NVarChar, 50);
+            param[0] = new SqlParameter("@mat_no", SqlDbType.NVarChar, 50);
             param[0].Value = mat_no;
             dt = DAL.selectData("virifyProduct", param);
             DAL.close();

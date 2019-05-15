@@ -11,7 +11,6 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.repayment.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.suppliers.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.Properties.Resources.resources
-C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.REPORT.matReport.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale stations.csproj.GenerateResource.cache
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale stations.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale stations.csprojAssemblyReference.cache
@@ -43,3 +42,4 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale stations.exe
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale stations.pdb
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.listMatirial.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.FetchMatirial.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.REPORT.frmReport.resources

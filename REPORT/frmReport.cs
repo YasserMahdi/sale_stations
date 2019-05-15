@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace sale_stations.REPORT
 {
-    public partial class matReport : Form
+    public partial class frmReport : Form
     {
-        public matReport()
+        public frmReport()
         {
             InitializeComponent();
-        }
-
-        private void matReport_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

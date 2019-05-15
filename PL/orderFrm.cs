@@ -63,7 +63,7 @@ namespace sale_stations.PL
 
         private void button3_Click(object sender, EventArgs e)
         {
-            invoiceno.Text = ord.getLastInvoice().Rows[0][0].ToString();
+            invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
 
         }
 
@@ -71,7 +71,7 @@ namespace sale_stations.PL
         {
             listCustomer cus = new listCustomer();
             cus.ShowDialog();
-            this.cusno.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
@@ -121,12 +121,21 @@ namespace sale_stations.PL
         {
             if (e.KeyCode == Keys.Enter)
             {
-                for(int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                if (ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                {
+                    MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     if(dataGridView1.Rows[i].Cells[0].Value.ToString() == matno.Text)
                     {
                         MessageBox.Show("هذا المنتج موجود مسبقاً","تنبية",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         return;
+                    }
+                    if (ord.verifyQte(Convert.ToInt32(matno.Text),Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                    {
+                        MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 DataRow r = dt.NewRow();
@@ -195,6 +204,63 @@ namespace sale_stations.PL
             txttotal.Text = (from DataGridViewRow row in dataGridView1.Rows
                              where row.Cells[4].FormattedValue.ToString() != string.Empty
                              select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // cheack values is set or not 
+            if (invoiceNo.Text == string.Empty)
+            {
+                MessageBox.Show("الرجاء ادخال رقم القائمة", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (salesman.Text == string.Empty)
+            {
+                MessageBox.Show("الرجاء ادخال اسم البائع", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cusNo.Text == string.Empty)
+            {
+                MessageBox.Show("الرجاء ادخال معلومات الزبون", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("الرجاء ادخال المواد", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+
+
+                    // save informations of the head of invoice
+                    ord.add_order(invoiceNo.Text, invoiceDesk.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToInt32(txttotal.Text));
+
+                    //save products info 
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                            Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                    }
+                    MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //get the last order
+            int lasto =Convert.ToInt32( ord.getLastInvoiceForPrint().Rows[0][0]);
+            REPORT.product_minu rpt = new REPORT.product_minu();
+            REPORT.frmReport frm = new REPORT.frmReport();
+            rpt.SetDataSource(ord.getOrdrrDetails(lasto)) ;
+            frm.crystalReportViewer1.ReportSource = rpt;
+            frm.ShowDialog();
+            //frm.crystalReportViewer1.PrintReport();
         }
     }
 }

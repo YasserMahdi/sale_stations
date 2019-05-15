@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.invoiceDesk = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.salesman = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.invoiceno = new System.Windows.Forms.TextBox();
+            this.invoiceNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cusname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cusno = new System.Windows.Forms.TextBox();
+            this.cusNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -52,14 +52,14 @@
             this.matAmaunt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.matQte = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.matName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.matno = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_browse = new System.Windows.Forms.Button();
             this.matPrice = new System.Windows.Forms.TextBox();
+            this.matName = new System.Windows.Forms.TextBox();
+            this.matQte = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -77,13 +77,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.invoiceDesk);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.salesman);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.invoiceno);
+            this.groupBox1.Controls.Add(this.invoiceNo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(662, 29);
             this.groupBox1.Name = "groupBox1";
@@ -92,13 +92,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "معلومات الفاتوره";
             // 
-            // textBox3
+            // invoiceDesk
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 54);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 68);
-            this.textBox3.TabIndex = 1;
+            this.invoiceDesk.Location = new System.Drawing.Point(6, 54);
+            this.invoiceDesk.Multiline = true;
+            this.invoiceDesk.Name = "invoiceDesk";
+            this.invoiceDesk.Size = new System.Drawing.Size(234, 68);
+            this.invoiceDesk.TabIndex = 1;
             // 
             // label4
             // 
@@ -125,12 +125,12 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 24);
             this.dateTimePicker1.TabIndex = 3;
             // 
-            // textBox2
+            // salesman
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 24);
-            this.textBox2.TabIndex = 4;
+            this.salesman.Location = new System.Drawing.Point(6, 158);
+            this.salesman.Name = "salesman";
+            this.salesman.Size = new System.Drawing.Size(234, 24);
+            this.salesman.TabIndex = 4;
             // 
             // label2
             // 
@@ -141,12 +141,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "اسم البائع";
             // 
-            // invoiceno
+            // invoiceNo
             // 
-            this.invoiceno.Location = new System.Drawing.Point(6, 24);
-            this.invoiceno.Name = "invoiceno";
-            this.invoiceno.Size = new System.Drawing.Size(234, 24);
-            this.invoiceno.TabIndex = 0;
+            this.invoiceNo.Location = new System.Drawing.Point(6, 24);
+            this.invoiceNo.Name = "invoiceNo";
+            this.invoiceNo.Size = new System.Drawing.Size(234, 24);
+            this.invoiceNo.TabIndex = 0;
             // 
             // label1
             // 
@@ -164,7 +164,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cusname);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cusno);
+            this.groupBox2.Controls.Add(this.cusNo);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(206, 29);
             this.groupBox2.Name = "groupBox2";
@@ -215,12 +215,12 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "اسم الزبون";
             // 
-            // cusno
+            // cusNo
             // 
-            this.cusno.Location = new System.Drawing.Point(79, 51);
-            this.cusno.Name = "cusno";
-            this.cusno.Size = new System.Drawing.Size(161, 24);
-            this.cusno.TabIndex = 5;
+            this.cusNo.Location = new System.Drawing.Point(79, 51);
+            this.cusNo.Name = "cusNo";
+            this.cusNo.Size = new System.Drawing.Size(161, 24);
+            this.cusNo.TabIndex = 5;
             // 
             // label5
             // 
@@ -306,18 +306,6 @@
             this.label11.Text = "الكمية";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // matQte
-            // 
-            this.matQte.Location = new System.Drawing.Point(141, 66);
-            this.matQte.MaxLength = 12;
-            this.matQte.Name = "matQte";
-            this.matQte.Size = new System.Drawing.Size(135, 24);
-            this.matQte.TabIndex = 5;
-            this.matQte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.matQte.KeyDown += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyDown);
-            this.matQte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matQte_KeyPress);
-            this.matQte.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyUp);
-            // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -328,15 +316,6 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "اسم المنتج";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // matName
-            // 
-            this.matName.Location = new System.Drawing.Point(400, 66);
-            this.matName.Name = "matName";
-            this.matName.ReadOnly = true;
-            this.matName.Size = new System.Drawing.Size(279, 24);
-            this.matName.TabIndex = 3;
-            this.matName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -398,6 +377,27 @@
             this.matPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matPrice_KeyPress);
             this.matPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matPrice_KeyUp);
             // 
+            // matName
+            // 
+            this.matName.Location = new System.Drawing.Point(400, 66);
+            this.matName.Name = "matName";
+            this.matName.ReadOnly = true;
+            this.matName.Size = new System.Drawing.Size(279, 24);
+            this.matName.TabIndex = 3;
+            this.matName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // matQte
+            // 
+            this.matQte.Location = new System.Drawing.Point(141, 66);
+            this.matQte.MaxLength = 12;
+            this.matQte.Name = "matQte";
+            this.matQte.Size = new System.Drawing.Size(135, 24);
+            this.matQte.TabIndex = 5;
+            this.matQte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matQte.KeyDown += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyDown);
+            this.matQte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matQte_KeyPress);
+            this.matQte.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyUp);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(829, 619);
@@ -441,6 +441,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "حفظ الفاتورة";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -450,6 +451,7 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "طباعة الفاتورة";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -489,6 +491,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "orderFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "القائمة";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -506,13 +509,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox invoiceDesk;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox salesman;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox invoiceno;
+        private System.Windows.Forms.TextBox invoiceNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
@@ -520,7 +523,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox cusname;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox cusno;
+        private System.Windows.Forms.TextBox cusNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;

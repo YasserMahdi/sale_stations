@@ -25,5 +25,12 @@ namespace sale_stations.PL
         {
             this.Close();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = mat.searchProduct(txtSearch.Text);
+            this.dataGridView1.DataSource = dt;
+        }
     }
 }

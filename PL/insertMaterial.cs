@@ -14,6 +14,7 @@ namespace sale_stations.PL
     public partial class insertMaterial : Form
     {
         public string state ="add";
+        public string isUpdate = "false";
         BL.MaterialClass Mat = new BL.MaterialClass();
         public insertMaterial()
         {
@@ -43,12 +44,14 @@ namespace sale_stations.PL
                     this.buyCost.Clear();
                     this.saleCost.Clear();
                     this.qte.Clear();
+                    this.isUpdate = "true";
+                  
                    
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("ادخل معلومات صحيحة", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ادخل معلومات صحيحة " + ex.Message, "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
         }
@@ -57,11 +60,18 @@ namespace sale_stations.PL
         {
             if (state == "add")
             {
-                DataTable dt = new DataTable();
-                dt = Mat.verifyProduct(Convert.ToInt32(noMtr.Text));
-                if (dt.Rows.Count > 0)
+                try
                 {
-                    MessageBox.Show("هذا المعرف موجود مسبقاً", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = new DataTable();
+                    dt = Mat.verifyProduct(Convert.ToInt32(noMtr.Text));
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("هذا المعرف موجود مسبقاً", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

@@ -55,9 +55,10 @@
             // 
             this.btnstore.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnstore.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnstore.Location = new System.Drawing.Point(847, 163);
+            this.btnstore.Location = new System.Drawing.Point(968, 163);
+            this.btnstore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnstore.Name = "btnstore";
-            this.btnstore.Size = new System.Drawing.Size(169, 94);
+            this.btnstore.Size = new System.Drawing.Size(193, 94);
             this.btnstore.TabIndex = 0;
             this.btnstore.Text = "المخزن";
             this.btnstore.UseVisualStyleBackColor = false;
@@ -67,9 +68,10 @@
             // 
             this.btnsuplier.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnsuplier.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnsuplier.Location = new System.Drawing.Point(275, 163);
+            this.btnsuplier.Location = new System.Drawing.Point(315, 163);
+            this.btnsuplier.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnsuplier.Name = "btnsuplier";
-            this.btnsuplier.Size = new System.Drawing.Size(169, 96);
+            this.btnsuplier.Size = new System.Drawing.Size(193, 96);
             this.btnsuplier.TabIndex = 1;
             this.btnsuplier.Text = "الموردين";
             this.btnsuplier.UseVisualStyleBackColor = false;
@@ -79,9 +81,10 @@
             // 
             this.btninvoive.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btninvoive.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btninvoive.Location = new System.Drawing.Point(467, 163);
+            this.btninvoive.Location = new System.Drawing.Point(533, 163);
+            this.btninvoive.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btninvoive.Name = "btninvoive";
-            this.btninvoive.Size = new System.Drawing.Size(169, 94);
+            this.btninvoive.Size = new System.Drawing.Size(193, 94);
             this.btninvoive.TabIndex = 2;
             this.btninvoive.Text = "فاتورة جديدة";
             this.btninvoive.UseVisualStyleBackColor = false;
@@ -91,20 +94,23 @@
             // 
             this.btnqueryinvoice.BackColor = System.Drawing.Color.Blue;
             this.btnqueryinvoice.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnqueryinvoice.Location = new System.Drawing.Point(467, 291);
+            this.btnqueryinvoice.Location = new System.Drawing.Point(533, 291);
+            this.btnqueryinvoice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnqueryinvoice.Name = "btnqueryinvoice";
-            this.btnqueryinvoice.Size = new System.Drawing.Size(169, 96);
+            this.btnqueryinvoice.Size = new System.Drawing.Size(193, 96);
             this.btnqueryinvoice.TabIndex = 3;
             this.btnqueryinvoice.Text = "استعلام عن الفواتير";
             this.btnqueryinvoice.UseVisualStyleBackColor = false;
+            this.btnqueryinvoice.Click += new System.EventHandler(this.btnqueryinvoice_Click);
             // 
             // btndept
             // 
             this.btndept.BackColor = System.Drawing.Color.Salmon;
             this.btndept.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btndept.Location = new System.Drawing.Point(656, 163);
+            this.btndept.Location = new System.Drawing.Point(749, 163);
+            this.btndept.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btndept.Name = "btndept";
-            this.btndept.Size = new System.Drawing.Size(169, 94);
+            this.btndept.Size = new System.Drawing.Size(193, 94);
             this.btndept.TabIndex = 4;
             this.btndept.Text = "الديون";
             this.btndept.UseVisualStyleBackColor = false;
@@ -114,9 +120,10 @@
             // 
             this.btnreport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnreport.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnreport.Location = new System.Drawing.Point(656, 291);
+            this.btnreport.Location = new System.Drawing.Point(749, 291);
+            this.btnreport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnreport.Name = "btnreport";
-            this.btnreport.Size = new System.Drawing.Size(169, 96);
+            this.btnreport.Size = new System.Drawing.Size(193, 96);
             this.btnreport.TabIndex = 5;
             this.btnreport.Text = "التقارير";
             this.btnreport.UseVisualStyleBackColor = false;
@@ -125,9 +132,10 @@
             // btnSuppilerQuerye
             // 
             this.btnSuppilerQuerye.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnSuppilerQuerye.Location = new System.Drawing.Point(275, 291);
+            this.btnSuppilerQuerye.Location = new System.Drawing.Point(315, 291);
+            this.btnSuppilerQuerye.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSuppilerQuerye.Name = "btnSuppilerQuerye";
-            this.btnSuppilerQuerye.Size = new System.Drawing.Size(169, 96);
+            this.btnSuppilerQuerye.Size = new System.Drawing.Size(193, 96);
             this.btnSuppilerQuerye.TabIndex = 6;
             this.btnSuppilerQuerye.Text = "استعلام عن الموردين";
             this.btnSuppilerQuerye.UseVisualStyleBackColor = true;
@@ -136,9 +144,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button1.Location = new System.Drawing.Point(847, 291);
+            this.button1.Location = new System.Drawing.Point(968, 291);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 96);
+            this.button1.Size = new System.Drawing.Size(193, 96);
             this.button1.TabIndex = 7;
             this.button1.Text = "استعلام عن المخزن";
             this.button1.UseVisualStyleBackColor = true;
@@ -147,9 +156,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button2.Location = new System.Drawing.Point(84, 165);
+            this.button2.Location = new System.Drawing.Point(96, 165);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 94);
+            this.button2.Size = new System.Drawing.Size(193, 94);
             this.button2.TabIndex = 8;
             this.button2.Text = "اضافة زبون";
             this.button2.UseVisualStyleBackColor = true;
@@ -159,9 +169,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Yellow;
             this.button3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button3.Location = new System.Drawing.Point(84, 291);
+            this.button3.Location = new System.Drawing.Point(96, 291);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 96);
+            this.button3.Size = new System.Drawing.Size(192, 96);
             this.button3.TabIndex = 9;
             this.button3.Text = "استعلام عن الزبائن";
             this.button3.UseVisualStyleBackColor = false;
@@ -175,8 +186,9 @@
             this.المستخدمينToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1112, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1271, 28);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -206,6 +218,7 @@
             this.انشاءنسخةاحتياطيةToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Text = "انشاء نسخة احتياطية";
+            this.انشاءنسخةاحتياطيةToolStripMenuItem.Click += new System.EventHandler(this.انشاءنسخةاحتياطيةToolStripMenuItem_Click);
             // 
             // استعادةنسخةاحياطيةToolStripMenuItem
             // 
@@ -246,9 +259,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 568);
+            this.ClientSize = new System.Drawing.Size(1271, 568);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -260,8 +273,10 @@
             this.Controls.Add(this.btnsuplier);
             this.Controls.Add(this.btnstore);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";

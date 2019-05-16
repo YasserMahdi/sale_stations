@@ -77,7 +77,8 @@ namespace sale_stations.PL
 
         private void استعادةنسخةاحياطيةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PL.Resore rst = new Resore();
+            rst.ShowDialog();
         }
 
         private void تسجيلالدخولToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +95,18 @@ namespace sale_stations.PL
         private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnqueryinvoice_Click(object sender, EventArgs e)
+        {
+            PL.listOrders frm = new listOrders();
+            frm.Show();
+        }
+
+        private void انشاءنسخةاحتياطيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.createBackup frm = new createBackup();
+            frm.ShowDialog();
         }
     }
 }

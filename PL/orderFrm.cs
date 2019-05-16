@@ -154,6 +154,8 @@ namespace sale_stations.PL
                 txttotal.Text = (from DataGridViewRow row in dataGridView1.Rows
                                  where row.Cells[4].FormattedValue.ToString() != string.Empty
                                  select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString();
+
+                
                 
             }
         }
@@ -261,6 +263,11 @@ namespace sale_stations.PL
             frm.crystalReportViewer1.ReportSource = rpt;
             frm.ShowDialog();
             //frm.crystalReportViewer1.PrintReport();
+        }
+
+        private void AmountReceived_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            remainingAmount.Text = Convert.ToString(Convert.ToInt32(txttotal.Text) - Convert.ToInt32(txttotal.Text));
         }
     }
 }

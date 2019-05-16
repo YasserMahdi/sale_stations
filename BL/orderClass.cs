@@ -121,5 +121,46 @@ namespace sale_stations.BL
             DAL.close();
             return dt;
         }
+        public DataTable serachOrders()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("serachOrders", null);
+            accessobject.close();
+            return Dt;
+
+        }
+
+        public DataTable seach_single_oerder(string reference)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            DataTable Dt = new DataTable();
+
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@reference", SqlDbType.NVarChar,64);
+            param[0].Value = reference;
+
+            Dt = accessobject.selectData("seach_single_oerder", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+        public DataTable getNotCashedOrder()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getNotCashedOrder", null);
+            accessobject.close();
+            return Dt;
+
+        }
+
+
     }
 }

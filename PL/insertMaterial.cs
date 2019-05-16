@@ -45,6 +45,7 @@ namespace sale_stations.PL
                     this.saleCost.Clear();
                     this.qte.Clear();
                     this.isUpdate = "true";
+                    
                   
                    
                 }

@@ -68,6 +68,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AmountReceived = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.remainingAmount = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -425,7 +429,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(668, 690);
+            this.button3.Location = new System.Drawing.Point(668, 727);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 28);
             this.button3.TabIndex = 10;
@@ -435,7 +439,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(560, 690);
+            this.button4.Location = new System.Drawing.Point(560, 727);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 28);
             this.button4.TabIndex = 11;
@@ -445,7 +449,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(452, 690);
+            this.button5.Location = new System.Drawing.Point(452, 727);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 28);
             this.button5.TabIndex = 12;
@@ -455,7 +459,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(344, 690);
+            this.button6.Location = new System.Drawing.Point(344, 727);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 28);
             this.button6.TabIndex = 13;
@@ -474,11 +478,48 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // AmountReceived
+            // 
+            this.AmountReceived.Location = new System.Drawing.Point(32, 656);
+            this.AmountReceived.Name = "AmountReceived";
+            this.AmountReceived.Size = new System.Drawing.Size(234, 24);
+            this.AmountReceived.TabIndex = 16;
+            this.AmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountReceived_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(272, 659);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 17);
+            this.label15.TabIndex = 15;
+            this.label15.Text = ": المبلغ الواصل";
+            // 
+            // remainingAmount
+            // 
+            this.remainingAmount.Location = new System.Drawing.Point(32, 686);
+            this.remainingAmount.Name = "remainingAmount";
+            this.remainingAmount.Size = new System.Drawing.Size(234, 24);
+            this.remainingAmount.TabIndex = 18;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(272, 689);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 17);
+            this.label16.TabIndex = 17;
+            this.label16.Text = ": المبلغ الباقي";
+            // 
             // orderFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 776);
+            this.Controls.Add(this.remainingAmount);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.AmountReceived);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -547,5 +588,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox matno;
         private System.Windows.Forms.TextBox matPrice;
+        private System.Windows.Forms.TextBox AmountReceived;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox remainingAmount;
+        private System.Windows.Forms.Label label16;
     }
 }

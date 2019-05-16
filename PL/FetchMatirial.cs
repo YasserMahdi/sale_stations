@@ -52,9 +52,11 @@ namespace sale_stations.PL
             frm.qte.Text= this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
             frm.Text = "تحديث المنتوج : " + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             frm.button1.Text = "تحديث";
-            this.dataGridView1.DataSource = mtr.getMatirialInfo();
             frm.ShowDialog();
-            
+            if(frm.isUpdate == "true")
+            {
+                this.dataGridView1.DataSource = mtr.getMatirialInfo();
+            }
 
         }
 

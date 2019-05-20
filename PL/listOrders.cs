@@ -18,7 +18,6 @@ namespace sale_stations.PL
         {
 
             InitializeComponent();
-            this.button3.Enabled = false;
             this.dataGridView1.DataSource = order.serachOrders();
             txtSearch.Focus();
 
@@ -28,6 +27,7 @@ namespace sale_stations.PL
         {
             try
             {
+
                 DataTable dt = new DataTable();
                 dt = order.seach_single_oerder(txtSearch.Text);
                 this.dataGridView1.DataSource = dt;
@@ -58,7 +58,13 @@ namespace sale_stations.PL
 
         private void button1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.button3.Enabled = true;
+          
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PL.updateOrders frm = new updateOrders();
+            frm.ShowDialog();
         }
     }
 }

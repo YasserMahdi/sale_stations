@@ -95,6 +95,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "معلومات الفاتوره";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // invoiceDesk
             // 
@@ -103,6 +104,7 @@
             this.invoiceDesk.Name = "invoiceDesk";
             this.invoiceDesk.Size = new System.Drawing.Size(234, 68);
             this.invoiceDesk.TabIndex = 1;
+            this.invoiceDesk.TextChanged += new System.EventHandler(this.invoiceDesk_TextChanged);
             // 
             // label4
             // 
@@ -112,6 +114,7 @@
             this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "وصف الفاتورة";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -121,6 +124,7 @@
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "التاريخ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dateTimePicker1
             // 
@@ -128,6 +132,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 24);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // salesman
             // 
@@ -135,6 +140,7 @@
             this.salesman.Name = "salesman";
             this.salesman.Size = new System.Drawing.Size(234, 24);
             this.salesman.TabIndex = 4;
+            this.salesman.TextChanged += new System.EventHandler(this.salesman_TextChanged);
             // 
             // label2
             // 
@@ -144,6 +150,7 @@
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "اسم البائع";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // invoiceNo
             // 
@@ -151,6 +158,7 @@
             this.invoiceNo.Name = "invoiceNo";
             this.invoiceNo.Size = new System.Drawing.Size(234, 24);
             this.invoiceNo.TabIndex = 0;
+            this.invoiceNo.TextChanged += new System.EventHandler(this.invoiceNo_TextChanged);
             // 
             // label1
             // 
@@ -160,6 +168,7 @@
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "رقم الفاتورة";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -176,6 +185,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "معلومات الزبون";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -193,6 +203,7 @@
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(234, 24);
             this.phone.TabIndex = 8;
+            this.phone.TextChanged += new System.EventHandler(this.phone_TextChanged);
             // 
             // label7
             // 
@@ -202,6 +213,7 @@
             this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "رقم الهاتف";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cusname
             // 
@@ -209,6 +221,7 @@
             this.cusname.Name = "cusname";
             this.cusname.Size = new System.Drawing.Size(234, 24);
             this.cusname.TabIndex = 7;
+            this.cusname.TextChanged += new System.EventHandler(this.cusname_TextChanged);
             // 
             // label6
             // 
@@ -218,6 +231,7 @@
             this.label6.Size = new System.Drawing.Size(71, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "اسم الزبون";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // cusNo
             // 
@@ -225,6 +239,7 @@
             this.cusNo.Name = "cusNo";
             this.cusNo.Size = new System.Drawing.Size(161, 24);
             this.cusNo.TabIndex = 5;
+            this.cusNo.TextChanged += new System.EventHandler(this.cusNo_TextChanged);
             // 
             // label5
             // 
@@ -234,6 +249,7 @@
             this.label5.Size = new System.Drawing.Size(76, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "معرف الزبون";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox3
             // 
@@ -256,6 +272,7 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "المنتجات";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // label14
             // 
@@ -267,6 +284,7 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "اختيار";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label13
             // 
@@ -278,6 +296,7 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "المبلغ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // matAmaunt
             // 
@@ -287,6 +306,7 @@
             this.matAmaunt.Size = new System.Drawing.Size(133, 24);
             this.matAmaunt.TabIndex = 9;
             this.matAmaunt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matAmaunt.TextChanged += new System.EventHandler(this.matAmaunt_TextChanged);
             // 
             // label12
             // 
@@ -298,6 +318,7 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "سعر البيع";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label11
             // 
@@ -309,6 +330,7 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "الكمية";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -320,6 +342,7 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "اسم المنتج";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -331,6 +354,7 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "رقم المنتج";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // matno
             // 
@@ -340,6 +364,7 @@
             this.matno.Size = new System.Drawing.Size(186, 24);
             this.matno.TabIndex = 1;
             this.matno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matno.TextChanged += new System.EventHandler(this.matno_TextChanged);
             // 
             // dataGridView1
             // 
@@ -355,6 +380,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(951, 265);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -377,6 +403,7 @@
             this.matPrice.Size = new System.Drawing.Size(128, 24);
             this.matPrice.TabIndex = 13;
             this.matPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matPrice.TextChanged += new System.EventHandler(this.matPrice_TextChanged_1);
             this.matPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.matPrice_KeyDown);
             this.matPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matPrice_KeyPress);
             this.matPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matPrice_KeyUp);
@@ -389,6 +416,7 @@
             this.matName.Size = new System.Drawing.Size(279, 24);
             this.matName.TabIndex = 3;
             this.matName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matName.TextChanged += new System.EventHandler(this.matName_TextChanged);
             // 
             // matQte
             // 
@@ -398,6 +426,7 @@
             this.matQte.Size = new System.Drawing.Size(135, 24);
             this.matQte.TabIndex = 5;
             this.matQte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.matQte.TextChanged += new System.EventHandler(this.matQte_TextChanged);
             this.matQte.KeyDown += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyDown);
             this.matQte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matQte_KeyPress);
             this.matQte.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyUp);
@@ -410,6 +439,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "حذف المادة المحددة";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txttotal
             // 
@@ -417,6 +447,7 @@
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(234, 24);
             this.txttotal.TabIndex = 14;
+            this.txttotal.TextChanged += new System.EventHandler(this.txttotal_TextChanged);
             // 
             // label8
             // 
@@ -426,6 +457,7 @@
             this.label8.Size = new System.Drawing.Size(88, 17);
             this.label8.TabIndex = 8;
             this.label8.Text = ": المبلغ الكلي";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button3
             // 
@@ -477,6 +509,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(168, 200);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AmountReceived
             // 
@@ -484,6 +517,7 @@
             this.AmountReceived.Name = "AmountReceived";
             this.AmountReceived.Size = new System.Drawing.Size(234, 24);
             this.AmountReceived.TabIndex = 16;
+            this.AmountReceived.TextChanged += new System.EventHandler(this.AmountReceived_TextChanged);
             this.AmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountReceived_KeyPress);
             // 
             // label15
@@ -494,6 +528,7 @@
             this.label15.Size = new System.Drawing.Size(92, 17);
             this.label15.TabIndex = 15;
             this.label15.Text = ": المبلغ الواصل";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // remainingAmount
             // 
@@ -501,6 +536,7 @@
             this.remainingAmount.Name = "remainingAmount";
             this.remainingAmount.Size = new System.Drawing.Size(234, 24);
             this.remainingAmount.TabIndex = 18;
+            this.remainingAmount.TextChanged += new System.EventHandler(this.remainingAmount_TextChanged);
             // 
             // label16
             // 
@@ -510,6 +546,7 @@
             this.label16.Size = new System.Drawing.Size(91, 17);
             this.label16.TabIndex = 17;
             this.label16.Text = ": المبلغ الباقي";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // orderFrm
             // 

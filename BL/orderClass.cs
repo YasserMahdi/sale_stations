@@ -34,17 +34,25 @@ namespace sale_stations.BL
 
         }
 
-        public void add_order(string inv_no, string inv_desc,string date, string saleman, string customer_id , int total_ammount)
+        public void add_order(string inv_no,string date, string saleman, string customer_id , int total_ammount, int dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[7];
 
             param[0] = new SqlParameter("@inv_no", SqlDbType.Int);
             param[0].Value =Convert.ToInt32(inv_no);
 
-            param[1] = new SqlParameter("@inv_desc", SqlDbType.NVarChar, 64);
-            param[1].Value = inv_desc;
+            param[1] = new SqlParameter("@isCashed", SqlDbType.NVarChar, 32);
+            if (dept == 0)
+            {
+                param[1].Value = "YES";
+            }
+            else
+            {
+                param[1].Value = "NO";
+            }
+           
 
             param[2] = new SqlParameter("@inv_date", SqlDbType.Date);
             param[2].Value = Convert.ToDateTime(date);
@@ -58,12 +66,17 @@ namespace sale_stations.BL
             param[5] = new SqlParameter("@total_amount", SqlDbType.Int);
             param[5].Value = total_ammount;
 
+            param[6] = new SqlParameter("@dept", SqlDbType.Int);
+            param[6].Value = dept;
+            
+          
+
 
             DAL.Executecmd("add_order", param);
             DAL.close();
         }
 
-        public void add_order_detail(int mat_no, int order_no, int qte, double price ,int amount )
+        public void add_order_detail(int mat_no, int order_no, int qte, double price ,int amount)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();

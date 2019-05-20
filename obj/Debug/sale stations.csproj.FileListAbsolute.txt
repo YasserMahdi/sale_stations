@@ -46,3 +46,5 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.REP
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.listOrders.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.createBackup.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.Resore.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.updateOrders.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editDeptInfo.resources

@@ -15,6 +15,7 @@ namespace sale_stations.PL
     {
 
         BL.orderClass ord = new BL.orderClass();
+        BL.Dept_class dpt = new BL.Dept_class();
         DataTable dt = new DataTable();
 
         void calculateAmount()
@@ -42,6 +43,8 @@ namespace sale_stations.PL
 
             dataGridView1.DataSource = dt;
         }
+        
+
 
         void resizeDVGcolumns()
         {
@@ -227,14 +230,32 @@ namespace sale_stations.PL
             {
                 MessageBox.Show("الرجاء ادخال المواد", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if(remainingAmount.Text == string.Empty)
+            {
+                MessageBox.Show("الرجاء ادخال المبلغ الواصل", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 try
                 {
 
-
                     // save informations of the head of invoice
-                    ord.add_order(invoiceNo.Text, invoiceDesk.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToInt32(txttotal.Text));
+                    ord.add_order(invoiceNo.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToInt32(txttotal.Text),Convert.ToInt32(remainingAmount.Text));
+
+                    //save the value of dept 
+
+                    DataTable Dt = new DataTable();
+                    Dt = dpt.cheackDept(Convert.ToInt32(cusNo.Text));
+                    if (dt.Rows.Count < 1)//Check for no old debt
+                    {
+                        dpt.setOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+
+                    }
+                    else //If there is an old debt it will be combined with the current debt
+                    {
+                        dpt.updateOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+
+                    }
 
                     //save products info 
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -242,6 +263,8 @@ namespace sale_stations.PL
                         ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
                             Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()));
                     }
+
+                    
                     MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 catch (Exception ex)
@@ -267,7 +290,214 @@ namespace sale_stations.PL
 
         private void AmountReceived_KeyPress(object sender, KeyPressEventArgs e)
         {
-            remainingAmount.Text = Convert.ToString(Convert.ToInt32(txttotal.Text) - Convert.ToInt32(txttotal.Text));
+
+
+            // (Convert.ToString(Convert.ToInt32(txttotal.Text) - Convert.ToInt32(AmountReceived.Text)))
+            // procdure for compute dept
+            try
+            {
+                int received = new int();
+                int total = Convert.ToInt32(txttotal.Text);
+                string rec = AmountReceived.Text;
+                Int32.TryParse(rec, out received);
+                int ramaning = total - received;
+
+                if (e.KeyChar == 13)
+                {
+                    remainingAmount.Text = Convert.ToString(ramaning);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void invoiceDesk_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salesman_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void invoiceNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cusname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cusNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void matAmaunt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void matno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void matPrice_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void matName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void matQte_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AmountReceived_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void remainingAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

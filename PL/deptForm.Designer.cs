@@ -154,6 +154,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "deptForm";
             this.Text = "deptForm";
+            this.Load += new System.EventHandler(this.deptForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

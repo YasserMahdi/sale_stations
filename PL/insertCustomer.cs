@@ -16,6 +16,7 @@ namespace sale_stations.PL
         public insertCustomer()
         {
             InitializeComponent();
+            textBoxNO.Text = insCus.getCustomerID().Rows[0][0].ToString();
         }
 
         private void btnSaveCustomer_Click(object sender, EventArgs e)
@@ -28,6 +29,7 @@ namespace sale_stations.PL
                 textBoxNO.Clear();
                 textBoxNmae.Clear();
                 textBoxPhone.Clear();
+                textBoxNO.Text = insCus.getCustomerID().Rows[0][0].ToString();
             }
             catch (Exception sqlEx)
             {

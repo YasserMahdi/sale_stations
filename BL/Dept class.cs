@@ -58,7 +58,7 @@ namespace sale_stations.BL
 
         }
 
-        public void setOrderDepts(int customerID , int dept)
+        public void setOrderDepts(int customerID, int dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -67,14 +67,13 @@ namespace sale_stations.BL
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
 
-            param[1] = new SqlParameter("@depts", SqlDbType.VarChar, 50);
+            param[1] = new SqlParameter("@depts", SqlDbType.Int);
             param[1].Value = dept;
-
-            
 
             DAL.Executecmd("setOrderDepts", param);
             DAL.close();
         }
+
 
         public DataTable cheackDept(int customerID)
         {
@@ -98,8 +97,7 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2];
-
+            SqlParameter[] param = new SqlParameter[2]; 
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
 

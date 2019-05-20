@@ -68,5 +68,17 @@ namespace sale_stations.BL
             DAL.close();
         }
 
+        public DataTable getCustomerID()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getCustomerID", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
     }
 }

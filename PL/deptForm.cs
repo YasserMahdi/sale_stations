@@ -64,5 +64,10 @@ namespace sale_stations.PL
 
 
         }
+
+        private void deptForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

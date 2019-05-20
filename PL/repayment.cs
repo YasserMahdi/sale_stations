@@ -13,31 +13,20 @@ namespace sale_stations.PL
     public partial class repayment : Form
     {
         BL.Dept_class dpt = new BL.Dept_class();
+        listCustomer lst = new listCustomer();
         public repayment()
         {
             InitializeComponent();
-            comboBox1.DataSource = dpt.getCustomerName();
-            comboBox1.DisplayMember = "customer_name";
-            comboBox1.ValueMember = "customer_no";
+            lst.ShowDialog();
+            txtNo.Text = lst.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = lst.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             
-        }
-        
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
-           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRep_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox1.Text))
-            {
-                MessageBox.Show("No Item is Selected");
-            }
-            else
-            {
-                MessageBox.Show("Item Selected is:" + comboBox1.Text);
-            }
+
         }
     }
 }

@@ -74,9 +74,16 @@ namespace sale_stations.PL
         {
             listCustomer cus = new listCustomer();
             cus.ShowDialog();
-            this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            try
+            {
+                this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                return ;
+            }
 
         }
 
@@ -213,6 +220,7 @@ namespace sale_stations.PL
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
             // cheack values is set or not 
             if (invoiceNo.Text == string.Empty)
             {
@@ -242,20 +250,7 @@ namespace sale_stations.PL
                     // save informations of the head of invoice
                     ord.add_order(invoiceNo.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToInt32(txttotal.Text),Convert.ToInt32(remainingAmount.Text));
 
-                    //save the value of dept 
 
-                    DataTable Dt = new DataTable();
-                    Dt = dpt.cheackDept(Convert.ToInt32(cusNo.Text));
-                    if (dt.Rows.Count < 1)//Check for no old debt
-                    {
-                        dpt.setOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
-
-                    }
-                    else //If there is an old debt it will be combined with the current debt
-                    {
-                        dpt.updateOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
-
-                    }
 
                     //save products info 
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -264,7 +259,24 @@ namespace sale_stations.PL
                             Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()));
                     }
 
-                    
+                    //save the value of dept 
+
+                    DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(cusNo.Text));
+
+                    if (DtForCheack.Rows.Count > 0)//Check for old debt ,
+                        //If there is an old debt it will be combined with the current debt
+                    {
+                        dpt.updateOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+                        // this for test -> MessageBox.Show("old dept is update");
+
+                    }
+                    if (DtForCheack.Rows.Count <= 0) 
+                    {
+                        dpt.setOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+                        // this for test -> MessageBox.Show("new dept inserted");
+                    }
+
+
                     MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 catch (Exception ex)

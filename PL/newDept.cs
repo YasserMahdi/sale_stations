@@ -20,6 +20,7 @@ namespace sale_stations.PL
             InitializeComponent();
             cus.ShowDialog();
             
+
             this.txtNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             this.txtName.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             

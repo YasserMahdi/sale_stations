@@ -94,6 +94,12 @@
     <Compile Include="PL\editDeptInfo.Designer.cs">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\editSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\editSupplier.Designer.cs">
+      <DependentUpon>editSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FetchMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\editDeptInfo.resx">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\editSupplier.resx">
+      <DependentUpon>editSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>

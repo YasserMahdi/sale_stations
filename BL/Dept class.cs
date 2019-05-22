@@ -58,7 +58,7 @@ namespace sale_stations.BL
 
         }
 
-        public void setOrderDepts(int customerID, int dept)
+        public void setOrderDepts(int customerID, double dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -67,7 +67,7 @@ namespace sale_stations.BL
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
 
-            param[1] = new SqlParameter("@depts", SqlDbType.Int);
+            param[1] = new SqlParameter("@depts", SqlDbType.Money);
             param[1].Value = dept;
 
             DAL.Executecmd("setOrderDepts", param);
@@ -94,7 +94,7 @@ namespace sale_stations.BL
 
         }
 
-        public void updateOrderDepts(int customerID, int dept)
+        public void updateOrderDepts(int customerID, double dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -102,7 +102,7 @@ namespace sale_stations.BL
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
 
-            param[1] = new SqlParameter("@depts", SqlDbType.Int);
+            param[1] = new SqlParameter("@depts", SqlDbType.Money);
             param[1].Value = dept;
 
 

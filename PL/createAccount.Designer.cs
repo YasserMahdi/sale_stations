@@ -41,7 +41,7 @@
             // username
             // 
             this.username.AutoSize = true;
-            this.username.Location = new System.Drawing.Point(509, 157);
+            this.username.Location = new System.Drawing.Point(426, 70);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(101, 17);
             this.username.TabIndex = 0;
@@ -50,7 +50,7 @@
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(509, 192);
+            this.password.Location = new System.Drawing.Point(426, 105);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(74, 17);
             this.password.TabIndex = 1;
@@ -59,7 +59,7 @@
             // confirmPassword
             // 
             this.confirmPassword.AutoSize = true;
-            this.confirmPassword.Location = new System.Drawing.Point(509, 222);
+            this.confirmPassword.Location = new System.Drawing.Point(426, 135);
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.Size = new System.Drawing.Size(106, 17);
             this.confirmPassword.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(269, 257);
+            this.btnCreateAccount.Location = new System.Drawing.Point(186, 170);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(234, 31);
             this.btnCreateAccount.TabIndex = 3;
@@ -76,21 +76,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(269, 157);
+            this.textBox1.Location = new System.Drawing.Point(186, 70);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 24);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(269, 192);
+            this.textBox2.Location = new System.Drawing.Point(186, 105);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(234, 24);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(269, 222);
+            this.textBox3.Location = new System.Drawing.Point(186, 135);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(234, 24);
             this.textBox3.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(654, 246);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);

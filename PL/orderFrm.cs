@@ -96,7 +96,7 @@ namespace sale_stations.PL
                 clearBoxes();
                 matno.Text = mat.dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 matName.Text = mat.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                matPrice.Text = mat.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                matPrice.Text = mat.dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 matQte.Focus();
             }
             catch
@@ -131,22 +131,34 @@ namespace sale_stations.PL
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                try
                 {
-                    MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                {
-                    if(dataGridView1.Rows[i].Cells[0].Value.ToString() == matno.Text)
-                    {
-                        MessageBox.Show("هذا المنتج موجود مسبقاً","تنبية",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                        return;
-                    }
-                    if (ord.verifyQte(Convert.ToInt32(matno.Text),Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                    if (ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text)).Rows.Count < 1)
                     {
                         MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
                     }
+                    else
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        {
+                            if (dataGridView1.Rows[i].Cells[0].Value.ToString() == matno.Text)
+                            {
+                                MessageBox.Show("هذا المنتج موجود مسبقاً", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
+                            /*
+                            if (ord.verifyQte(Convert.ToInt32(matno.Text),Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                            {
+                                MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            */
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
                 DataRow r = dt.NewRow();
               
@@ -248,7 +260,7 @@ namespace sale_stations.PL
                 {
 
                     // save informations of the head of invoice
-                    ord.add_order(invoiceNo.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToInt32(txttotal.Text),Convert.ToInt32(remainingAmount.Text));
+                    ord.add_order(invoiceNo.Text, dateTimePicker1.Value.ToString(), salesman.Text, cusNo.Text, Convert.ToDouble(txttotal.Text),Convert.ToDouble(remainingAmount.Text));
 
 
 
@@ -256,7 +268,7 @@ namespace sale_stations.PL
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                     {
                         ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                            Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                            Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
                     }
 
                     //save the value of dept 
@@ -266,13 +278,13 @@ namespace sale_stations.PL
                     if (DtForCheack.Rows.Count > 0)//Check for old debt ,
                         //If there is an old debt it will be combined with the current debt
                     {
-                        dpt.updateOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+                        dpt.updateOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToDouble(remainingAmount.Text));
                         // this for test -> MessageBox.Show("old dept is update");
 
                     }
                     if (DtForCheack.Rows.Count <= 0) 
                     {
-                        dpt.setOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToInt32(remainingAmount.Text));
+                        dpt.setOrderDepts(Convert.ToInt32(cusNo.Text), Convert.ToDouble(remainingAmount.Text));
                         // this for test -> MessageBox.Show("new dept inserted");
                     }
 
@@ -510,6 +522,26 @@ namespace sale_stations.PL
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.invoiceNo.Clear();
+                this.salesman.Clear();
+                this.cusNo.Clear();
+                this.cusname.Clear();
+                this.phone.Clear();
+                this.txttotal.Clear();
+                this.AmountReceived.Clear();
+                this.remainingAmount.Clear();
+                this.dataGridView1.DataSource = null;
+            }
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("الرجاء غلق النافذه و فتحها مرة اخرى");
+            }
         }
     }
 }

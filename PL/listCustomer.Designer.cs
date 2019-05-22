@@ -74,6 +74,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.searchbox);
             this.Name = "listCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listCustomer";
             this.Load += new System.EventHandler(this.listCustomer_Load);
             this.DoubleClick += new System.EventHandler(this.listCustomer_DoubleClick);

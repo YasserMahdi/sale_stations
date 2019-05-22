@@ -59,6 +59,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "تعديل معلومات المورد";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Name = "fetchSupplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fetchSupplier";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

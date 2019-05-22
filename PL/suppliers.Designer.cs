@@ -128,6 +128,7 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtName);
             this.Name = "suppliers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "suppliers";
             this.Load += new System.EventHandler(this.suppliers_Load);
             this.ResumeLayout(false);

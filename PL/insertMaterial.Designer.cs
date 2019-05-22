@@ -149,6 +149,7 @@
             this.Controls.Add(this.nameMtr);
             this.Controls.Add(this.noMtr);
             this.Name = "insertMaterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "add Material";
             this.ResumeLayout(false);
             this.PerformLayout();

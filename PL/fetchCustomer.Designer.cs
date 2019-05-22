@@ -120,6 +120,7 @@
             this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Name = "fetchCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

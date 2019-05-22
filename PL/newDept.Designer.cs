@@ -108,6 +108,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDept);
             this.Name = "newDept";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "newDept";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -109,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNo);
             this.Name = "repayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "repayment";
             this.ResumeLayout(false);
             this.PerformLayout();

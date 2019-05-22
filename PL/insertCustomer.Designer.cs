@@ -110,6 +110,7 @@
             this.Controls.Add(this.customerNo);
             this.Controls.Add(this.textBoxNO);
             this.Name = "insertCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "insertCustomer";
             this.ResumeLayout(false);
             this.PerformLayout();

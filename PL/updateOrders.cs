@@ -12,8 +12,6 @@ namespace sale_stations.PL
 {
     public partial class updateOrders : Form
     {
-        DataTable Dt;
-
 
         BL.orderClass order = new BL.orderClass();
         public updateOrders()

@@ -96,6 +96,7 @@
             this.Controls.Add(this.btnSelectPath);
             this.Controls.Add(this.textpath);
             this.Name = "Resore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resore";
             this.ResumeLayout(false);
             this.PerformLayout();

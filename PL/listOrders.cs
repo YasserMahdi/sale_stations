@@ -69,14 +69,22 @@ namespace sale_stations.PL
              
             PL.updateOrders frm = new updateOrders();
             DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
-            frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
-            frm.cusNo.Text = Dt.Rows[0][1].ToString();
-            frm.cusname.Text = Dt.Rows[0][6].ToString();
-            frm.txtDate.Text = Dt.Rows[0][2].ToString();
-            frm.txttotal.Text = Dt.Rows[0][3].ToString();
-            frm.salesman.Text = Dt.Rows[0][4].ToString();
+            try
+            {
+                frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
+                frm.cusNo.Text = Dt.Rows[0][1].ToString();
+                frm.cusname.Text = Dt.Rows[0][6].ToString();
+                frm.txtDate.Text = Dt.Rows[0][2].ToString();
+                frm.txttotal.Text = Dt.Rows[0][3].ToString();
+                frm.salesman.Text = Dt.Rows[0][4].ToString();
+                frm.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\nهذه الفاتورة لا تحتوي على مواد مباعة ");
+            }
             
-            frm.ShowDialog();
+           
         }
     }
 }

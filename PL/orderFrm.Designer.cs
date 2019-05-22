@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.invoiceDesk = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.salesman = new System.Windows.Forms.TextBox();
@@ -60,7 +58,6 @@
             this.matPrice = new System.Windows.Forms.TextBox();
             this.matName = new System.Windows.Forms.TextBox();
             this.matQte = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -72,6 +69,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.remainingAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,8 +79,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.invoiceDesk);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.salesman);
@@ -97,29 +93,10 @@
             this.groupBox1.Text = "معلومات الفاتوره";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // invoiceDesk
-            // 
-            this.invoiceDesk.Location = new System.Drawing.Point(6, 54);
-            this.invoiceDesk.Multiline = true;
-            this.invoiceDesk.Name = "invoiceDesk";
-            this.invoiceDesk.Size = new System.Drawing.Size(234, 68);
-            this.invoiceDesk.TabIndex = 1;
-            this.invoiceDesk.TextChanged += new System.EventHandler(this.invoiceDesk_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "وصف الفاتورة";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(257, 134);
+            this.label3.Location = new System.Drawing.Point(257, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 5;
@@ -128,24 +105,24 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 128);
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 84);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(233, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(222, 24);
             this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // salesman
             // 
-            this.salesman.Location = new System.Drawing.Point(6, 158);
+            this.salesman.Location = new System.Drawing.Point(18, 114);
             this.salesman.Name = "salesman";
-            this.salesman.Size = new System.Drawing.Size(234, 24);
+            this.salesman.Size = new System.Drawing.Size(222, 24);
             this.salesman.TabIndex = 4;
             this.salesman.TextChanged += new System.EventHandler(this.salesman_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 161);
+            this.label2.Location = new System.Drawing.Point(254, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 2;
@@ -154,16 +131,16 @@
             // 
             // invoiceNo
             // 
-            this.invoiceNo.Location = new System.Drawing.Point(6, 24);
+            this.invoiceNo.Location = new System.Drawing.Point(18, 54);
             this.invoiceNo.Name = "invoiceNo";
-            this.invoiceNo.Size = new System.Drawing.Size(234, 24);
+            this.invoiceNo.Size = new System.Drawing.Size(222, 24);
             this.invoiceNo.TabIndex = 0;
             this.invoiceNo.TextChanged += new System.EventHandler(this.invoiceNo_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 27);
+            this.label1.Location = new System.Drawing.Point(257, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
@@ -431,16 +408,6 @@
             this.matQte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matQte_KeyPress);
             this.matQte.KeyUp += new System.Windows.Forms.KeyEventHandler(this.matQte_KeyUp);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(829, 619);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 31);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "حذف المادة المحددة";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txttotal
             // 
             this.txttotal.Location = new System.Drawing.Point(32, 626);
@@ -461,7 +428,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(668, 727);
+            this.button3.Location = new System.Drawing.Point(700, 736);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 28);
             this.button3.TabIndex = 10;
@@ -471,7 +438,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(560, 727);
+            this.button4.Location = new System.Drawing.Point(592, 736);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 28);
             this.button4.TabIndex = 11;
@@ -481,7 +448,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(452, 727);
+            this.button5.Location = new System.Drawing.Point(484, 736);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 28);
             this.button5.TabIndex = 12;
@@ -491,7 +458,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(344, 727);
+            this.button6.Location = new System.Drawing.Point(376, 736);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 28);
             this.button6.TabIndex = 13;
@@ -548,11 +515,22 @@
             this.label16.Text = ": المبلغ الباقي";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(268, 736);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(102, 28);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "بيع جديد";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // orderFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 776);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.remainingAmount);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.AmountReceived);
@@ -564,7 +542,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -587,8 +564,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox invoiceDesk;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox salesman;
@@ -605,7 +580,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txttotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button3;
@@ -629,5 +603,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox remainingAmount;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button7;
     }
 }

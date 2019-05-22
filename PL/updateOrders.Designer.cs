@@ -36,6 +36,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,11 +54,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cusNo = new System.Windows.Forms.TextBox();
             this.btnMatShow = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -136,6 +136,61 @@
             this.dataGridView1.Size = new System.Drawing.Size(951, 265);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Location = new System.Drawing.Point(16, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 23);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "المبلغ";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(507, 55);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(249, 23);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "اسم المنتج";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(344, 55);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(154, 23);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "سعر البيع";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(762, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 23);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "رقم المنتج";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(159, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(176, 23);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "الكمية";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
@@ -255,61 +310,6 @@
             this.btnMatShow.UseVisualStyleBackColor = true;
             this.btnMatShow.Click += new System.EventHandler(this.btnMatShow_Click);
             // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(16, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 23);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "المبلغ";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(344, 55);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(154, 23);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "سعر البيع";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(159, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(176, 23);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "الكمية";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(507, 55);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(249, 23);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "اسم المنتج";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(762, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 23);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "رقم المنتج";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // updateOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -325,6 +325,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "updateOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "updateOrders";
             this.Load += new System.EventHandler(this.updateOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

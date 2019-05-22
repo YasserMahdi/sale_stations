@@ -48,6 +48,7 @@
             this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمستخدمجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفمستخدمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,6 +199,7 @@
             this.تسجيلالدخولToolStripMenuItem,
             this.انشاءنسخةاحتياطيةToolStripMenuItem,
             this.استعادةنسخةاحياطيةToolStripMenuItem,
+            this.تسجيلالخروجToolStripMenuItem,
             this.خروجToolStripMenuItem});
             this.الرئيسيةToolStripMenuItem.Name = "الرئيسيةToolStripMenuItem";
             this.الرئيسيةToolStripMenuItem.RightToLeftAutoMirrorImage = true;
@@ -257,6 +259,12 @@
             this.حذفمستخدمToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.حذفمستخدمToolStripMenuItem.Text = "حذف مستخدم";
             // 
+            // تسجيلالخروجToolStripMenuItem
+            // 
+            this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,5 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةمستخدمجديدToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفمستخدمToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تسجيلالخروجToolStripMenuItem;
     }
 }

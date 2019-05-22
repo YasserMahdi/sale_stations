@@ -70,5 +70,28 @@ namespace sale_stations.BL
             DAL.Executecmd("deletSupplier", param);
             DAL.close();
         }
+
+        public void updateSupplierInfo(int supplierNo, string name, string phone, string address)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[4];
+
+            param[0] = new SqlParameter("@ID", SqlDbType.Int);
+            param[0].Value = supplierNo;
+
+            param[1] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[1].Value = name;
+
+            param[2] = new SqlParameter("@phone", SqlDbType.NVarChar, 50);
+            param[2].Value = phone;
+
+            param[3] = new SqlParameter("@address", SqlDbType.NVarChar, 50);
+            param[3].Value = address;
+
+
+            DAL.Executecmd("updateSupplierInfo", param);
+            DAL.close();
+        }
     }
 }

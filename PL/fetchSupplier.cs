@@ -45,5 +45,19 @@ namespace sale_stations.PL
                 MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            editSupplier edSupp = new editSupplier();
+            edSupp.textBoxNO.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            edSupp.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            edSupp.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            edSupp.textBoxAddress.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            edSupp.ShowDialog();
+            if(edSupp.state == "update")
+            {
+                this.dataGridView1.DataSource = sup.getSupplierlInfo();
+            }
+        }
     }
 }

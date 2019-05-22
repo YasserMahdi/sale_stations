@@ -131,6 +131,7 @@
             this.Controls.Add(this.textSearch);
             this.Controls.Add(this.label1);
             this.Name = "FetchMatirial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FetchMatirial";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

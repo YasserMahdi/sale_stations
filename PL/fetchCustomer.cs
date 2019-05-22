@@ -14,14 +14,12 @@ namespace sale_stations.PL
     {
         BL.CustomerClass cus =new BL.CustomerClass();
         editCustomer frm = new editCustomer();
+        
         public fetchCustomer()
         {
             InitializeComponent();
             this.dataGridView1.DataSource = cus.getCustomerInfo();
-            if(frm.state == "update")
-            {
-                this.dataGridView1.DataSource = cus.getCustomerInfo();
-            }
+            
 
         }
 
@@ -39,6 +37,11 @@ namespace sale_stations.PL
             edCus.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             edCus.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             edCus.ShowDialog();
+            if(edCus.state == "update")
+            {
+                this.dataGridView1.DataSource = cus.getCustomerInfo();
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

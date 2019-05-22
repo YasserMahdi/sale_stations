@@ -153,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Name = "deptForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "deptForm";
             this.Load += new System.EventHandler(this.deptForm_Load);
             this.groupBox1.ResumeLayout(false);

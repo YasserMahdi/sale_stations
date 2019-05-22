@@ -82,6 +82,12 @@
     <Compile Include="PL\deptForm.Designer.cs">
       <DependentUpon>deptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\editCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\editCustomer.Designer.cs">
+      <DependentUpon>editCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\editDeptInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="REPORT\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\menu_for_client.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menu_for_client.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\print_single_mat.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\deptForm.resx">
       <DependentUpon>deptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\editCustomer.resx">
+      <DependentUpon>editCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\editDeptInfo.resx">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
@@ -275,6 +290,10 @@
     </Compile>
     <EmbeddedResource Include="REPORT\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\menu_for_client.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>menu_for_client.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\print_single_mat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

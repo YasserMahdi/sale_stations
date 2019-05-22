@@ -13,6 +13,8 @@ namespace sale_stations.PL
 {
     public partial class listOrders : Form
     {
+
+        
         BL.orderClass order = new BL.orderClass();
         public listOrders()
         {
@@ -20,6 +22,7 @@ namespace sale_stations.PL
             InitializeComponent();
             this.dataGridView1.DataSource = order.serachOrders();
             txtSearch.Focus();
+
 
         }
 
@@ -63,7 +66,16 @@ namespace sale_stations.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
+             
             PL.updateOrders frm = new updateOrders();
+            DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+            frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
+            frm.cusNo.Text = Dt.Rows[0][1].ToString();
+            frm.cusname.Text = Dt.Rows[0][6].ToString();
+            frm.txtDate.Text = Dt.Rows[0][2].ToString();
+            frm.txttotal.Text = Dt.Rows[0][3].ToString();
+            frm.salesman.Text = Dt.Rows[0][4].ToString();
+            
             frm.ShowDialog();
         }
     }

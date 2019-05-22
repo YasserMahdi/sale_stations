@@ -93,6 +93,7 @@ namespace sale_stations.BL
             return Dt;
 
         }
+
         public void updateOrderDepts(int customerID, int dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
@@ -164,6 +165,68 @@ namespace sale_stations.BL
             DAL.Executecmd("updateSumDebt", param);
             DAL.close();
         }
+        /*
+        public DataTable debtRepayment(int customerID)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0].Value = customerID;
+
+            accessobject.open();
+
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("debtRepayment", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+        public void updateDeptInOrderTable(int invID, int dept,string isCashed)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@invID", SqlDbType.Int);
+            param[0].Value = invID;
+
+            param[1] = new SqlParameter("@orderDept", SqlDbType.Int);
+            param[1].Value = dept;
+
+            param[2] = new SqlParameter("@isCashed", SqlDbType.NVarChar,32);
+            param[2].Value = isCashed;
+
+
+
+            DAL.Executecmd("REP", param);
+            DAL.close();
+        }
+        */
+
+        public void updateDeptInDeptTable(int invID, int dept)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0].Value = invID;
+
+            param[1] = new SqlParameter("@dept", SqlDbType.Int);
+            param[1].Value = dept;
+
+            
+
+
+
+            DAL.Executecmd("updateDeptInDeptTable", param);
+            DAL.close();
+        }
+
 
     }
 

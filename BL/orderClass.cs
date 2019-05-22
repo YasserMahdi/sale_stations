@@ -174,6 +174,37 @@ namespace sale_stations.BL
 
         }
 
+        public DataTable showOrderinfo(int customerId, int invID)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+            param[0].Value = customerId;
+
+            param[1] = new SqlParameter("@invID", SqlDbType.Int);
+            param[1].Value = invID;
+
+            dt = DAL.selectData("showOrderinfo", param);
+            DAL.close();
+            return dt;
+        }
+
+        public DataTable showOrderDit( int invID)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@invID", SqlDbType.Int);
+            param[0].Value = invID;
+
+            dt = DAL.selectData("showOrderDit", param);
+            DAL.close();
+            return dt;
+        }
+
 
     }
 }

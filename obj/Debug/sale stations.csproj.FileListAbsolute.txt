@@ -48,3 +48,4 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.Resore.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.updateOrders.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editDeptInfo.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editCustomer.resources

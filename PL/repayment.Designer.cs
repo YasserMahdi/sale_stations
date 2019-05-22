@@ -84,6 +84,7 @@
             this.txtRep.Name = "txtRep";
             this.txtRep.Size = new System.Drawing.Size(311, 24);
             this.txtRep.TabIndex = 4;
+            this.txtRep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRep_KeyPress);
             // 
             // btnRep
             // 

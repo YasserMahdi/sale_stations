@@ -80,7 +80,7 @@ namespace sale_stations.PL
                 this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return ;
             }
@@ -296,8 +296,8 @@ namespace sale_stations.PL
             REPORT.frmReport frm = new REPORT.frmReport();
             rpt.SetDataSource(ord.getOrdrrDetails(lasto)) ;
             frm.crystalReportViewer1.ReportSource = rpt;
-            frm.ShowDialog();
-            //frm.crystalReportViewer1.PrintReport();
+            //frm.ShowDialog();
+            frm.crystalReportViewer1.PrintReport();
         }
 
         private void AmountReceived_KeyPress(object sender, KeyPressEventArgs e)

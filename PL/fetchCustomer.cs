@@ -13,10 +13,16 @@ namespace sale_stations.PL
     public partial class fetchCustomer : Form
     {
         BL.CustomerClass cus =new BL.CustomerClass();
+        editCustomer frm = new editCustomer();
         public fetchCustomer()
         {
             InitializeComponent();
             this.dataGridView1.DataSource = cus.getCustomerInfo();
+            if(frm.state == "update")
+            {
+                this.dataGridView1.DataSource = cus.getCustomerInfo();
+            }
+
         }
 
         private void searchbox_TextChanged(object sender, EventArgs e)
@@ -28,7 +34,11 @@ namespace sale_stations.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            editCustomer edCus = new editCustomer();
+            edCus.textBoxNO.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            edCus.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            edCus.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            edCus.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

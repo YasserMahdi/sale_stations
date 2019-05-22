@@ -28,22 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxNO = new System.Windows.Forms.TextBox();
             this.customerNo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNmae = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNO = new System.Windows.Forms.TextBox();
+            this.textBoxNmae = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.btnSaveCustomer = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textBoxNO
-            // 
-            this.textBoxNO.Location = new System.Drawing.Point(245, 156);
-            this.textBoxNO.Name = "textBoxNO";
-            this.textBoxNO.ReadOnly = true;
-            this.textBoxNO.Size = new System.Drawing.Size(240, 24);
-            this.textBoxNO.TabIndex = 0;
             // 
             // customerNo
             // 
@@ -64,13 +56,6 @@
             this.label1.Text = "اسم الزبون";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxNmae
-            // 
-            this.textBoxNmae.Location = new System.Drawing.Point(245, 186);
-            this.textBoxNmae.Name = "textBoxNmae";
-            this.textBoxNmae.Size = new System.Drawing.Size(240, 24);
-            this.textBoxNmae.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -79,6 +64,21 @@
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "رقم الهاتف";
+            // 
+            // textBoxNO
+            // 
+            this.textBoxNO.Location = new System.Drawing.Point(245, 156);
+            this.textBoxNO.Name = "textBoxNO";
+            this.textBoxNO.ReadOnly = true;
+            this.textBoxNO.Size = new System.Drawing.Size(240, 24);
+            this.textBoxNO.TabIndex = 0;
+            // 
+            // textBoxNmae
+            // 
+            this.textBoxNmae.Location = new System.Drawing.Point(245, 186);
+            this.textBoxNmae.Name = "textBoxNmae";
+            this.textBoxNmae.Size = new System.Drawing.Size(240, 24);
+            this.textBoxNmae.TabIndex = 2;
             // 
             // textBoxPhone
             // 
@@ -117,12 +117,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxNO;
         private System.Windows.Forms.Label customerNo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNmae;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxNO;
+        private System.Windows.Forms.TextBox textBoxNmae;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Button btnSaveCustomer;
     }

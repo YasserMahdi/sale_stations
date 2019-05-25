@@ -82,6 +82,12 @@
     <Compile Include="PL\deptForm.Designer.cs">
       <DependentUpon>deptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\DirectSalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DirectSalesOrder.Designer.cs">
+      <DependentUpon>DirectSalesOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\editCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,12 +99,6 @@
     </Compile>
     <Compile Include="PL\editDeptInfo.Designer.cs">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\editSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\editSupplier.Designer.cs">
-      <DependentUpon>editSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FetchMatirial.cs">
       <SubType>Form</SubType>
@@ -123,12 +123,6 @@
     </Compile>
     <Compile Include="PL\fetchCustomer.Designer.cs">
       <DependentUpon>fetchCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\fetchSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\fetchSupplier.Designer.cs">
-      <DependentUpon>fetchSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\insertCustomer.cs">
       <SubType>Form</SubType>
@@ -184,6 +178,18 @@
     <Compile Include="PL\Resore.Designer.cs">
       <DependentUpon>Resore.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\showDeptHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\showDeptHistory.Designer.cs">
+      <DependentUpon>showDeptHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\stats.Designer.cs">
+      <DependentUpon>stats.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,14 +237,14 @@
     <EmbeddedResource Include="PL\deptForm.resx">
       <DependentUpon>deptForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\DirectSalesOrder.resx">
+      <DependentUpon>DirectSalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\editCustomer.resx">
       <DependentUpon>editCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\editDeptInfo.resx">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\editSupplier.resx">
-      <DependentUpon>editSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
@@ -251,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\fetchCustomer.resx">
       <DependentUpon>fetchCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\fetchSupplier.resx">
-      <DependentUpon>fetchSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\insertCustomer.resx">
       <DependentUpon>insertCustomer.cs</DependentUpon>
@@ -281,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Resore.resx">
       <DependentUpon>Resore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\showDeptHistory.resx">
+      <DependentUpon>showDeptHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\stats.resx">
+      <DependentUpon>stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>

@@ -12,14 +12,11 @@ namespace sale_stations.PL
 {
     public partial class repayment : Form
     {
+        public string state = "null";
         BL.Dept_class dpt = new BL.Dept_class();
-        listCustomer lst = new listCustomer();
         public repayment()
         {
             InitializeComponent();
-            lst.ShowDialog();
-            txtNo.Text = lst.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtName.Text = lst.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             
             
             
@@ -27,8 +24,9 @@ namespace sale_stations.PL
 
         private void btnRep_Click(object sender, EventArgs e)
         {
-            dpt.updateDeptInDeptTable(Convert.ToInt32(txtNo.Text), Convert.ToInt32(txtRep.Text));
+            dpt.updateDeptInDeptTable(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text) ,Convert.ToDouble(textDept.Text),DateTime.Now.ToString());
             MessageBox.Show(txtName.Text +  " تم تحديث حالة الدين الخاصة بـ ","سداد الديون ",MessageBoxButtons.OK,MessageBoxIcon.Exclamation );
+            state = "update";
 
              
 

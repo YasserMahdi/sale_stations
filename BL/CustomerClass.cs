@@ -100,6 +100,65 @@ namespace sale_stations.BL
                 DAL.Executecmd("updateCustomerInfo", param);
                 DAL.close();
             }
+        public DataTable getCustomerName (string name)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar,50);
+            param[0].Value = name; 
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getCustomerName", param);
+            accessobject.close();
+
+            return Dt;
 
         }
+
+        public DataTable gitCustomerIdByName(string name)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar,50);
+            param[0].Value = name;
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("gitCustomerIdByName", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+        public DataTable getPhoneByName(string name)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[0].Value = name;
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getPhoneByName", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+        public void updateOrinsertCustomerPhoneNumber(int customerid,string phone)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0].Value = customerid;
+
+            param[1] = new SqlParameter("@phone", SqlDbType.NVarChar,50);
+            param[1].Value = phone;
+
+            DAL.Executecmd("updateOrinsertCustomerPhoneNumber", param);
+            DAL.close();
+        }
+
+
+    }
 }

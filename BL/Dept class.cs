@@ -15,7 +15,32 @@ namespace sale_stations.BL
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
 
             DataTable Dt = new DataTable();
+            
+          //  DataRow Dr ;
             Dt = accessobject.selectData("getDeptInfo", null);
+          //  DataTable DtF = Dt;
+            accessobject.close();
+            
+            
+            
+
+
+            return Dt;
+
+        }
+
+        public DataTable searchCusForDeptList( string name)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[0].Value = name;
+
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("searchCusForDeptList", param);
             accessobject.close();
 
             return Dt;
@@ -58,17 +83,20 @@ namespace sale_stations.BL
 
         }
 
-        public void setOrderDepts(int customerID, double dept)
+        public void setOrderDepts(int customerid, double dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
 
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
-            param[0].Value = customerID;
+            param[0].Value = customerid;
 
             param[1] = new SqlParameter("@depts", SqlDbType.Money);
             param[1].Value = dept;
+
+            param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
+            param[2].Value = DateTime.Now;
 
             DAL.Executecmd("setOrderDepts", param);
             DAL.close();
@@ -94,16 +122,19 @@ namespace sale_stations.BL
 
         }
 
-        public void updateOrderDepts(int customerID, double dept)
+        public void updateOrderDepts(int customerid, double dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2]; 
+            SqlParameter[] param = new SqlParameter[3]; 
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
-            param[0].Value = customerID;
+            param[0].Value = customerid;
 
             param[1] = new SqlParameter("@depts", SqlDbType.Money);
             param[1].Value = dept;
+
+            param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
+            param[2].Value =DateTime.Now;
 
 
 
@@ -134,13 +165,16 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
 
             param[0] = new SqlParameter("@customerID", SqlDbType.Int);
             param[0].Value = customerID;
 
             param[1] = new SqlParameter("@dept", SqlDbType.Int);
             param[1].Value = dept;
+
+            param[2] = new SqlParameter("@DateT", SqlDbType.DateTime);
+            param[2].Value = DateTime.Now;
 
 
 
@@ -207,25 +241,53 @@ namespace sale_stations.BL
         }
         */
 
-        public void updateDeptInDeptTable(int invID, int dept)
+        public void updateDeptInDeptTable(int invID, double rep,double dept , String dateT)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@customerID", SqlDbType.Int);
             param[0].Value = invID;
 
-            param[1] = new SqlParameter("@dept", SqlDbType.Int);
-            param[1].Value = dept;
+            param[1] = new SqlParameter("@rep", SqlDbType.Money);
+            param[1].Value = rep;
 
-            
+            param[2] = new SqlParameter("@dept", SqlDbType.Money);
+            param[2].Value = dept;
+
+            param[3] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
+            param[3].Value =Convert.ToDateTime( dateT);
 
 
 
-            DAL.Executecmd("updateDeptInDeptTable", param);
+
+
+            DAL.Executecmd("insertREP", param);
             DAL.close();
         }
+
+
+        public DataTable getDeptHistory(string customerID)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0].Value =Convert.ToInt32( customerID);
+
+            accessobject.open();
+
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getDeptHistory", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+
 
 
     }

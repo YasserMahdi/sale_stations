@@ -28,34 +28,48 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            try
             {
-                mtr.deletMatirials(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
-                MessageBox.Show("تم الحذف", "عملية الحذف",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                this.dataGridView1.DataSource = mtr.getMatirialInfo();
+                if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    mtr.deletMatirials(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.dataGridView1.DataSource = mtr.getMatirialInfo();
+                }
+                else
+                {
+                    MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PL.insertMaterial frm = new PL.insertMaterial();
-
-            frm.state = "update";
-            frm.noMtr.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            frm.nameMtr.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            frm.buyCost.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            frm.saleCost.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            frm.qte.Text= this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            frm.Text = "تحديث المنتوج : " + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            frm.button1.Text = "تحديث";
-            frm.ShowDialog();
-            if(frm.isUpdate == "true")
+            try
             {
-                this.dataGridView1.DataSource = mtr.getMatirialInfo();
+                PL.insertMaterial frm = new PL.insertMaterial();
+
+                frm.state = "update";
+                frm.noMtr.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.nameMtr.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.buyCost.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                frm.saleCost.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                frm.qte.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                frm.Text = "تحديث المنتوج : " + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.button1.Text = "تحديث";
+                frm.ShowDialog();
+                if (frm.isUpdate == "true")
+                {
+                    this.dataGridView1.DataSource = mtr.getMatirialInfo();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -66,6 +80,16 @@ namespace sale_stations.PL
             
 
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PL.insertMaterial frm = new insertMaterial();
+            frm.ShowDialog();
+            if(frm.caseOf == "insert")
+            {
+                this.dataGridView1.DataSource = mtr.getMatirialInfo();
+            }
         }
     }
 }

@@ -118,11 +118,11 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtDept;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtDept;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtNo;
     }
 }

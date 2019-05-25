@@ -32,35 +32,55 @@ namespace sale_stations.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            editCustomer edCus = new editCustomer();
-            edCus.textBoxNO.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            edCus.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            edCus.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            edCus.ShowDialog();
-            if(edCus.state == "update")
+            try
             {
-                this.dataGridView1.DataSource = cus.getCustomerInfo();
+                editCustomer edCus = new editCustomer();
+                edCus.textBoxNO.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                edCus.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                edCus.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                edCus.ShowDialog();
+                if (edCus.state == "update")
+                {
+                    this.dataGridView1.DataSource = cus.getCustomerInfo();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            try
             {
-                cus.deletCustomer(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
-                MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.dataGridView1.DataSource = cus.getCustomerInfo();
+                if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    cus.deletCustomer(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                    MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.dataGridView1.DataSource = cus.getCustomerInfo();
+                }
+                else
+                {
+                    MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("تم الغاء عمليةالحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            insertCustomer frm = new insertCustomer();
+            frm.ShowDialog();
         }
     }
 }

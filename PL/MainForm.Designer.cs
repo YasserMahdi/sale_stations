@@ -29,60 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.btnstore = new System.Windows.Forms.Button();
-            this.btnsuplier = new System.Windows.Forms.Button();
             this.btninvoive = new System.Windows.Forms.Button();
-            this.btnqueryinvoice = new System.Windows.Forms.Button();
-            this.btndept = new System.Windows.Forms.Button();
             this.btnreport = new System.Windows.Forms.Button();
-            this.btnSuppilerQuerye = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.الرئيسيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تسجيلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.انشاءنسخةاحتياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.استعادةنسخةاحياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.اضافةمستخدمجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.حذفمستخدمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.انشاءنسخةاحتياToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اغلاقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.استعلامعنالزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnstore
-            // 
-            this.btnstore.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnstore.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnstore.Location = new System.Drawing.Point(968, 163);
-            this.btnstore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnstore.Name = "btnstore";
-            this.btnstore.Size = new System.Drawing.Size(193, 94);
-            this.btnstore.TabIndex = 0;
-            this.btnstore.Text = "المخزن";
-            this.btnstore.UseVisualStyleBackColor = false;
-            this.btnstore.Click += new System.EventHandler(this.btnstore_Click);
-            // 
-            // btnsuplier
-            // 
-            this.btnsuplier.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnsuplier.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnsuplier.Location = new System.Drawing.Point(315, 163);
-            this.btnsuplier.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnsuplier.Name = "btnsuplier";
-            this.btnsuplier.Size = new System.Drawing.Size(193, 96);
-            this.btnsuplier.TabIndex = 1;
-            this.btnsuplier.Text = "الموردين";
-            this.btnsuplier.UseVisualStyleBackColor = false;
-            this.btnsuplier.Click += new System.EventHandler(this.btnsuplier_Click);
-            // 
             // btninvoive
             // 
-            this.btninvoive.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btninvoive.BackColor = System.Drawing.Color.MediumBlue;
             this.btninvoive.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btninvoive.Location = new System.Drawing.Point(533, 163);
+            this.btninvoive.ForeColor = System.Drawing.SystemColors.Control;
+            this.btninvoive.Location = new System.Drawing.Point(46, 54);
             this.btninvoive.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btninvoive.Name = "btninvoive";
             this.btninvoive.Size = new System.Drawing.Size(193, 94);
@@ -91,37 +64,11 @@
             this.btninvoive.UseVisualStyleBackColor = false;
             this.btninvoive.Click += new System.EventHandler(this.btninvoive_Click);
             // 
-            // btnqueryinvoice
-            // 
-            this.btnqueryinvoice.BackColor = System.Drawing.Color.Blue;
-            this.btnqueryinvoice.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnqueryinvoice.Location = new System.Drawing.Point(533, 291);
-            this.btnqueryinvoice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnqueryinvoice.Name = "btnqueryinvoice";
-            this.btnqueryinvoice.Size = new System.Drawing.Size(193, 96);
-            this.btnqueryinvoice.TabIndex = 3;
-            this.btnqueryinvoice.Text = "استعلام عن الفواتير";
-            this.btnqueryinvoice.UseVisualStyleBackColor = false;
-            this.btnqueryinvoice.Click += new System.EventHandler(this.btnqueryinvoice_Click);
-            // 
-            // btndept
-            // 
-            this.btndept.BackColor = System.Drawing.Color.Salmon;
-            this.btndept.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btndept.Location = new System.Drawing.Point(749, 163);
-            this.btndept.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btndept.Name = "btndept";
-            this.btndept.Size = new System.Drawing.Size(193, 94);
-            this.btndept.TabIndex = 4;
-            this.btndept.Text = "الديون";
-            this.btndept.UseVisualStyleBackColor = false;
-            this.btndept.Click += new System.EventHandler(this.btndept_Click);
-            // 
             // btnreport
             // 
-            this.btnreport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnreport.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnreport.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnreport.Location = new System.Drawing.Point(749, 291);
+            this.btnreport.Location = new System.Drawing.Point(39, 66);
             this.btnreport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(193, 96);
@@ -130,165 +77,143 @@
             this.btnreport.UseVisualStyleBackColor = false;
             this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
-            // btnSuppilerQuerye
-            // 
-            this.btnSuppilerQuerye.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnSuppilerQuerye.Location = new System.Drawing.Point(315, 291);
-            this.btnSuppilerQuerye.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSuppilerQuerye.Name = "btnSuppilerQuerye";
-            this.btnSuppilerQuerye.Size = new System.Drawing.Size(193, 96);
-            this.btnSuppilerQuerye.TabIndex = 6;
-            this.btnSuppilerQuerye.Text = "استعلام عن الموردين";
-            this.btnSuppilerQuerye.UseVisualStyleBackColor = true;
-            this.btnSuppilerQuerye.Click += new System.EventHandler(this.btnSuppilerQuerye_Click);
-            // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button1.Location = new System.Drawing.Point(968, 291);
+            this.button1.Location = new System.Drawing.Point(50, 66);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 96);
             this.button1.TabIndex = 7;
-            this.button1.Text = "استعلام عن المخزن";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "المخزن";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // groupBox1
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button2.Location = new System.Drawing.Point(96, 165);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 94);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "اضافة زبون";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(622, 172);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(305, 202);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "المخزن و المواد";
             // 
-            // button3
+            // groupBox2
             // 
-            this.button3.BackColor = System.Drawing.Color.Yellow;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.button3.Location = new System.Drawing.Point(96, 291);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(192, 96);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "استعلام عن الزبائن";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.groupBox2.Controls.Add(this.btnreport);
+            this.groupBox2.Location = new System.Drawing.Point(51, 172);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(275, 202);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "التقارير و الديون";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btninvoive);
+            this.groupBox3.Location = new System.Drawing.Point(332, 172);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(284, 202);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "البيع المباشر";
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الرئيسيةToolStripMenuItem,
-            this.المستخدمينToolStripMenuItem});
+            this.الزبائنToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1271, 28);
-            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Size = new System.Drawing.Size(981, 28);
+            this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // الرئيسيةToolStripMenuItem
             // 
             this.الرئيسيةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.تسجيلالدخولToolStripMenuItem,
-            this.انشاءنسخةاحتياطيةToolStripMenuItem,
-            this.استعادةنسخةاحياطيةToolStripMenuItem,
+            this.انشاءنسخةاحتياToolStripMenuItem,
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem,
             this.تسجيلالخروجToolStripMenuItem,
-            this.خروجToolStripMenuItem});
+            this.اغلاقToolStripMenuItem});
             this.الرئيسيةToolStripMenuItem.Name = "الرئيسيةToolStripMenuItem";
-            this.الرئيسيةToolStripMenuItem.RightToLeftAutoMirrorImage = true;
             this.الرئيسيةToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.الرئيسيةToolStripMenuItem.Text = "الرئيسية";
             // 
             // تسجيلالدخولToolStripMenuItem
             // 
             this.تسجيلالدخولToolStripMenuItem.Name = "تسجيلالدخولToolStripMenuItem";
-            this.تسجيلالدخولToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.تسجيلالدخولToolStripMenuItem.Text = "تسجيل الدخول";
-            this.تسجيلالدخولToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem_Click);
             // 
-            // انشاءنسخةاحتياطيةToolStripMenuItem
+            // انشاءنسخةاحتياToolStripMenuItem
             // 
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Name = "انشاءنسخةاحتياطيةToolStripMenuItem";
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Text = "انشاء نسخة احتياطية";
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Click += new System.EventHandler(this.انشاءنسخةاحتياطيةToolStripMenuItem_Click);
+            this.انشاءنسخةاحتياToolStripMenuItem.Name = "انشاءنسخةاحتياToolStripMenuItem";
+            this.انشاءنسخةاحتياToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.انشاءنسخةاحتياToolStripMenuItem.Text = "انشاء نسخة احتياطية";
+            this.انشاءنسخةاحتياToolStripMenuItem.Click += new System.EventHandler(this.انشاءنسخةاحتياToolStripMenuItem_Click);
             // 
-            // استعادةنسخةاحياطيةToolStripMenuItem
+            // استعادةالنسخةالاحتياطيةToolStripMenuItem
             // 
-            this.استعادةنسخةاحياطيةToolStripMenuItem.Name = "استعادةنسخةاحياطيةToolStripMenuItem";
-            this.استعادةنسخةاحياطيةToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.استعادةنسخةاحياطيةToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.استعادةنسخةاحياطيةToolStripMenuItem.Text = "استعادة نسخة احتياطية";
-            this.استعادةنسخةاحياطيةToolStripMenuItem.Click += new System.EventHandler(this.استعادةنسخةاحياطيةToolStripMenuItem_Click);
-            // 
-            // خروجToolStripMenuItem
-            // 
-            this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
-            this.خروجToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.خروجToolStripMenuItem.Text = "خروج";
-            this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
-            // 
-            // المستخدمينToolStripMenuItem
-            // 
-            this.المستخدمينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اضافةمستخدمجديدToolStripMenuItem,
-            this.حذفمستخدمToolStripMenuItem});
-            this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
-            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
-            this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
-            // 
-            // اضافةمستخدمجديدToolStripMenuItem
-            // 
-            this.اضافةمستخدمجديدToolStripMenuItem.Name = "اضافةمستخدمجديدToolStripMenuItem";
-            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
-            this.اضافةمستخدمجديدToolStripMenuItem.Text = "اضافة مستخدم جديد";
-            // 
-            // حذفمستخدمToolStripMenuItem
-            // 
-            this.حذفمستخدمToolStripMenuItem.Name = "حذفمستخدمToolStripMenuItem";
-            this.حذفمستخدمToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
-            this.حذفمستخدمToolStripMenuItem.Text = "حذف مستخدم";
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Name = "استعادةالنسخةالاحتياطيةToolStripMenuItem";
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Text = "استعادة النسخة الاحتياطية";
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Click += new System.EventHandler(this.استعادةالنسخةالاحتياطيةToolStripMenuItem_Click);
             // 
             // تسجيلالخروجToolStripMenuItem
             // 
             this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
-            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
+            // 
+            // اغلاقToolStripMenuItem
+            // 
+            this.اغلاقToolStripMenuItem.Name = "اغلاقToolStripMenuItem";
+            this.اغلاقToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.اغلاقToolStripMenuItem.Text = "اغلاق";
+            this.اغلاقToolStripMenuItem.Click += new System.EventHandler(this.اغلاقToolStripMenuItem_Click);
+            // 
+            // الزبائنToolStripMenuItem
+            // 
+            this.الزبائنToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.استعلامعنالزبائنToolStripMenuItem});
+            this.الزبائنToolStripMenuItem.Name = "الزبائنToolStripMenuItem";
+            this.الزبائنToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.الزبائنToolStripMenuItem.Text = "الزبائن";
+            // 
+            // استعلامعنالزبائنToolStripMenuItem
+            // 
+            this.استعلامعنالزبائنToolStripMenuItem.Name = "استعلامعنالزبائنToolStripMenuItem";
+            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.استعلامعنالزبائنToolStripMenuItem.Text = "استعلام عن الزبائن";
+            this.استعلامعنالزبائنToolStripMenuItem.Click += new System.EventHandler(this.استعلامعنالزبائنToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 568);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSuppilerQuerye);
-            this.Controls.Add(this.btnreport);
-            this.Controls.Add(this.btndept);
-            this.Controls.Add(this.btnqueryinvoice);
-            this.Controls.Add(this.btninvoive);
-            this.Controls.Add(this.btnsuplier);
-            this.Controls.Add(this.btnstore);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(981, 494);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -297,26 +222,20 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnstore;
-        private System.Windows.Forms.Button btnsuplier;
         private System.Windows.Forms.Button btninvoive;
-        private System.Windows.Forms.Button btnqueryinvoice;
-        private System.Windows.Forms.Button btndept;
         private System.Windows.Forms.Button btnreport;
-        private System.Windows.Forms.Button btnSuppilerQuerye;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem الرئيسيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تسجيلالدخولToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem انشاءنسخةاحتياطيةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem استعادةنسخةاحياطيةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem خروجToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem اضافةمستخدمجديدToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem حذفمستخدمToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem انشاءنسخةاحتياToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem استعادةالنسخةالاحتياطيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تسجيلالخروجToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اغلاقToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الزبائنToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem استعلامعنالزبائنToolStripMenuItem;
     }
 }

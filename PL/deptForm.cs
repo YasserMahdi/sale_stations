@@ -13,23 +13,63 @@ namespace sale_stations.PL
     public partial class deptForm : Form
     {
         BL.Dept_class dpt = new BL.Dept_class();
+        BL.CustomerClass cus = new BL.CustomerClass();
+
         public deptForm()
         {
             InitializeComponent();
+            DataTable Dat = dpt.getDeptInfo();
             this.dataGridView1.DataSource = dpt.getDeptInfo();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PL.repayment rpt = new PL.repayment();
-            rpt.ShowDialog();
+            try
+            {
+                PL.repayment rpt = new PL.repayment();
+                rpt.txtNo.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                rpt.txtName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                rpt.textDept.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                rpt.ShowDialog();
+                if (rpt.state == "update")
+                {
+
+                    this.dataGridView1.DataSource = dpt.getDeptInfo();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PL.newDept dpt = new PL.newDept();
-            dpt.ShowDialog();
+            try
+            {
+                PL.newDept frm = new PL.newDept();
+                PL.listCustomer lstfrm = new listCustomer();
+                lstfrm.dataGridView1.DataSource = cus.getCustomerInfo();
+                lstfrm.ShowDialog();
+                frm.txtNo.Text = lstfrm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.txtName.Text = lstfrm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+
+                frm.ShowDialog();
+                if (frm.state == "update")
+                {
+                    // DataRow query = from detQuery in dpt.getDeptInfo().AsEnumerable() where detQuery.Field(string)()
+
+
+                    this.dataGridView1.DataSource = dpt.getDeptInfo();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,6 +108,28 @@ namespace sale_stations.PL
         private void deptForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = dpt.searchCusForDeptList(textBox1.Text);
+            this.dataGridView1.DataSource = dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                showDeptHistory showDpt = new showDeptHistory();
+                showDpt.dataGridView1.DataSource = dpt.getDeptHistory(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                showDpt.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+"\n \n لا يوجد ديون","تنبيه",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

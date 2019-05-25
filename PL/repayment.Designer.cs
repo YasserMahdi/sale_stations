@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtRep = new System.Windows.Forms.TextBox();
             this.btnRep = new System.Windows.Forms.Button();
+            this.textDept = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNo
@@ -72,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(476, 195);
+            this.label3.Location = new System.Drawing.Point(476, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 5;
@@ -80,7 +82,7 @@
             // 
             // txtRep
             // 
-            this.txtRep.Location = new System.Drawing.Point(159, 192);
+            this.txtRep.Location = new System.Drawing.Point(159, 222);
             this.txtRep.Name = "txtRep";
             this.txtRep.Size = new System.Drawing.Size(311, 24);
             this.txtRep.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             // btnRep
             // 
-            this.btnRep.Location = new System.Drawing.Point(159, 223);
+            this.btnRep.Location = new System.Drawing.Point(159, 254);
             this.btnRep.Name = "btnRep";
             this.btnRep.Size = new System.Drawing.Size(311, 28);
             this.btnRep.TabIndex = 6;
@@ -96,11 +98,29 @@
             this.btnRep.UseVisualStyleBackColor = true;
             this.btnRep.Click += new System.EventHandler(this.btnRep_Click);
             // 
+            // textDept
+            // 
+            this.textDept.Location = new System.Drawing.Point(159, 192);
+            this.textDept.Name = "textDept";
+            this.textDept.Size = new System.Drawing.Size(311, 24);
+            this.textDept.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(476, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "الدين الحالي";
+            // 
             // repayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 399);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textDept);
             this.Controls.Add(this.btnRep);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRep);
@@ -118,12 +138,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtRep;
-        private System.Windows.Forms.Button btnRep;
+        public System.Windows.Forms.TextBox txtNo;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtRep;
+        public System.Windows.Forms.Button btnRep;
+        public System.Windows.Forms.TextBox textDept;
+        public System.Windows.Forms.Label label4;
     }
 }

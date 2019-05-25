@@ -1,7 +1,6 @@
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.createAccount.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.deptForm.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.fetchCustomer.resources
-C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.fetchSupplier.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.insertCustomer.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.listCustomer.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.login.resources
@@ -49,4 +48,6 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.updateOrders.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editDeptInfo.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editCustomer.resources
-C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.editSupplier.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.showDeptHistory.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.DirectSalesOrder.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.stats.resources

@@ -15,6 +15,7 @@ namespace sale_stations.PL
     {
         public string state ="add";
         public string isUpdate = "false";
+        public string caseOf = "null";
         BL.MaterialClass Mat = new BL.MaterialClass();
         public insertMaterial()
         {
@@ -34,7 +35,9 @@ namespace sale_stations.PL
                     this.buyCost.Clear();
                     this.saleCost.Clear();
                     this.qte.Clear();
-                }
+                    caseOf = "insert";
+
+    }
                 else
                 {
                     Mat.updateMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));

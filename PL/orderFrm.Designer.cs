@@ -37,13 +37,10 @@
             this.invoiceNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.phone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cusname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cusNo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,6 +67,9 @@
             this.remainingAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.oldDespt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,6 +133,7 @@
             // 
             this.invoiceNo.Location = new System.Drawing.Point(18, 54);
             this.invoiceNo.Name = "invoiceNo";
+            this.invoiceNo.ReadOnly = true;
             this.invoiceNo.Size = new System.Drawing.Size(222, 24);
             this.invoiceNo.TabIndex = 0;
             this.invoiceNo.TextChanged += new System.EventHandler(this.invoiceNo_TextChanged);
@@ -150,12 +151,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.oldDespt);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.phone);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cusname);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cusNo);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(206, 29);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(336, 200);
@@ -164,19 +165,9 @@
             this.groupBox2.Text = "معلومات الزبون";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // phone
             // 
-            this.phone.Location = new System.Drawing.Point(6, 131);
+            this.phone.Location = new System.Drawing.Point(16, 107);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(234, 24);
             this.phone.TabIndex = 8;
@@ -185,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(246, 134);
+            this.label7.Location = new System.Drawing.Point(256, 110);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 6;
@@ -194,39 +185,22 @@
             // 
             // cusname
             // 
-            this.cusname.Location = new System.Drawing.Point(6, 88);
+            this.cusname.Location = new System.Drawing.Point(62, 64);
             this.cusname.Name = "cusname";
-            this.cusname.Size = new System.Drawing.Size(234, 24);
+            this.cusname.Size = new System.Drawing.Size(188, 24);
             this.cusname.TabIndex = 7;
             this.cusname.TextChanged += new System.EventHandler(this.cusname_TextChanged);
+            this.cusname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cusname_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(246, 91);
+            this.label6.Location = new System.Drawing.Point(256, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "اسم الزبون";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // cusNo
-            // 
-            this.cusNo.Location = new System.Drawing.Point(79, 51);
-            this.cusNo.Name = "cusNo";
-            this.cusNo.Size = new System.Drawing.Size(161, 24);
-            this.cusNo.TabIndex = 5;
-            this.cusNo.TextChanged += new System.EventHandler(this.cusNo_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(246, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "معرف الزبون";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox3
             // 
@@ -510,9 +484,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(272, 689);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 17);
+            this.label16.Size = new System.Drawing.Size(90, 17);
             this.label16.TabIndex = 17;
-            this.label16.Text = ": المبلغ الباقي";
+            this.label16.Text = ": الدين الحالي";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // button7
@@ -525,11 +499,38 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
+            // oldDespt
+            // 
+            this.oldDespt.Location = new System.Drawing.Point(16, 150);
+            this.oldDespt.Name = "oldDespt";
+            this.oldDespt.ReadOnly = true;
+            this.oldDespt.Size = new System.Drawing.Size(234, 24);
+            this.oldDespt.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "الدين السابق";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // orderFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 776);
+            this.ClientSize = new System.Drawing.Size(1038, 806);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.remainingAmount);
             this.Controls.Add(this.label16);
@@ -571,13 +572,10 @@
         private System.Windows.Forms.TextBox invoiceNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox cusname;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox cusNo;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txttotal;
@@ -604,5 +602,8 @@
         private System.Windows.Forms.TextBox remainingAmount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox oldDespt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

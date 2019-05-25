@@ -30,7 +30,7 @@ namespace sale_stations.PL
         {
             try
             {
-
+                // text box search 
                 DataTable dt = new DataTable();
                 dt = order.seach_single_oerder(txtSearch.Text);
                 this.dataGridView1.DataSource = dt;
@@ -66,22 +66,27 @@ namespace sale_stations.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-             
-            PL.updateOrders frm = new updateOrders();
-            DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
             try
             {
-                frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
-                frm.cusNo.Text = Dt.Rows[0][1].ToString();
-                frm.cusname.Text = Dt.Rows[0][6].ToString();
-                frm.txtDate.Text = Dt.Rows[0][2].ToString();
-                frm.txttotal.Text = Dt.Rows[0][3].ToString();
-                frm.salesman.Text = Dt.Rows[0][4].ToString();
-                frm.ShowDialog();
+                PL.updateOrders frm = new updateOrders();
+                DataTable Dt = order.showOrderinfo(this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                try
+                {
+                    frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
+                    frm.cusname.Text = Dt.Rows[0][6].ToString();
+                    frm.txtDate.Text = Dt.Rows[0][2].ToString();
+                    frm.txttotal.Text = Dt.Rows[0][3].ToString();
+                    frm.salesman.Text = Dt.Rows[0][4].ToString();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\nهذه الفاتورة لا تحتوي على مواد مباعة ");
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nهذه الفاتورة لا تحتوي على مواد مباعة ");
+                MessageBox.Show(ex.Message);
             }
             
            

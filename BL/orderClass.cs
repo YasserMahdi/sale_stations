@@ -34,7 +34,7 @@ namespace sale_stations.BL
 
         }
 
-        public void add_order(string inv_no,string date, string saleman, string customer_id , double total_ammount, double dept)
+        public void add_order(int customerID, string inv_no, string saleman, double total_ammount, double dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -55,13 +55,13 @@ namespace sale_stations.BL
            
 
             param[2] = new SqlParameter("@inv_date", SqlDbType.DateTime);
-            param[2].Value = Convert.ToDateTime(date);
+            param[2].Value = DateTime.Now;
 
             param[3] = new SqlParameter("@salesman", SqlDbType.NVarChar, 50);
             param[3].Value = saleman;
 
-            param[4] = new SqlParameter("@customer_id", SqlDbType.Int);
-            param[4].Value = Convert.ToInt32(customer_id);
+            param[4] = new SqlParameter("@customer_iD", SqlDbType.Int);
+            param[4].Value = customerID;
 
             param[5] = new SqlParameter("@total_amount", SqlDbType.Money);
             param[5].Value = total_ammount;
@@ -174,14 +174,14 @@ namespace sale_stations.BL
 
         }
 
-        public DataTable showOrderinfo(int customerId, int invID)
+        public DataTable showOrderinfo(string customerName, int invID)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
             SqlParameter[] param = new SqlParameter[2];
 
-            param[0] = new SqlParameter("@customerId", SqlDbType.Int);
-            param[0].Value = customerId;
+            param[0] = new SqlParameter("@customerName", SqlDbType.NVarChar,50);
+            param[0].Value = customerName;
 
             param[1] = new SqlParameter("@invID", SqlDbType.Int);
             param[1].Value = invID;

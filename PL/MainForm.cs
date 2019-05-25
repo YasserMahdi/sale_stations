@@ -23,7 +23,7 @@ namespace sale_stations.PL
         private void btnstore_Click(object sender, EventArgs e)
         {
             PL.insertMaterial addMaterial = new PL.insertMaterial();
-            addMaterial.ShowDialog();
+            addMaterial.Show();
         }
 
         private void btnsuplier_Click(object sender, EventArgs e)
@@ -46,14 +46,11 @@ namespace sale_stations.PL
 
         private void btnreport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ستكون التقارير متاحه في الاصدارات القادمة", "التقارير", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PL.stats frm = new stats();
+            frm.ShowDialog();
         }
 
-        private void btnSuppilerQuerye_Click(object sender, EventArgs e)
-        {
-            PL.fetchSupplier ftch = new PL.fetchSupplier();
-            ftch.ShowDialog();
-        }
+       
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -65,7 +62,7 @@ namespace sale_stations.PL
         {
             
             PL.FetchMatirial ftch = new PL.FetchMatirial();
-            ftch.ShowDialog();
+            ftch.Show();
            
         }
 
@@ -106,6 +103,50 @@ namespace sale_stations.PL
         private void انشاءنسخةاحتياطيةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PL.createBackup frm = new createBackup();
+            frm.ShowDialog();
+        }
+
+        private void قائمةجديدةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DirectSalesOrder frm = new DirectSalesOrder();
+            frm.ShowDialog();
+        }
+
+        private void اضافةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.insertCustomer frm = new insertCustomer();
+        }
+
+        private void استعلامToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.fetchCustomer frm = new fetchCustomer();
+        }
+
+        private void انشاءنسخةاحتياToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.createBackup frm = new createBackup();
+            frm.ShowDialog();
+        }
+
+        private void اغلاقToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void استعادةالنسخةالاحتياطيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.Resore frm = new Resore();
+            frm.ShowDialog();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void استعلامعنالزبائنToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fetchCustomer frm = new fetchCustomer();
             frm.ShowDialog();
         }
     }

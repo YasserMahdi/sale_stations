@@ -219,121 +219,174 @@ namespace sale_stations.PL
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            // cheack values is set or not 
-            if (invoiceNo.Text == string.Empty)
+            try
             {
-                MessageBox.Show("الرجاء ادخال رقم القائمة", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (salesman.Text == string.Empty)
-            {
-                MessageBox.Show("الرجاء ادخال اسم البائع", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (cusname.Text == string.Empty)
-            {
-                MessageBox.Show("الرجاء ادخال معلومات الزبون", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (dataGridView1.Rows.Count < 1)
-            {
-                MessageBox.Show("الرجاء ادخال المواد", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if(remainingAmount.Text == string.Empty)
-            {
-                MessageBox.Show("الرجاء ادخال المبلغ الواصل", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
-            else
-            {
-
-                DataTable Dt = cusobject.getCustomerName(cusname.Text);
-                if(Dt.Rows.Count < 1)
+                if (Convert.ToInt32(remainingAmount.Text) > 0)
                 {
-                    if (MessageBox.Show("هذا الزبون غير موجود هل تريد اضافته", "تنبية", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    // cheack values is set or not 
+                    if (invoiceNo.Text == string.Empty)
                     {
-                        DataTable DtName = cusobject.getCustomerID();
-                        cusobject.insertCus(Convert.ToInt32(DtName.Rows[0][0]),cusname.Text,phone.Text);
-                        // save informations of the head of invoice
-                        ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
-
-
-
-                        //save products info 
-                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                        {
-                            ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
-                        }
-
-                        //save the value of dept 
-
-                        DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
-
-                        if (DtForCheack.Rows.Count > 0)//Check for old debt ,
-                                                       //If there is an old debt it will be combined with the current debt
-                        {
-                            dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                            // this for test -> MessageBox.Show("old dept is update");
-
-                        }
-                        if (DtForCheack.Rows.Count <= 0)
-
-                            dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                        // this for test -> MessageBox.Show("new dept inserted");
-
-
-
-                        MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                        MessageBox.Show("الرجاء ادخال رقم القائمة", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                    else if (salesman.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال اسم البائع", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (cusname.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال معلومات الزبون", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (dataGridView1.Rows.Count < 1)
+                    {
+                        MessageBox.Show("الرجاء ادخال المواد", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (remainingAmount.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال المبلغ الواصل", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                     else
                     {
-                        MessageBox.Show("تم الغاء العملية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
 
+                        DataTable Dt = cusobject.getCustomerName(cusname.Text);
+                        if (Dt.Rows.Count < 1)
+                        {
+                            if (MessageBox.Show("هذا الزبون غير موجود هل تريد اضافته", "تنبية", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                            {
+                                DataTable DtName = cusobject.getCustomerID();
+                                cusobject.insertCus(Convert.ToInt32(DtName.Rows[0][0]), cusname.Text, phone.Text);
+                                // save informations of the head of invoice
+                                ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
+
+
+
+                                //save products info 
+                                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                                {
+                                    ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                                        Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                                }
+
+                                // get the value of dept
+
+                                DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
+                                if (DtForCheack.Rows.Count > 0)//Check for old debt ,
+                                                               //If there is an old debt it will be combined with the current debt
+                                {
+                                    dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                    // this for test -> MessageBox.Show("old dept is update");
+
+                                }
+                                if (DtForCheack.Rows.Count <= 0)
+
+                                    dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                // this for test -> MessageBox.Show("new dept inserted");
+
+
+
+                                MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("تم الغاء العملية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+
+                        }
+                        else
+                        {
+                            DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
+
+
+                            cusobject.updateOrinsertCustomerPhoneNumber(Convert.ToInt32(DtName.Rows[0][0]), phone.Text);
+
+
+                            // save informations of the head of invoice
+
+                            ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
+
+
+
+                            //save products info 
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
+                                ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                            }
+
+                            //save the value of dept 
+
+                            DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
+
+                            if (DtForCheack.Rows.Count > 0)//Check for old debt ,
+                                                           //If there is an old debt it will be combined with the current debt
+                            {
+                                dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                // this for test -> MessageBox.Show("old dept is update");
+
+                            }
+                            if (DtForCheack.Rows.Count <= 0)
+
+                                dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                            // this for test -> MessageBox.Show("new dept inserted");
+
+
+
+                            MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        }
+
+
+                    }
                 }
                 else
                 {
-                    DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
-                    
-                    
-                    cusobject.updateOrinsertCustomerPhoneNumber(Convert.ToInt32(DtName.Rows[0][0]), phone.Text);  
-                    
-                   
-                    // save informations of the head of invoice
-                   
-                    ord.add_order(Convert.ToInt32(DtName.Rows[0][0]),invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
-
-
-
-                    //save products info 
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    // for saving order with out costomer imfo
+                    if (invoiceNo.Text == string.Empty)
                     {
-                        ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                            Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                        MessageBox.Show("الرجاء ادخال رقم القائمة", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (salesman.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال اسم البائع", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (cusname.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال معلومات الزبون", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (dataGridView1.Rows.Count < 1)
+                    {
+                        MessageBox.Show("الرجاء ادخال المواد", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (remainingAmount.Text == string.Empty)
+                    {
+                        MessageBox.Show("الرجاء ادخال المبلغ الواصل", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
-                    //save the value of dept 
-                    
-                    DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
-
-                    if (DtForCheack.Rows.Count > 0)//Check for old debt ,
-                                                   //If there is an old debt it will be combined with the current debt
+                    else
                     {
-                        dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                        // this for test -> MessageBox.Show("old dept is update");
+                        try
+                        {
+                            ord.dir_add_order(cusname.Text, invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text));
 
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
+                                ord.dir_add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                            }
+                            MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-                    if (DtForCheack.Rows.Count <= 0)
 
-                        dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                    // this for test -> MessageBox.Show("new dept inserted");
-
-
-
-                    MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                    // end
                 }
-
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
 
@@ -342,13 +395,28 @@ namespace sale_stations.PL
         private void button5_Click(object sender, EventArgs e)
         {
             //get the last order
+
             int lasto =Convert.ToInt32( ord.getLastInvoiceForPrint().Rows[0][0]);
-            REPORT.product_minu rpt = new REPORT.product_minu();
-            REPORT.frmReport frm = new REPORT.frmReport();
-            rpt.SetDataSource(ord.getOrdrrDetails(lasto)) ;
-            frm.crystalReportViewer1.ReportSource = rpt;
-            //frm.ShowDialog();
-            frm.crystalReportViewer1.PrintReport();
+            string state =ord.getLastInvoiceForPrint().Rows[0][1].ToString();
+            if (state == "NO")
+            {
+                REPORT.product_minu rpt = new REPORT.product_minu();
+                REPORT.frmReport frm = new REPORT.frmReport();
+                rpt.SetDataSource(ord.getOrdrrDetails(lasto));
+                frm.crystalReportViewer1.ReportSource = rpt;
+                frm.ShowDialog();
+                // frm.crystalReportViewer1.PrintReport();
+            }
+            else if(state == "YES")
+            {
+                REPORT.printDirSale rpt = new REPORT.printDirSale();
+                REPORT.frmReport frm = new REPORT.frmReport();
+                rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
+                frm.crystalReportViewer1.ReportSource = rpt;
+                frm.ShowDialog();
+
+
+            }
         }
 
         private void AmountReceived_KeyPress(object sender, KeyPressEventArgs e)

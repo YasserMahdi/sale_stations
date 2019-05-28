@@ -18,7 +18,7 @@ namespace sale_stations.PL
         public deptForm()
         {
             InitializeComponent();
-            DataTable Dat = dpt.getDeptInfo();
+           // DataTable Dat = dpt.getDeptInfo();
             this.dataGridView1.DataSource = dpt.getDeptInfo();
         }
 
@@ -28,8 +28,8 @@ namespace sale_stations.PL
             {
                 PL.repayment rpt = new PL.repayment();
                 rpt.txtNo.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                rpt.txtName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                rpt.textDept.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                rpt.txtName.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                rpt.textDept.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 rpt.ShowDialog();
                 if (rpt.state == "update")
                 {
@@ -123,7 +123,7 @@ namespace sale_stations.PL
             try
             {
                 showDeptHistory showDpt = new showDeptHistory();
-                showDpt.dataGridView1.DataSource = dpt.getDeptHistory(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                showDpt.dataGridView1.DataSource = dpt.getDeptHistory(Convert.ToInt32( this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 showDpt.Show();
             }
             catch (Exception ex)

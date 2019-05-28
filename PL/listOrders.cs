@@ -69,7 +69,7 @@ namespace sale_stations.PL
             try
             {
                 PL.updateOrders frm = new updateOrders();
-                DataTable Dt = order.showOrderinfo(this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 try
                 {
                     frm.invoiceNo.Text = Dt.Rows[0][0].ToString();

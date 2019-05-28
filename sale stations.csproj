@@ -216,6 +216,12 @@
       <DependentUpon>menu_for_client.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\printDirSale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printDirSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\print_single_mat.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -313,6 +319,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>menu_for_client.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\printDirSale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printDirSale.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\print_single_mat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>print_single_mat.cs</LastGenOutput>
@@ -332,7 +342,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="REPORT\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

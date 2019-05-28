@@ -47,41 +47,14 @@ namespace sale_stations.BL
 
         }
 
-        //function to fetch a cutomer name from the Databast
-        public DataTable getCustomerName()
-        {
-            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
-            accessobject.open();
-            DataTable Dt = new DataTable();
-            Dt = accessobject.selectData("getCustomerName", null);
-            accessobject.close();
 
-            return Dt;
-
-        }
 
         /// <summary>
         /// not uses right now
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public DataTable selectID( DataTable name)
-        {
-            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
-            accessobject.open();
-            SqlParameter[] param = new SqlParameter[1];
-
-            param[0] = new SqlParameter("@Customer_name)", SqlDbType.NVarChar,50);
-            param[0].Value = name;
-
-            
-            DataTable Dt = new DataTable();
-            Dt = accessobject.selectData("selectID", null);
-            accessobject.close();
-
-            return Dt;
-
-        }
+ 
 
         public void setOrderDepts(int customerid, double dept)
         {
@@ -241,34 +214,28 @@ namespace sale_stations.BL
         }
         */
 
-        public void updateDeptInDeptTable(int invID, double rep,double dept , String dateT)
+        public void updateDeptInDeptTable(int cusID, double rep)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[3];
 
             param[0] = new SqlParameter("@customerID", SqlDbType.Int);
-            param[0].Value = invID;
+            param[0].Value = cusID;
 
             param[1] = new SqlParameter("@rep", SqlDbType.Money);
             param[1].Value = rep;
 
-            param[2] = new SqlParameter("@dept", SqlDbType.Money);
-            param[2].Value = dept;
-
-            param[3] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
-            param[3].Value =Convert.ToDateTime( dateT);
+            param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
+            param[2].Value = DateTime.Now;
 
 
-
-
-
-            DAL.Executecmd("insertREP", param);
+            DAL.Executecmd("updateDeptInDeptTable", param);
             DAL.close();
         }
 
 
-        public DataTable getDeptHistory(string customerID)
+        public DataTable getDeptHistory(int customerID)
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
             SqlParameter[] param = new SqlParameter[1];

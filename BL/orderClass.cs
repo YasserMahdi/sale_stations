@@ -38,36 +38,25 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[6];
 
             param[0] = new SqlParameter("@inv_no", SqlDbType.Int);
             param[0].Value =Convert.ToInt32(inv_no);
+          
+            param[1] = new SqlParameter("@inv_date", SqlDbType.DateTime);
+            param[1].Value = DateTime.Now;
 
-            param[1] = new SqlParameter("@isCashed", SqlDbType.NVarChar, 32);
-            if (dept == 0)
-            {
-                param[1].Value = "YES";
-            }
-            else
-            {
-                param[1].Value = "NO";
-            }
-           
+            param[2] = new SqlParameter("@salesman", SqlDbType.NVarChar, 50);
+            param[2].Value = saleman;
 
-            param[2] = new SqlParameter("@inv_date", SqlDbType.DateTime);
-            param[2].Value = DateTime.Now;
+            param[3] = new SqlParameter("@customer_iD", SqlDbType.Int);
+            param[3].Value = customerID;
 
-            param[3] = new SqlParameter("@salesman", SqlDbType.NVarChar, 50);
-            param[3].Value = saleman;
+            param[4] = new SqlParameter("@total_amount", SqlDbType.Money);
+            param[4].Value = total_ammount;
 
-            param[4] = new SqlParameter("@customer_iD", SqlDbType.Int);
-            param[4].Value = customerID;
-
-            param[5] = new SqlParameter("@total_amount", SqlDbType.Money);
-            param[5].Value = total_ammount;
-
-            param[6] = new SqlParameter("@dept", SqlDbType.Money);
-            param[6].Value = dept;
+            param[5] = new SqlParameter("@dept", SqlDbType.Money);
+            param[5].Value = dept;
             
           
 
@@ -123,6 +112,8 @@ namespace sale_stations.BL
             return dt;
         }
 
+        // for printing orders
+
         public DataTable getOrdrrDetails(int order_id)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
@@ -134,6 +125,22 @@ namespace sale_stations.BL
             DAL.close();
             return dt;
         }
+
+        // also for printing orders
+        public DataTable getDirOrdrrDetails(int order_id)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@order_id", SqlDbType.Int);
+            param[0].Value = @order_id;
+
+            dt = DAL.selectData("getDirOrdrrDetails", param);
+            DAL.close();
+            return dt;
+        }
+
         public DataTable serachOrders()
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
@@ -174,14 +181,14 @@ namespace sale_stations.BL
 
         }
 
-        public DataTable showOrderinfo(string customerName, int invID)
+        public DataTable showOrderinfo(int customerId, int invID)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
             SqlParameter[] param = new SqlParameter[2];
 
-            param[0] = new SqlParameter("@customerName", SqlDbType.NVarChar,50);
-            param[0].Value = customerName;
+            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0].Value = customerId;
 
             param[1] = new SqlParameter("@invID", SqlDbType.Int);
             param[1].Value = invID;
@@ -204,6 +211,65 @@ namespace sale_stations.BL
             DAL.close();
             return dt;
         }
+
+
+        public void dir_add_order(string customername, string inv_no, string saleman, double total_ammount)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[5];
+
+            param[0] = new SqlParameter("@inviD", SqlDbType.Int);
+            param[0].Value = Convert.ToInt32(inv_no);
+
+            param[1] = new SqlParameter("@customerName", SqlDbType.NVarChar, 50);
+            param[1].Value = customername;
+
+            param[2] = new SqlParameter("@saleman", SqlDbType.NVarChar,50);
+            param[2].Value = saleman;
+
+            param[3] = new SqlParameter("@invDate", SqlDbType.DateTime);
+            param[3].Value = DateTime.Now;
+
+            param[4] = new SqlParameter("@totalamaount", SqlDbType.Money);
+            param[4].Value = total_ammount;
+
+
+
+            DAL.Executecmd("dir_add_order", param);
+            DAL.close();
+        }
+
+        public void dir_add_order_detail(int mat_no, int order_no, int qte, double price, double amount)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[5];
+
+
+            param[0] = new SqlParameter("@matNo", SqlDbType.Int);
+            param[0].Value = mat_no;
+
+            param[1] = new SqlParameter("@inviD", SqlDbType.Int);
+            param[1].Value = order_no;
+
+            param[2] = new SqlParameter("@qte", SqlDbType.Int);
+            param[2].Value = qte;
+
+            param[3] = new SqlParameter("@price", SqlDbType.Money);
+            param[3].Value = price;
+
+            param[4] = new SqlParameter("@amount", SqlDbType.Money);
+            param[4].Value = amount;
+
+
+
+
+
+            DAL.Executecmd("dir_add_order_det", param);
+            DAL.close();
+        }
+
 
 
     }

@@ -30,7 +30,7 @@ namespace sale_stations.PL
             try
             {
                 DataTable Dt = new DataTable();
-                DataTable DtName = CUS.getCustomerID();
+                DataTable DtName = CUS.gitCustomerIdByName(txtName.Text);
                 Dt = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
                 if (Dt.Rows.Count < 1)//Check for no old debt
                 {
@@ -58,10 +58,11 @@ namespace sale_stations.PL
                     this.txtNo.Clear();
                     this.txtName.Clear();
                     this.txtDept.Clear();
-                    state = "update";
+                    
                     
 
                 }
+                state = "update";
             }
             catch(Exception ex)
             {

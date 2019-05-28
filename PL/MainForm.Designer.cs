@@ -94,17 +94,17 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(622, 172);
+            this.groupBox1.Location = new System.Drawing.Point(623, 172);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(305, 202);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "المخزن و المواد";
+            this.groupBox1.Text = "المواد و المخزن";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnreport);
-            this.groupBox2.Location = new System.Drawing.Point(51, 172);
+            this.groupBox2.Location = new System.Drawing.Point(52, 172);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(275, 202);
             this.groupBox2.TabIndex = 12;
@@ -114,12 +114,12 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btninvoive);
-            this.groupBox3.Location = new System.Drawing.Point(332, 172);
+            this.groupBox3.Location = new System.Drawing.Point(333, 172);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(284, 202);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "البيع المباشر";
+            this.groupBox3.Text = "المبيعات";
             // 
             // menuStrip1
             // 
@@ -190,7 +190,7 @@
             // استعلامعنالزبائنToolStripMenuItem
             // 
             this.استعلامعنالزبائنToolStripMenuItem.Name = "استعلامعنالزبائنToolStripMenuItem";
-            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
             this.استعلامعنالزبائنToolStripMenuItem.Text = "استعلام عن الزبائن";
             this.استعلامعنالزبائنToolStripMenuItem.Click += new System.EventHandler(this.استعلامعنالزبائنToolStripMenuItem_Click);
             // 

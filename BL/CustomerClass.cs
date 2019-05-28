@@ -115,6 +115,37 @@ namespace sale_stations.BL
 
         }
 
+        public DataTable selectID(DataTable name)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@Customer_name)", SqlDbType.NVarChar, 50);
+            param[0].Value = name;
+
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("selectID", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+        //function to fetch a cutomer name from the Databast
+        public DataTable getCustomerName()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getCustomerName", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
         public DataTable gitCustomerIdByName(string name)
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();

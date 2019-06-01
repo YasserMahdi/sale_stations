@@ -71,6 +71,7 @@ namespace sale_stations.BL
             param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
 
+
             DAL.Executecmd("setOrderDepts", param);
             DAL.close();
         }
@@ -133,27 +134,28 @@ namespace sale_stations.BL
             DAL.close();
         }
 
-
+        
         public void insertNewDept(int customerID, int dept)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
             SqlParameter[] param = new SqlParameter[3];
 
-            param[0] = new SqlParameter("@customerID", SqlDbType.Int);
+            param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
 
-            param[1] = new SqlParameter("@dept", SqlDbType.Int);
+            param[1] = new SqlParameter("@depts", SqlDbType.Money);
             param[1].Value = dept;
 
-            param[2] = new SqlParameter("@DateT", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
 
 
 
-            DAL.Executecmd("insertNewDept", param);
+            DAL.Executecmd("setOrderDepts", param);
             DAL.close();
         }
+        
 
         public void updateSumDebt(int customerID, int dept)
         {
@@ -214,7 +216,7 @@ namespace sale_stations.BL
         }
         */
 
-        public void updateDeptInDeptTable(int cusID, double rep)
+        public void repayment(int cusID, double rep)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
@@ -230,7 +232,7 @@ namespace sale_stations.BL
             param[2].Value = DateTime.Now;
 
 
-            DAL.Executecmd("updateDeptInDeptTable", param);
+            DAL.Executecmd("repayment", param);
             DAL.close();
         }
 
@@ -248,6 +250,20 @@ namespace sale_stations.BL
 
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("getDeptHistory", param);
+            accessobject.close();
+
+            return Dt;
+
+        }
+
+
+        public DataTable sumOfDepts()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("sumOfDepts", null);
             accessobject.close();
 
             return Dt;

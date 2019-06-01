@@ -24,7 +24,7 @@ namespace sale_stations.PL
 
         private void btnRep_Click(object sender, EventArgs e)
         {
-            dpt.updateDeptInDeptTable(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text));
+            dpt.repayment(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text));
             MessageBox.Show(txtName.Text +  " تم تحديث حالة الدين الخاصة بـ ","سداد الديون ",MessageBoxButtons.OK,MessageBoxIcon.Exclamation );
             state = "update";
         }

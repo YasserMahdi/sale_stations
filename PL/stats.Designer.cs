@@ -33,9 +33,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtSumDpt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -63,7 +64,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(42, 28);
+            this.groupBox1.Location = new System.Drawing.Point(43, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(257, 146);
             this.groupBox1.TabIndex = 3;
@@ -73,7 +74,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(364, 28);
+            this.groupBox2.Location = new System.Drawing.Point(365, 49);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(257, 146);
             this.groupBox2.TabIndex = 4;
@@ -82,35 +83,38 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(42, 214);
+            this.groupBox3.BackColor = System.Drawing.Color.Silver;
+            this.groupBox3.Controls.Add(this.txtSumDpt);
+            this.groupBox3.Location = new System.Drawing.Point(201, 230);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(257, 146);
+            this.groupBox3.Size = new System.Drawing.Size(257, 73);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "محموع الديون";
             // 
-            // groupBox4
+            // txtSumDpt
             // 
-            this.groupBox4.Location = new System.Drawing.Point(364, 214);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(257, 146);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
+            this.txtSumDpt.Location = new System.Drawing.Point(25, 23);
+            this.txtSumDpt.Name = "txtSumDpt";
+            this.txtSumDpt.Size = new System.Drawing.Size(203, 24);
+            this.txtSumDpt.TabIndex = 0;
             // 
             // stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 385);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "stats";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "stats";
+            this.Load += new System.EventHandler(this.stats_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -122,6 +126,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtSumDpt;
     }
 }

@@ -69,6 +69,7 @@ namespace sale_stations.PL
             try
             {
                 PL.updateOrders frm = new updateOrders();
+                //Pass two variables   int customerid  and invoice id
                 DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 try
                 {

@@ -153,6 +153,7 @@ namespace sale_stations.BL
 
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar,50);
             param[0].Value = name;
+            accessobject.open();
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("gitCustomerIdByName", param);
             accessobject.close();
@@ -188,6 +189,26 @@ namespace sale_stations.BL
 
             DAL.Executecmd("updateOrinsertCustomerPhoneNumber", param);
             DAL.close();
+        }
+
+
+
+
+        public DataTable getDeptByID( int customerid)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            DataTable Dt = new DataTable();
+            accessobject.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID", SqlDbType.Int);
+            param[0].Value = customerid;
+
+            Dt = accessobject.selectData("getDeptByID", param);
+            accessobject.close();
+
+            return Dt;
+
         }
 
 

@@ -74,13 +74,7 @@ namespace sale_stations.PL
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            REPORT.print_single_mat report = new REPORT.print_single_mat();
-            
 
-            
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {

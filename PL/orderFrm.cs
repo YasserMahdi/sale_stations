@@ -18,11 +18,12 @@ namespace sale_stations.PL
         BL.Dept_class dpt = new BL.Dept_class();
         BL.CustomerClass cusobject = new BL.CustomerClass();
         DataTable dt = new DataTable();
+        
 
         void calculateAmount()
         {
             if(matQte.Text != string.Empty && matPrice.Text != string.Empty)
-            matAmaunt.Text = (Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text)).ToString();
+            matAmaunt.Text = ((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString();
         }
 
         void clearBoxes()
@@ -61,6 +62,8 @@ namespace sale_stations.PL
             createColumns();
             resizeDVGcolumns();
             invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+            invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+
 
 
 
@@ -68,6 +71,7 @@ namespace sale_stations.PL
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
 
         }
@@ -162,7 +166,7 @@ namespace sale_stations.PL
 
                 txttotal.Text = (from DataGridViewRow row in dataGridView1.Rows
                                  where row.Cells[4].FormattedValue.ToString() != string.Empty
-                                 select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString();
+                                 select (Convert.ToDouble(row.Cells[4].FormattedValue))).Sum().ToString();
 
                 
                 
@@ -221,6 +225,8 @@ namespace sale_stations.PL
         {
             try
             {
+                invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+
                 if (Convert.ToInt32(remainingAmount.Text) > 0)
                 {
                     // cheack values is set or not 
@@ -269,15 +275,15 @@ namespace sale_stations.PL
 
                                 // get the value of dept
 
-                                DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
-                                if (DtForCheack.Rows.Count > 0)//Check for old debt ,
+                                //DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
+                                //if (DtForCheack.Rows.Count > 0)//Check for old debt ,
                                                                //If there is an old debt it will be combined with the current debt
-                                {
-                                    dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                //{
+                                    //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
                                     // this for test -> MessageBox.Show("old dept is update");
 
-                                }
-                                if (DtForCheack.Rows.Count <= 0)
+                                //}
+                                //if (DtForCheack.Rows.Count <= 0)
 
                                     dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
                                 // this for test -> MessageBox.Show("new dept inserted");
@@ -316,17 +322,16 @@ namespace sale_stations.PL
 
                             //save the value of dept 
 
-                            DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
+                            //DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
 
-                            if (DtForCheack.Rows.Count > 0)//Check for old debt ,
+                            //if (DtForCheack.Rows.Count > 0)//Check for old debt ,
                                                            //If there is an old debt it will be combined with the current debt
-                            {
-                                dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                           // {
+                                //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
                                 // this for test -> MessageBox.Show("old dept is update");
 
-                            }
-                            if (DtForCheack.Rows.Count <= 0)
-
+                          //  }
+                            //if (DtForCheack.Rows.Count <= 0)
                                 dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
                             // this for test -> MessageBox.Show("new dept inserted");
 
@@ -395,27 +400,33 @@ namespace sale_stations.PL
         private void button5_Click(object sender, EventArgs e)
         {
             //get the last order
-
-            int lasto =Convert.ToInt32( ord.getLastInvoiceForPrint().Rows[0][0]);
-            string state =ord.getLastInvoiceForPrint().Rows[0][1].ToString();
-            if (state == "NO")
+            try
             {
-                REPORT.product_minu rpt = new REPORT.product_minu();
-                REPORT.frmReport frm = new REPORT.frmReport();
-                rpt.SetDataSource(ord.getOrdrrDetails(lasto));
-                frm.crystalReportViewer1.ReportSource = rpt;
-                frm.ShowDialog();
-                // frm.crystalReportViewer1.PrintReport();
+                int lasto = Convert.ToInt32(ord.getLastInvoiceForPrint().Rows[0][0]);
+                string state = ord.getLastInvoiceForPrint().Rows[0][1].ToString();
+                if (state == "NO")
+                {
+                    REPORT.product_minu rpt = new REPORT.product_minu();
+                    REPORT.frmReport frm = new REPORT.frmReport();
+                    rpt.SetDataSource(ord.getOrdrrDetails(lasto));
+                    frm.crystalReportViewer1.ReportSource = rpt;
+                    frm.ShowDialog();
+                    // frm.crystalReportViewer1.PrintReport();
+                }
+                else if (state == "YES")
+                {
+                    REPORT.printDirSale rpt = new REPORT.printDirSale();
+                    REPORT.frmReport frm = new REPORT.frmReport();
+                    rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
+                    frm.crystalReportViewer1.ReportSource = rpt;
+                    frm.ShowDialog();
+
+
+                }
             }
-            else if(state == "YES")
+            catch(Exception ex)
             {
-                REPORT.printDirSale rpt = new REPORT.printDirSale();
-                REPORT.frmReport frm = new REPORT.frmReport();
-                rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
-                frm.crystalReportViewer1.ReportSource = rpt;
-                frm.ShowDialog();
-
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -503,7 +514,33 @@ namespace sale_stations.PL
 
         private void cusname_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
 
+
+
+                if (cusobject.getCustomerName(cusname.Text).Rows[0][0].ToString().Equals(cusname.Text))
+                    {
+                        
+                        DataTable ID = cusobject.gitCustomerIdByName(cusname.Text);
+                        DataTable dpt = cusobject.getDeptByID(Convert.ToInt32(ID.Rows[0][0]));
+                        txtOldDept.Text = dpt.Rows[0][0].ToString();
+
+
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                txtOldDept.Clear();
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -613,7 +650,23 @@ namespace sale_stations.PL
 
         private void AmountReceived_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                int received = new int();
+                int total = Convert.ToInt32(txttotal.Text);
+                string rec = AmountReceived.Text;
+                Int32.TryParse(rec, out received);
+                int ramaning = total - received;
 
+                
+                remainingAmount.Text = Convert.ToString(ramaning);
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -653,7 +706,32 @@ namespace sale_stations.PL
 
         private void cusname_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try
+            {
+                if (e.KeyChar == 13)
+                {
+                    
+                    if (cusobject.getCustomerName(cusname.Text).Rows[0][0].ToString().Equals(cusname.Text))
+                    {
+                        DataTable ID = cusobject.gitCustomerIdByName(cusname.Text);
+                        DataTable dpt = cusobject.getDeptByID(Convert.ToInt32(ID.Rows[0][0]));
+                        txtOldDept.Text = dpt.Rows[0][0].ToString();
 
+
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("الاستعلام غير موجود");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -666,6 +744,7 @@ namespace sale_stations.PL
                     //this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                   
                 }
                 catch (Exception)
                 {

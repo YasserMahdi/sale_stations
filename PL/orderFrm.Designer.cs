@@ -37,6 +37,9 @@
             this.invoiceNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtOldDept = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cusname = new System.Windows.Forms.TextBox();
@@ -67,9 +70,6 @@
             this.remainingAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.oldDespt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -151,7 +151,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.oldDespt);
+            this.groupBox2.Controls.Add(this.txtOldDept);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.phone);
             this.groupBox2.Controls.Add(this.label7);
@@ -164,6 +164,33 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "معلومات الزبون";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtOldDept
+            // 
+            this.txtOldDept.Location = new System.Drawing.Point(16, 150);
+            this.txtOldDept.Name = "txtOldDept";
+            this.txtOldDept.ReadOnly = true;
+            this.txtOldDept.Size = new System.Drawing.Size(234, 24);
+            this.txtOldDept.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "الدين السابق";
             // 
             // phone
             // 
@@ -499,33 +526,6 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
-            // oldDespt
-            // 
-            this.oldDespt.Location = new System.Drawing.Point(16, 150);
-            this.oldDespt.Name = "oldDespt";
-            this.oldDespt.ReadOnly = true;
-            this.oldDespt.Size = new System.Drawing.Size(234, 24);
-            this.oldDespt.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "الدين السابق";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // orderFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -602,7 +602,7 @@
         private System.Windows.Forms.TextBox remainingAmount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox oldDespt;
+        private System.Windows.Forms.TextBox txtOldDept;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
     }

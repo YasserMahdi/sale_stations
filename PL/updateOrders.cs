@@ -33,7 +33,29 @@ namespace sale_stations.PL
 
         private void btnMatShow_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = order.showOrderDit(Convert.ToInt32(invoiceNo.Text));
+            this.dataGridView1.DataSource = order.showOrderDit(Convert.ToInt32(invID.Text));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                    REPORT.printDirSale rpt = new REPORT.printDirSale();
+                    REPORT.frmReport frm = new REPORT.frmReport();
+                    rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
+                    frm.crystalReportViewer1.ReportSource = rpt;
+                    frm.ShowDialog();
+                
+
+                //frm.crystalReportViewer1.PrintReport();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

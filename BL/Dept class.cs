@@ -116,19 +116,14 @@ namespace sale_stations.BL
             DAL.close();
         }
 
-        public void deletCustomerDepts(int customerID, int dept)
+        public void deletCustomerDepts(int customerID)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[1];
 
             param[0] = new SqlParameter("@customerID", SqlDbType.Int);
             param[0].Value = customerID;
-
-            param[1] = new SqlParameter("@dept", SqlDbType.Int);
-            param[1].Value = dept;
-
-
 
             DAL.Executecmd("deletCustomerDepts", param);
             DAL.close();
@@ -269,6 +264,22 @@ namespace sale_stations.BL
             return Dt;
 
         }
+
+        public DataTable printDeptInfo(int id)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@iD", SqlDbType.Int);
+            param[0].Value =id;
+
+            dt = DAL.selectData("printDeptInfo", param);
+            DAL.close();
+
+            return dt;
+        }
+
 
 
 

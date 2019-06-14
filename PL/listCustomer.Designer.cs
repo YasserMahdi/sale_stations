@@ -79,6 +79,8 @@
             this.Name = "listCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listCustomer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.listCustomer_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.listCustomer_FormClosed);
             this.Load += new System.EventHandler(this.listCustomer_Load);
             this.DoubleClick += new System.EventHandler(this.listCustomer_DoubleClick);
             this.groupBox1.ResumeLayout(false);

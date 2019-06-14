@@ -109,6 +109,17 @@ namespace sale_stations.BL
             DAL.close();
         }
 
+        public DataTable printMaterials()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("printMaterials", null);
+            accessobject.close();
+
+            return Dt;
+
+        }
 
 
     }

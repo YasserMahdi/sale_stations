@@ -69,7 +69,9 @@ namespace sale_stations.PL
         private void btninvoive_Click(object sender, EventArgs e)
         {
             PL.orderFrm ord = new PL.orderFrm();
+            
             ord.Show();
+            
         }
 
         private void استعادةنسخةاحياطيةToolStripMenuItem_Click(object sender, EventArgs e)

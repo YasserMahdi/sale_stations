@@ -18,7 +18,8 @@ namespace sale_stations.PL
         {
             InitializeComponent();
             Dt = dpt.sumOfDepts();
-            txtSumDpt.Text = Dt.Rows[0][0].ToString();
+            string dptformatted = string.Format("{0:n0}", Convert.ToDouble(Dt.Rows[0][0].ToString()));
+            txtSumDpt.Text = dptformatted;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +36,11 @@ namespace sale_stations.PL
         }
 
         private void stats_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSumDpt_TextChanged(object sender, EventArgs e)
         {
 
         }

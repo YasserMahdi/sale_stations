@@ -47,5 +47,15 @@ namespace sale_stations.PL
         {
             this.Close();
         }
+
+        private void listCustomer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+                
+        }
+
+        private void listCustomer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            return;
+        }
     }
 }

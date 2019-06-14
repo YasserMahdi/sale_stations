@@ -20,7 +20,8 @@ namespace sale_stations.PL
         public newDept()
         {
             InitializeComponent();
-            
+            //txtNo.Text=CUS.getCustomerID().Rows[0][0].ToString();
+
 
 
         }

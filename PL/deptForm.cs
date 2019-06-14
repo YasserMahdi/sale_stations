@@ -83,7 +83,7 @@ namespace sale_stations.PL
             {
                 if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    dpt.deletCustomerDepts(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value));
+                    dpt.deletCustomerDepts(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.dataGridView1.DataSource = dpt.getDeptInfo();
 
@@ -129,6 +129,22 @@ namespace sale_stations.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message+"\n \n لا يوجد ديون","تنبيه",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnPrintDeptInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                REPORT.printDeptInfo rep = new REPORT.printDeptInfo();
+                REPORT.frmReport frm = new REPORT.frmReport();
+                rep.SetDataSource( dpt.printDeptInfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value)));
+                frm.crystalReportViewer1.ReportSource = rep;
+                frm.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

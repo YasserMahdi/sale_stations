@@ -486,7 +486,6 @@
             this.AmountReceived.Size = new System.Drawing.Size(234, 24);
             this.AmountReceived.TabIndex = 16;
             this.AmountReceived.TextChanged += new System.EventHandler(this.AmountReceived_TextChanged);
-            this.AmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountReceived_KeyPress);
             // 
             // label15
             // 
@@ -530,7 +529,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 806);
+            this.ClientSize = new System.Drawing.Size(1038, 863);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.remainingAmount);
             this.Controls.Add(this.label16);
@@ -572,12 +571,9 @@
         private System.Windows.Forms.TextBox invoiceNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox cusname;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txttotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button3;
@@ -602,8 +598,11 @@
         private System.Windows.Forms.TextBox remainingAmount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox txtOldDept;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox phone;
+        public System.Windows.Forms.TextBox cusname;
+        public System.Windows.Forms.TextBox txtOldDept;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -98,6 +98,7 @@
             this.txtSumDpt.Name = "txtSumDpt";
             this.txtSumDpt.Size = new System.Drawing.Size(203, 24);
             this.txtSumDpt.TabIndex = 0;
+            this.txtSumDpt.TextChanged += new System.EventHandler(this.txtSumDpt_TextChanged);
             // 
             // stats
             // 

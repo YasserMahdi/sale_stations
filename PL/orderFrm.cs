@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Globalization;
+using System.Globalization;
 
 namespace sale_stations.PL
 {
@@ -18,12 +18,15 @@ namespace sale_stations.PL
         BL.Dept_class dpt = new BL.Dept_class();
         BL.CustomerClass cusobject = new BL.CustomerClass();
         DataTable dt = new DataTable();
-        
+        string totalamount;
+        string rRemaining;
+
+
 
         void calculateAmount()
         {
-            if(matQte.Text != string.Empty && matPrice.Text != string.Empty)
-            matAmaunt.Text = ((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString();
+            if (matQte.Text != string.Empty && matPrice.Text != string.Empty)
+                matAmaunt.Text = ((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString();
         }
 
         void clearBoxes()
@@ -37,32 +40,64 @@ namespace sale_stations.PL
 
         void createColumns()
         {
-            dt.Columns.Add("رقم المادة");
-            dt.Columns.Add("اسم المادة");
-            dt.Columns.Add("الكمية");
-            dt.Columns.Add("سعر البيع");
-            dt.Columns.Add("المبلغ");
+            dt.Columns.Add("Column1"); //رقم المادة
+            dt.Columns.Add("Column2");// اسم المادة
+            dt.Columns.Add("Column3");//  qte
+            dt.Columns.Add("Column4");// price
+            dt.Columns.Add("Column5");// total amount
+           
 
-            dataGridView1.DataSource = dt;
+            this.dataGridView1.DataSource = dt;
         }
-        
 
 
         void resizeDVGcolumns()
         {
-            this.dataGridView1.RowHeadersWidth =90;
-            //this.dataGridView1.Columns[0].Width=108;
-            
-            
+            this.dataGridView1.RowHeadersWidth = 90;
+            //this.dataGridView1.Columns[1].Width = 408;
+            //this.dataGridView1.Columns["Column1"].Width = 160;
+
+
 
         }
+
+        void calculateDept()
+        {
+            try
+            {
+
+              
+                if (AmountReceived.Text == string.Empty)
+                {
+                    remainingAmount.Text = String.Format("{0:n0}", Convert.ToInt32(totalamount));
+                }
+                else
+                {
+                    int rReceived;
+                    int total = Convert.ToInt32(totalamount);
+                    int.TryParse(AmountReceived.Text, out rReceived);
+                    int ramaning = (total - rReceived);
+                    rRemaining = ramaning.ToString();
+
+                    remainingAmount.Text = String.Format("{0:n0}", ramaning);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " \n Error in Text changed");
+            }
+        }
+
         public orderFrm()
         {
             InitializeComponent();
+            
             createColumns();
+            invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
             resizeDVGcolumns();
-            invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
-            invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+            
+            
 
 
 
@@ -89,17 +124,19 @@ namespace sale_stations.PL
                 matName.Text = mat.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 matPrice.Text = mat.dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 matQte.Focus();
+              
             }
             catch
             {
                 mat.Close();
 
             }
-           
+
         }
         private void matPrice_KeyPress(object sender, KeyPressEventArgs e)
+
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8  && e.KeyChar !=Convert.ToChar( System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator))
             {
                 e.Handled = true;
             }
@@ -107,7 +144,7 @@ namespace sale_stations.PL
 
         private void matQte_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 )
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
@@ -124,6 +161,7 @@ namespace sale_stations.PL
             {
                 try
                 {
+                    //for vierify  if quantity more than zero 
                     if (ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text)).Rows.Count < 1)
                     {
                         MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -147,29 +185,44 @@ namespace sale_stations.PL
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
                 DataRow r = dt.NewRow();
-              
+
+                string Priceformatted= string.Format("{0:n0}",Convert.ToDouble(matPrice.Text));
+                string amountformatted = string.Format("{0:n0}", Convert.ToDouble(matAmaunt.Text));
+
                 r[0] = matno.Text;
                 r[1] = matName.Text;
                 r[2] = matQte.Text;
-                r[3] = matPrice.Text;
-                r[4] = matAmaunt.Text;
-
+                r[3] = Priceformatted;
+                r[4] = amountformatted;
                 dt.Rows.Add(r);
+                
+                //dataGridView1.Columns["سعر البيع"].DefaultCellStyle.Format = "N2";
                 dataGridView1.DataSource = dt;
                 clearBoxes();
                 btn_browse.Focus();
 
-                txttotal.Text = (from DataGridViewRow row in dataGridView1.Rows
-                                 where row.Cells[4].FormattedValue.ToString() != string.Empty
-                                 select (Convert.ToDouble(row.Cells[4].FormattedValue))).Sum().ToString();
+                /*
+                  dt.Columns.Add("رقم المادة");
+            dt.Columns.Add("اسم المادة");
+            dt.Columns.Add("الكمية");
+            dt.Columns.Add("سعر البيع");
+            dt.Columns.Add("المبلغ");
+                 */
 
-                
-                
+                totalamount = (from DataGridViewRow row in dataGridView1.Rows
+                               where row.Cells[4].FormattedValue.ToString() != string.Empty
+                               select (Convert.ToDouble(row.Cells[4].FormattedValue))).Sum().ToString();
+
+                txttotal.Text = String.Format("{0:n0}", Convert.ToInt32(totalamount));
+
+
+
+
             }
         }
 
@@ -213,6 +266,7 @@ namespace sale_stations.PL
             }
         }
 
+        // for summation total price after deleting one Row or more from dataGrindView
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
 
@@ -227,7 +281,9 @@ namespace sale_stations.PL
             {
                 invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
 
-                if (Convert.ToInt32(remainingAmount.Text) > 0)
+
+                
+                if (Convert.ToInt32(rRemaining) > 0)
                 {
                     // cheack values is set or not 
                     if (invoiceNo.Text == string.Empty)
@@ -253,18 +309,17 @@ namespace sale_stations.PL
 
                     else
                     {
-
+                        //Check the customer name if it already exists
                         DataTable Dt = cusobject.getCustomerName(cusname.Text);
                         if (Dt.Rows.Count < 1)
                         {
                             if (MessageBox.Show("هذا الزبون غير موجود هل تريد اضافته", "تنبية", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                             {
+                                // get new ID for New Customer
                                 DataTable DtName = cusobject.getCustomerID();
                                 cusobject.insertCus(Convert.ToInt32(DtName.Rows[0][0]), cusname.Text, phone.Text);
                                 // save informations of the head of invoice
-                                ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
-
-
+                                ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining));
 
                                 //save products info 
                                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -277,15 +332,15 @@ namespace sale_stations.PL
 
                                 //DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
                                 //if (DtForCheack.Rows.Count > 0)//Check for old debt ,
-                                                               //If there is an old debt it will be combined with the current debt
+                                //If there is an old debt it will be combined with the current debt
                                 //{
-                                    //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                                    // this for test -> MessageBox.Show("old dept is update");
+                                //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                // this for test -> MessageBox.Show("old dept is update");
 
                                 //}
                                 //if (DtForCheack.Rows.Count <= 0)
 
-                                    dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                                dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining));
                                 // this for test -> MessageBox.Show("new dept inserted");
 
 
@@ -301,15 +356,16 @@ namespace sale_stations.PL
                         }
                         else
                         {
+                            // If the client name already exists, fetch its ID
                             DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
 
-
+                            //To store or modify the phone number
                             cusobject.updateOrinsertCustomerPhoneNumber(Convert.ToInt32(DtName.Rows[0][0]), phone.Text);
 
 
                             // save informations of the head of invoice
 
-                            ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text), Convert.ToDouble(remainingAmount.Text));
+                            ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining));
 
 
 
@@ -325,14 +381,14 @@ namespace sale_stations.PL
                             //DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
 
                             //if (DtForCheack.Rows.Count > 0)//Check for old debt ,
-                                                           //If there is an old debt it will be combined with the current debt
-                           // {
-                                //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
-                                // this for test -> MessageBox.Show("old dept is update");
+                            //If there is an old debt it will be combined with the current debt
+                            // {
+                            //dpt.updateOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                            // this for test -> MessageBox.Show("old dept is update");
 
-                          //  }
+                            //  }
                             //if (DtForCheack.Rows.Count <= 0)
-                                dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(remainingAmount.Text));
+                            dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining));
                             // this for test -> MessageBox.Show("new dept inserted");
 
 
@@ -372,7 +428,7 @@ namespace sale_stations.PL
                     {
                         try
                         {
-                            ord.dir_add_order(cusname.Text, invoiceNo.Text, salesman.Text, Convert.ToDouble(txttotal.Text));
+                            ord.dir_add_order(cusname.Text, invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount));
 
                             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                             {
@@ -389,9 +445,10 @@ namespace sale_stations.PL
 
                     // end
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "\nError in Fisrt try");
             }
 
 
@@ -411,7 +468,7 @@ namespace sale_stations.PL
                     rpt.SetDataSource(ord.getOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
                     frm.ShowDialog();
-                    // frm.crystalReportViewer1.PrintReport();
+                    frm.crystalReportViewer1.PrintReport();
                 }
                 else if (state == "YES")
                 {
@@ -420,11 +477,12 @@ namespace sale_stations.PL
                     rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
                     frm.ShowDialog();
+                    frm.crystalReportViewer1.PrintReport();
 
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -432,28 +490,6 @@ namespace sale_stations.PL
 
         private void AmountReceived_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-
-            // (Convert.ToString(Convert.ToInt32(txttotal.Text) - Convert.ToInt32(AmountReceived.Text)))
-            // procdure for compute dept
-            try
-            {
-                int received = new int();
-                int total = Convert.ToInt32(txttotal.Text);
-                string rec = AmountReceived.Text;
-                Int32.TryParse(rec, out received);
-                int ramaning = total - received;
-
-                if (e.KeyChar == 13)
-                {
-                    remainingAmount.Text = Convert.ToString(ramaning);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
         }
 
@@ -520,26 +556,27 @@ namespace sale_stations.PL
 
 
                 if (cusobject.getCustomerName(cusname.Text).Rows[0][0].ToString().Equals(cusname.Text))
-                    {
-                        
-                        DataTable ID = cusobject.gitCustomerIdByName(cusname.Text);
-                        DataTable dpt = cusobject.getDeptByID(Convert.ToInt32(ID.Rows[0][0]));
-                        txtOldDept.Text = dpt.Rows[0][0].ToString();
+                {
+
+                    DataTable ID = cusobject.gitCustomerIdByName(cusname.Text);
+                    DataTable dpt = cusobject.getDeptByID(Convert.ToInt32(ID.Rows[0][0]));
+                    txtOldDept.Text = String.Format("{0:n0}", Convert.ToInt32(dpt.Rows[0][0]));
 
 
 
-                    }
-                    else
-                    {
-                        return;
-                    }
+                }
+                else
+                {
+                    return;
+                }
 
-                
+
 
             }
             catch (Exception ex)
             {
                 txtOldDept.Clear();
+
             }
         }
 
@@ -650,23 +687,8 @@ namespace sale_stations.PL
 
         private void AmountReceived_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int received = new int();
-                int total = Convert.ToInt32(txttotal.Text);
-                string rec = AmountReceived.Text;
-                Int32.TryParse(rec, out received);
-                int ramaning = total - received;
 
-                
-                remainingAmount.Text = Convert.ToString(ramaning);
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            calculateDept();
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -698,7 +720,7 @@ namespace sale_stations.PL
                 this.remainingAmount.Clear();
                 this.dataGridView1.DataSource = null;
             }
-            catch(ArgumentNullException)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("الرجاء غلق النافذه و فتحها مرة اخرى");
             }
@@ -710,7 +732,7 @@ namespace sale_stations.PL
             {
                 if (e.KeyChar == 13)
                 {
-                    
+
                     if (cusobject.getCustomerName(cusname.Text).Rows[0][0].ToString().Equals(cusname.Text))
                     {
                         DataTable ID = cusobject.gitCustomerIdByName(cusname.Text);
@@ -724,7 +746,7 @@ namespace sale_stations.PL
                     {
                         return;
                     }
-                    
+
                 }
 
             }
@@ -736,22 +758,23 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-                listCustomer cus = new listCustomer();
-                cus.ShowDialog();
-                try
-                {
-                    //this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                   
-                }
-                catch (Exception)
-                {
-                    return;
-                }
 
-            
+            listCustomer cus = new listCustomer();
+            cus.ShowDialog();
+            try
+            {
+                
+                //this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+
         }
     }
 }

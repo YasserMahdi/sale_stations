@@ -73,10 +73,10 @@ namespace sale_stations.PL
                 DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 try
                 {
-                    frm.invoiceNo.Text = Dt.Rows[0][0].ToString();
+                    frm.invID.Text = Dt.Rows[0][0].ToString();
                     frm.cusname.Text = Dt.Rows[0][6].ToString();
                     frm.txtDate.Text = Dt.Rows[0][2].ToString();
-                    frm.txttotal.Text = Dt.Rows[0][3].ToString();
+                    frm.txttotal.Text =string.Format("{0:n}",Convert.ToInt32( Dt.Rows[0][3]));
                     frm.salesman.Text = Dt.Rows[0][4].ToString();
                     frm.ShowDialog();
                 }

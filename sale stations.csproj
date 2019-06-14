@@ -210,10 +210,22 @@
     <Compile Include="REPORT\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\printDeptInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printDeptInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\printDirSale.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>printDirSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORT\printMaterials.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printMaterials.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="REPORT\product_minu.cs">
@@ -303,9 +315,17 @@
     <EmbeddedResource Include="REPORT\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\printDeptInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printDeptInfo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\printDirSale.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printDirSale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\printMaterials.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printMaterials.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\product_minu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

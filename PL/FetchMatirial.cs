@@ -85,5 +85,21 @@ namespace sale_stations.PL
                 this.dataGridView1.DataSource = mtr.getMatirialInfo();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                REPORT.printMaterials rep = new REPORT.printMaterials();
+                REPORT.frmReport frm = new REPORT.frmReport();
+                rep.SetDataSource(mtr.printMaterials());
+                frm.crystalReportViewer1.ReportSource = rep;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

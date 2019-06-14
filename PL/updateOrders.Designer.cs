@@ -46,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.salesman = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.invoiceNo = new System.Windows.Forms.TextBox();
+            this.invID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cusname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.button5.TabIndex = 26;
             this.button5.Text = "طباعة";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // txttotal
             // 
@@ -198,7 +199,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.salesman);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.invoiceNo);
+            this.groupBox1.Controls.Add(this.invID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(642, 12);
             this.groupBox1.Name = "groupBox1";
@@ -239,12 +240,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "اسم البائع";
             // 
-            // invoiceNo
+            // invID
             // 
-            this.invoiceNo.Location = new System.Drawing.Point(6, 52);
-            this.invoiceNo.Name = "invoiceNo";
-            this.invoiceNo.Size = new System.Drawing.Size(234, 24);
-            this.invoiceNo.TabIndex = 0;
+            this.invID.Location = new System.Drawing.Point(6, 52);
+            this.invID.Name = "invID";
+            this.invID.Size = new System.Drawing.Size(234, 24);
+            this.invID.TabIndex = 0;
             // 
             // label1
             // 
@@ -353,7 +354,7 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox salesman;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox invoiceNo;
+        public System.Windows.Forms.TextBox invID;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox cusname;
         public System.Windows.Forms.Label label6;

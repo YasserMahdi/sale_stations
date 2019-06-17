@@ -26,7 +26,7 @@ namespace sale_stations.PL
         void calculateAmount()
         {
             if (matQte.Text != string.Empty && matPrice.Text != string.Empty)
-                matAmaunt.Text = ((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString();
+                matAmaunt.Text = string.Format("{0:n0}", Convert.ToDouble(((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString()));
         }
 
         void clearBoxes()
@@ -192,13 +192,13 @@ namespace sale_stations.PL
                 DataRow r = dt.NewRow();
 
                 string Priceformatted= string.Format("{0:n0}",Convert.ToDouble(matPrice.Text));
-                string amountformatted = string.Format("{0:n0}", Convert.ToDouble(matAmaunt.Text));
+                //string amountformatted = string.Format("{0:n0}", Convert.ToDouble(matAmaunt.Text));
 
                 r[0] = matno.Text;
                 r[1] = matName.Text;
                 r[2] = matQte.Text;
                 r[3] = Priceformatted;
-                r[4] = amountformatted;
+                r[4] = matAmaunt.Text;
                 dt.Rows.Add(r);
                 
                 //dataGridView1.Columns["سعر البيع"].DefaultCellStyle.Format = "N2";
@@ -467,6 +467,7 @@ namespace sale_stations.PL
                     REPORT.frmReport frm = new REPORT.frmReport();
                     rpt.SetDataSource(ord.getOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
+                    // 
                     frm.ShowDialog();
                     frm.crystalReportViewer1.PrintReport();
                 }

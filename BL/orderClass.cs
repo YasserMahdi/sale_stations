@@ -123,6 +123,22 @@ namespace sale_stations.BL
             param[0].Value = @order_id;
             dt = DAL.selectData("getOrdrrDetails", param);
             DAL.close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+                    
+                    row["السعر الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["السعر الكلي"]));
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                    row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
+                    row["الدين السابق"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين السابق"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
             return dt;
         }
 
@@ -138,6 +154,22 @@ namespace sale_stations.BL
 
             dt = DAL.selectData("getDirOrdrrDetails", param);
             DAL.close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
+                    row["السعر الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["السعر الكلي"]));
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
             return dt;
         }
 
@@ -148,6 +180,18 @@ namespace sale_stations.BL
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("serachOrders", null);
             accessobject.close();
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
             return Dt;
 
         }
@@ -165,6 +209,18 @@ namespace sale_stations.BL
 
             Dt = accessobject.selectData("seach_single_oerder", param);
             accessobject.close();
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
 
             return Dt;
 
@@ -209,6 +265,21 @@ namespace sale_stations.BL
 
             dt = DAL.selectData("showOrderDit", param);
             DAL.close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    row["سعر البيع"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر البيع"]));
+                    row["المبلغ"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ"]));
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
             return dt;
         }
 

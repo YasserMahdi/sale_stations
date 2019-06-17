@@ -18,7 +18,8 @@ namespace sale_stations.PL
         public deptForm()
         {
             InitializeComponent();
-           // DataTable Dat = dpt.getDeptInfo();
+            
+            
             this.dataGridView1.DataSource = dpt.getDeptInfo();
         }
 

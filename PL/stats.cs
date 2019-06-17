@@ -18,8 +18,17 @@ namespace sale_stations.PL
         {
             InitializeComponent();
             Dt = dpt.sumOfDepts();
-            string dptformatted = string.Format("{0:n0}", Convert.ToDouble(Dt.Rows[0][0].ToString()));
-            txtSumDpt.Text = dptformatted;
+            try
+            {
+                string dptformatted = string.Format("{0:n0}", Convert.ToDouble(Dt.Rows[0][0].ToString()));
+                txtSumDpt.Text = dptformatted;
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

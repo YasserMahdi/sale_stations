@@ -43,6 +43,21 @@ namespace sale_stations.BL
             Dt = accessobject.selectData("getMatirialInfo", null);
             accessobject.close();
 
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["سعر الشراء"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر الشراء"]));
+
+                    row["سعر البيع"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر البيع"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+
             return Dt;
 
         }
@@ -50,13 +65,28 @@ namespace sale_stations.BL
         public DataTable searchProduct(string mat_name)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
-            DataTable dt = new DataTable();
+            DataTable Dt = new DataTable();
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("mat_name", SqlDbType.NVarChar, 50);
             param[0].Value = mat_name;
-            dt = DAL.selectData("searchProduct", param);
+            Dt = DAL.selectData("searchProduct", param);
             DAL.close();
-            return dt;
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["سعر الشراء"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر الشراء"]));
+
+                    row["سعر البيع"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر البيع"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            return Dt;
         }
 
 

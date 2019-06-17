@@ -20,9 +20,12 @@ namespace sale_stations.BL
             Dt = accessobject.selectData("getDeptInfo", null);
           //  DataTable DtF = Dt;
             accessobject.close();
-            
-            
-            
+
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                row["قيمة الدين"] = String.Format("{0:n0}", Convert.ToDouble(row["قيمة الدين"]));
+            }
 
 
             return Dt;
@@ -42,6 +45,17 @@ namespace sale_stations.BL
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("searchCusForDeptList", param);
             accessobject.close();
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["قيمة الدين"] = String.Format("{0:n0}", Convert.ToDouble(row["قيمة الدين"]));
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+            }
 
             return Dt;
 
@@ -246,6 +260,19 @@ namespace sale_stations.BL
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("getDeptHistory", param);
             accessobject.close();
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["قيمة الدين"] = String.Format("{0:n0}", Convert.ToDouble(row["قيمة الدين"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
 
             return Dt;
 

@@ -133,6 +133,9 @@ namespace sale_stations.BL
                     row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
                     row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
                     row["الدين السابق"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين السابق"]));
+                    row["الدين الحالي"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين الحالي"]));
+                    row["اجمالي الديون"] = String.Format("{0:n0}", Convert.ToDouble(row["اجمالي الديون"]));
+                    row["المبلغ الواصل"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الواصل"]));
                 }
                 catch (Exception ex)
                 {

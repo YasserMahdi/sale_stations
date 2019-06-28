@@ -70,6 +70,7 @@
             this.remainingAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.salesman);
@@ -231,6 +233,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.matAmaunt);
@@ -254,6 +257,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label14.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Location = new System.Drawing.Point(860, 45);
@@ -266,6 +270,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Location = new System.Drawing.Point(16, 45);
@@ -278,9 +283,9 @@
             // 
             // matAmaunt
             // 
+            this.matAmaunt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.matAmaunt.Location = new System.Drawing.Point(16, 66);
             this.matAmaunt.Name = "matAmaunt";
-            this.matAmaunt.ReadOnly = true;
             this.matAmaunt.Size = new System.Drawing.Size(133, 24);
             this.matAmaunt.TabIndex = 9;
             this.matAmaunt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -288,6 +293,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Location = new System.Drawing.Point(272, 45);
@@ -300,6 +306,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Location = new System.Drawing.Point(138, 45);
@@ -312,6 +319,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Location = new System.Drawing.Point(400, 45);
@@ -324,6 +332,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Location = new System.Drawing.Point(673, 45);
@@ -336,9 +345,9 @@
             // 
             // matno
             // 
+            this.matno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.matno.Location = new System.Drawing.Point(675, 66);
             this.matno.Name = "matno";
-            this.matno.ReadOnly = true;
             this.matno.Size = new System.Drawing.Size(186, 24);
             this.matno.TabIndex = 1;
             this.matno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -346,6 +355,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
@@ -364,6 +374,7 @@
             // 
             // btn_browse
             // 
+            this.btn_browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btn_browse.Location = new System.Drawing.Point(860, 71);
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.Size = new System.Drawing.Size(107, 19);
@@ -375,6 +386,7 @@
             // 
             // matPrice
             // 
+            this.matPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.matPrice.Location = new System.Drawing.Point(272, 66);
             this.matPrice.MaxLength = 12;
             this.matPrice.Name = "matPrice";
@@ -388,9 +400,9 @@
             // 
             // matName
             // 
+            this.matName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.matName.Location = new System.Drawing.Point(400, 66);
             this.matName.Name = "matName";
-            this.matName.ReadOnly = true;
             this.matName.Size = new System.Drawing.Size(279, 24);
             this.matName.TabIndex = 3;
             this.matName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -398,6 +410,7 @@
             // 
             // matQte
             // 
+            this.matQte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.matQte.Location = new System.Drawing.Point(141, 66);
             this.matQte.MaxLength = 12;
             this.matQte.Name = "matQte";
@@ -411,6 +424,7 @@
             // 
             // txttotal
             // 
+            this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txttotal.Location = new System.Drawing.Point(32, 626);
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(234, 24);
@@ -419,6 +433,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(272, 629);
             this.label8.Name = "label8";
@@ -429,7 +444,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(700, 736);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(700, 762);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 28);
             this.button3.TabIndex = 10;
@@ -439,7 +456,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(592, 736);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(592, 762);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 28);
             this.button4.TabIndex = 11;
@@ -449,7 +467,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(484, 736);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button5.Location = new System.Drawing.Point(484, 762);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 28);
             this.button5.TabIndex = 12;
@@ -459,7 +478,8 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(376, 736);
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.Location = new System.Drawing.Point(376, 762);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 28);
             this.button6.TabIndex = 13;
@@ -481,6 +501,7 @@
             // 
             // AmountReceived
             // 
+            this.AmountReceived.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AmountReceived.Location = new System.Drawing.Point(32, 656);
             this.AmountReceived.Name = "AmountReceived";
             this.AmountReceived.Size = new System.Drawing.Size(234, 24);
@@ -489,6 +510,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(272, 659);
             this.label15.Name = "label15";
@@ -499,6 +521,7 @@
             // 
             // remainingAmount
             // 
+            this.remainingAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.remainingAmount.Location = new System.Drawing.Point(32, 686);
             this.remainingAmount.Name = "remainingAmount";
             this.remainingAmount.Size = new System.Drawing.Size(234, 24);
@@ -507,6 +530,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(272, 689);
             this.label16.Name = "label16";
@@ -517,7 +541,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(268, 736);
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.Location = new System.Drawing.Point(268, 762);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 28);
             this.button7.TabIndex = 19;
@@ -525,10 +550,21 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Location = new System.Drawing.Point(252, 736);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(567, 78);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            // 
             // orderFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1038, 863);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.remainingAmount);
@@ -545,6 +581,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox4);
             this.Name = "orderFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "القائمة";
@@ -604,5 +641,6 @@
         public System.Windows.Forms.TextBox cusname;
         public System.Windows.Forms.TextBox txtOldDept;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

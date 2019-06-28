@@ -44,10 +44,14 @@
             this.اغلاقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.استعلامعنالزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btninvoive
@@ -92,9 +96,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(623, 172);
+            this.groupBox1.Location = new System.Drawing.Point(624, 128);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(305, 202);
             this.groupBox1.TabIndex = 11;
@@ -103,8 +108,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnreport);
-            this.groupBox2.Location = new System.Drawing.Point(52, 172);
+            this.groupBox2.Location = new System.Drawing.Point(53, 128);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(275, 202);
             this.groupBox2.TabIndex = 12;
@@ -113,8 +119,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.btninvoive);
-            this.groupBox3.Location = new System.Drawing.Point(333, 172);
+            this.groupBox3.Location = new System.Drawing.Point(334, 128);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(284, 202);
             this.groupBox3.TabIndex = 13;
@@ -194,12 +201,37 @@
             this.استعلامعنالزبائنToolStripMenuItem.Text = "استعلام عن الزبائن";
             this.استعلامعنالزبائنToolStripMenuItem.Click += new System.EventHandler(this.استعلامعنالزبائنToolStripMenuItem_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Location = new System.Drawing.Point(334, 336);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(284, 106);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "الديون";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.button2.Location = new System.Drawing.Point(46, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 65);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "الديون";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(981, 494);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -216,6 +248,7 @@
             this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +270,8 @@
         private System.Windows.Forms.ToolStripMenuItem اغلاقToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الزبائنToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem استعلامعنالزبائنToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

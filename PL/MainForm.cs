@@ -151,5 +151,11 @@ namespace sale_stations.PL
             fetchCustomer frm = new fetchCustomer();
             frm.ShowDialog();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            PL.deptForm frm = new PL.deptForm();
+            frm.ShowDialog();
+        }
     }
 }

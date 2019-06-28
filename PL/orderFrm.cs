@@ -26,7 +26,16 @@ namespace sale_stations.PL
         void calculateAmount()
         {
             if (matQte.Text != string.Empty && matPrice.Text != string.Empty)
-                matAmaunt.Text = string.Format("{0:n0}", Convert.ToDouble(((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString()));
+            
+                try
+                {
+
+                    matAmaunt.Text = string.Format("{0:n0}", Convert.ToDouble(((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString()));
+                }
+                catch(Exception ex)
+                {
+                    return;
+                }
         }
 
         void clearBoxes()
@@ -162,8 +171,14 @@ namespace sale_stations.PL
                 try
                 {
                     //for vierify  if quantity more than zero 
-                    if (ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text)).Rows.Count < 1)
+                    DataTable CheckQte = ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text));
+                    if (CheckQte.Rows.Count <= 0)   
                     {
+                        MessageBox.Show("المادة غير مدرجة في المخزن");
+                    }
+                    else if (Convert.ToInt32(CheckQte.Rows[0][4]) < Convert.ToInt32(matQte.Text))
+                    {
+                        
                         MessageBox.Show("الكمية في المخزن غير كافية", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
@@ -187,7 +202,7 @@ namespace sale_stations.PL
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message + " out ");
                 }
                 DataRow r = dt.NewRow();
 
@@ -469,7 +484,7 @@ namespace sale_stations.PL
                     frm.crystalReportViewer1.ReportSource = rpt;
                     // 
                     frm.ShowDialog();
-                    frm.crystalReportViewer1.PrintReport();
+                    //frm.crystalReportViewer1.PrintReport();
                 }
                 else if (state == "YES")
                 {
@@ -478,7 +493,7 @@ namespace sale_stations.PL
                     rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
                     frm.ShowDialog();
-                    frm.crystalReportViewer1.PrintReport();
+                    //frm.crystalReportViewer1.PrintReport();
 
 
                 }
@@ -688,8 +703,16 @@ namespace sale_stations.PL
 
         private void AmountReceived_TextChanged(object sender, EventArgs e)
         {
-
-            calculateDept();
+            try
+            {
+                
+                calculateDept();
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+            
         }
 
         private void label15_Click(object sender, EventArgs e)

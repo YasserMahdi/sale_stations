@@ -40,7 +40,7 @@ namespace sale_stations.PL
         {
             try
             {
-                    REPORT.printDirSale rpt = new REPORT.printDirSale();
+                    REPORT.product_minu rpt = new REPORT.product_minu();
                     REPORT.frmReport frm = new REPORT.frmReport();
                     rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
                     frm.crystalReportViewer1.ReportSource = rpt;

@@ -33,11 +33,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPrintDeptInfo = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnPrintDeptInfo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -45,6 +45,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(9, 68);
             this.groupBox1.Name = "groupBox1";
@@ -55,6 +57,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 23);
@@ -68,6 +72,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.Location = new System.Drawing.Point(255, 38);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(431, 24);
@@ -76,6 +81,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(692, 41);
             this.label1.Name = "label1";
@@ -85,6 +91,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnPrintDeptInfo);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
@@ -97,8 +104,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات";
             // 
+            // btnPrintDeptInfo
+            // 
+            this.btnPrintDeptInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPrintDeptInfo.Location = new System.Drawing.Point(161, 49);
+            this.btnPrintDeptInfo.Name = "btnPrintDeptInfo";
+            this.btnPrintDeptInfo.Size = new System.Drawing.Size(148, 32);
+            this.btnPrintDeptInfo.TabIndex = 5;
+            this.btnPrintDeptInfo.Text = "طباعة معلومات الدين";
+            this.btnPrintDeptInfo.UseVisualStyleBackColor = true;
+            this.btnPrintDeptInfo.Click += new System.EventHandler(this.btnPrintDeptInfo_Click);
+            // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.Location = new System.Drawing.Point(623, 49);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(148, 32);
@@ -109,6 +128,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.Location = new System.Drawing.Point(777, 49);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(148, 32);
@@ -119,6 +139,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Location = new System.Drawing.Point(315, 49);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 32);
@@ -129,6 +150,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Location = new System.Drawing.Point(469, 49);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 32);
@@ -136,16 +158,6 @@
             this.button1.Text = "حذف الدين";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnPrintDeptInfo
-            // 
-            this.btnPrintDeptInfo.Location = new System.Drawing.Point(161, 49);
-            this.btnPrintDeptInfo.Name = "btnPrintDeptInfo";
-            this.btnPrintDeptInfo.Size = new System.Drawing.Size(148, 32);
-            this.btnPrintDeptInfo.TabIndex = 5;
-            this.btnPrintDeptInfo.Text = "طباعة معلومات الدين";
-            this.btnPrintDeptInfo.UseVisualStyleBackColor = true;
-            this.btnPrintDeptInfo.Click += new System.EventHandler(this.btnPrintDeptInfo_Click);
             // 
             // deptForm
             // 

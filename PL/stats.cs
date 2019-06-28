@@ -33,8 +33,7 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PL.deptForm frm = new deptForm();
-            frm.ShowDialog();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

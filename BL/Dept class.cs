@@ -307,6 +307,19 @@ namespace sale_stations.BL
             return dt;
         }
 
+        public DataTable printALLdebt()
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+
+            dt = DAL.selectData("printALLdebt",null);
+            DAL.close();
+
+            return dt;
+        }
+
 
 
 

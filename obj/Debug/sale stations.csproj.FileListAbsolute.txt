@@ -51,3 +51,4 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.showDeptHistory.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.DirectSalesOrder.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.stats.resources
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.insertMatfFromInov.resources

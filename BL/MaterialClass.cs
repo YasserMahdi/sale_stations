@@ -151,6 +151,19 @@ namespace sale_stations.BL
 
         }
 
+        public DataTable getLastMatNo()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("getLastMatNo", null);
+            accessobject.close();
+
+
+            return Dt;
+
+        }
+
 
     }
 }

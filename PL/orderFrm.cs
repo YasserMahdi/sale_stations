@@ -17,6 +17,7 @@ namespace sale_stations.PL
         BL.orderClass ord = new BL.orderClass();
         BL.Dept_class dpt = new BL.Dept_class();
         BL.CustomerClass cusobject = new BL.CustomerClass();
+        BL.MaterialClass materials = new BL.MaterialClass();
         DataTable dt = new DataTable();
         string totalamount;
         string rRemaining;
@@ -171,10 +172,41 @@ namespace sale_stations.PL
                 try
                 {
                     //for vierify  if quantity more than zero 
-                    DataTable CheckQte = ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text));
+                    DataTable CheckQte = new DataTable();
+                    if (matno.Text != string.Empty)
+                    {
+                         CheckQte = ord.verifyQte(Convert.ToInt32(matno.Text), Convert.ToInt32(matQte.Text));
+                    }
+                    
                     if (CheckQte.Rows.Count <= 0)   
                     {
-                        MessageBox.Show("المادة غير مدرجة في المخزن");
+                        
+
+                        if (MessageBox.Show("المادة غير مدرجة في المخزن هل تريد ادرجها", "تنبية ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                        {
+                            PL.insertMatfFromInov frm = new insertMatfFromInov();
+                            matno.Text = materials.getLastMatNo().Rows[0][0].ToString();
+                            frm.noMtr.Text = matno.Text;
+                            frm.nameMtr.Text = matName.Text;
+                            frm.qte.Text = matQte.Text;
+                            frm.saleCost.Text = string.Format("{0:n0}", Convert.ToDouble(matPrice.Text));
+                            frm.buyCost.Text = Convert.ToString(0);
+                            frm.ShowDialog();
+
+                        }
+                        else
+                        {
+                            PL.insertMatfFromInov frm = new insertMatfFromInov();
+                            matno.Text = materials.getLastMatNo().Rows[0][0].ToString();
+                            frm.noMtr.Text = matno.Text;
+                            frm.nameMtr.Text = matName.Text;
+                            frm.qte.Text = matQte.Text;
+                            frm.saleCost.Text = string.Format("{0:n0}", Convert.ToDouble(matPrice.Text));
+                            frm.buyCost.Text = Convert.ToString(0);
+                            materials.insertMtr(Convert.ToDouble(matno.Text), matName.Text, Convert.ToDouble(0),
+                             Convert.ToDouble(matPrice.Text), Convert.ToInt32(matQte.Text));
+                            
+                        }
                     }
                     else if (Convert.ToInt32(CheckQte.Rows[0][4]) < Convert.ToInt32(matQte.Text))
                     {
@@ -208,7 +240,7 @@ namespace sale_stations.PL
 
                 string Priceformatted= string.Format("{0:n0}",Convert.ToDouble(matPrice.Text));
                 //string amountformatted = string.Format("{0:n0}", Convert.ToDouble(matAmaunt.Text));
-
+                
                 r[0] = matno.Text;
                 r[1] = matName.Text;
                 r[2] = matQte.Text;
@@ -333,14 +365,24 @@ namespace sale_stations.PL
                                 // get new ID for New Customer
                                 DataTable DtName = cusobject.getCustomerID();
                                 cusobject.insertCus(Convert.ToInt32(DtName.Rows[0][0]), cusname.Text, phone.Text);
-                                // save informations of the head of invoice
+
+
+                                // save informations of the head of invoicev
                                 ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining));
 
                                 //save products info 
+                                
                                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                                 {
-                                    ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                                        Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                                   // if (dataGridView1.Rows[i].Cells[0].Value.ToString() == string.Empty)
+                                    
+                                       // ord.add_out_detail(dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32(invoiceNo.Text),
+                                         //   Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString())
+                                         //   );
+                                   
+                                        ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                                            Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                                   
                                 }
 
                                 // get the value of dept
@@ -369,6 +411,7 @@ namespace sale_stations.PL
                             }
 
                         }
+                        // if there is no debt on the invoice 
                         else
                         {
                             // If the client name already exists, fetch its ID
@@ -387,11 +430,22 @@ namespace sale_stations.PL
                             //save products info 
                             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                             {
-                                ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                              //  if (dataGridView1.Rows[i].Cells[0].Value.ToString() == string.Empty)
+                                
+                                   // ord.add_out_detail(dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32(invoiceNo.Text),
+                                     //   Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), 
+                                      //  Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString())
+                                       // );
+
+                                   ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                                   Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), 
+                                   Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                                
+                               
                             }
 
                             //save the value of dept 
+
 
                             //DataTable DtForCheack = dpt.cheackDept(Convert.ToInt32(DtName.Rows[0][0]));
 
@@ -483,8 +537,8 @@ namespace sale_stations.PL
                     rpt.SetDataSource(ord.getOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
                     // 
-                    frm.ShowDialog();
-                    //frm.crystalReportViewer1.PrintReport();
+                    //frm.ShowDialog();
+                    frm.crystalReportViewer1.PrintReport();
                 }
                 else if (state == "YES")
                 {
@@ -492,8 +546,8 @@ namespace sale_stations.PL
                     REPORT.frmReport frm = new REPORT.frmReport();
                     rpt.SetDataSource(ord.getDirOrdrrDetails(lasto));
                     frm.crystalReportViewer1.ReportSource = rpt;
-                    frm.ShowDialog();
-                    //frm.crystalReportViewer1.PrintReport();
+                    //frm.ShowDialog();
+                    frm.crystalReportViewer1.PrintReport();
 
 
                 }

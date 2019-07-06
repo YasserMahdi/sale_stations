@@ -94,7 +94,9 @@ namespace sale_stations.PL
                 REPORT.frmReport frm = new REPORT.frmReport();
                 rep.SetDataSource(mtr.printMaterials());
                 frm.crystalReportViewer1.ReportSource = rep;
-                frm.Show();
+                //frm.Show();
+                frm.crystalReportViewer1.PrintReport();
+
             }
             catch (Exception ex)
             {

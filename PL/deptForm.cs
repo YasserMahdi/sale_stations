@@ -15,6 +15,7 @@ namespace sale_stations.PL
         BL.Dept_class dpt = new BL.Dept_class();
         BL.CustomerClass cus = new BL.CustomerClass();
 
+
         public deptForm()
         {
             InitializeComponent();
@@ -141,12 +142,33 @@ namespace sale_stations.PL
                 REPORT.frmReport frm = new REPORT.frmReport();
                 rep.SetDataSource( dpt.printDeptInfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value)));
                 frm.crystalReportViewer1.ReportSource = rep;
-                frm.Show();
+                //frm.Show();
+                frm.crystalReportViewer1.PrintReport();
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                REPORT.printAllDebt rep = new REPORT.printAllDebt();
+                REPORT.frmReport frm = new REPORT.frmReport();
+                rep.SetDataSource(dpt.printALLdebt());
+                frm.crystalReportViewer1.ReportSource = rep;
+                //frm.Show();
+                frm.crystalReportViewer1.PrintReport();
+
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+            
         }
     }
 }

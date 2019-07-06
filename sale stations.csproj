@@ -115,6 +115,12 @@
     <Compile Include="PL\insertMaterial.Designer.cs">
       <DependentUpon>insertMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\insertMatfFromInov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\insertMatfFromInov.Designer.cs">
+      <DependentUpon>insertMatfFromInov.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\listMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,12 @@
     <Compile Include="REPORT\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\printAllDebt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printAllDebt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORT\printDeptInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\insertMaterial.resx">
       <DependentUpon>insertMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\insertMatfFromInov.resx">
+      <DependentUpon>insertMatfFromInov.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\listMatirial.resx">
       <DependentUpon>listMatirial.cs</DependentUpon>
@@ -318,6 +333,10 @@
     </Compile>
     <EmbeddedResource Include="REPORT\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\printAllDebt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printAllDebt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\printDeptInfo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

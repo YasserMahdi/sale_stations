@@ -344,6 +344,36 @@ namespace sale_stations.BL
             DAL.close();
         }
 
+        public void add_out_detail(string mat_name, int order_no, int qte, double price, double amount)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[5];
+
+
+            param[0] = new SqlParameter("@mat_name", SqlDbType.NVarChar,50);
+            param[0].Value = mat_name;
+
+            param[1] = new SqlParameter("@invo", SqlDbType.Int);
+            param[1].Value = order_no;
+
+            param[2] = new SqlParameter("@qte", SqlDbType.Int);
+            param[2].Value = qte;
+
+            param[3] = new SqlParameter("@price", SqlDbType.Money);
+            param[3].Value = price;
+
+            param[4] = new SqlParameter("@amount", SqlDbType.Money);
+            param[4].Value = Convert.ToDouble(amount);
+
+
+
+
+
+            DAL.Executecmd("add_out_det", param);
+            DAL.close();
+        }
+
 
 
     }

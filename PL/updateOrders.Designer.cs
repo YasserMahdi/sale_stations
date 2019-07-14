@@ -53,7 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cusNo = new System.Windows.Forms.TextBox();
-            this.btnMatShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -301,22 +300,11 @@
             this.cusNo.Size = new System.Drawing.Size(234, 24);
             this.cusNo.TabIndex = 5;
             // 
-            // btnMatShow
-            // 
-            this.btnMatShow.Location = new System.Drawing.Point(833, 609);
-            this.btnMatShow.Name = "btnMatShow";
-            this.btnMatShow.Size = new System.Drawing.Size(128, 32);
-            this.btnMatShow.TabIndex = 30;
-            this.btnMatShow.Text = "عرض المواد";
-            this.btnMatShow.UseVisualStyleBackColor = true;
-            this.btnMatShow.Click += new System.EventHandler(this.btnMatShow_Click);
-            // 
             // updateOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 771);
-            this.Controls.Add(this.btnMatShow);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -362,7 +350,6 @@
         public System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.TextBox cusNo;
         public System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.Button btnMatShow;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;

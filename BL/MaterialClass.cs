@@ -165,5 +165,30 @@ namespace sale_stations.BL
         }
 
 
+        public DataTable cheackMatName(string mat_name)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[0].Value = mat_name;
+            dt = DAL.selectData("cheackMatName", param);
+            DAL.close();
+            return dt;
+        }
+
+        public DataTable getMatValueByName(string mat_name)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            param[0].Value = mat_name;
+            dt = DAL.selectData("getMatValueByName", param);
+            DAL.close();
+            return dt;
+        }
+
+
     }
 }

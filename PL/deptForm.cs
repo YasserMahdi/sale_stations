@@ -143,7 +143,7 @@ namespace sale_stations.PL
                 rep.SetDataSource( dpt.printDeptInfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value)));
                 frm.crystalReportViewer1.ReportSource = rep;
                 //frm.Show();
-                frm.crystalReportViewer1.PrintReport();
+               frm.crystalReportViewer1.PrintReport();
 
             }
             catch (Exception ex)

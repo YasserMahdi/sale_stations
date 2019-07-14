@@ -18,12 +18,14 @@ namespace sale_stations.PL
         {
             InitializeComponent();
             
-            
+
+
+
         }
 
         private void updateOrders_Load(object sender, EventArgs e)
         {
-
+            this.dataGridView1.DataSource = order.showOrderDit(Convert.ToInt32(invID.Text));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -52,3 +52,5 @@ C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.DirectSalesOrder.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.stats.resources
 C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.insertMatfFromInov.resources
+C:\Users\HP\source\repos\sale stations\sale stations\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\HP\source\repos\sale stations\sale stations\obj\Debug\sale_stations.PL.listDirOrder.resources

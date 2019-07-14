@@ -92,5 +92,32 @@ namespace sale_stations.PL
             
            
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                PL.updateOrders frm = new updateOrders();
+                //Pass two variables   int customerid  and invoice id
+                DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                try
+                {
+                    frm.invID.Text = Dt.Rows[0][0].ToString();
+                    frm.cusname.Text = Dt.Rows[0][6].ToString();
+                    frm.txtDate.Text = Dt.Rows[0][2].ToString();
+                    frm.txttotal.Text = string.Format("{0:n}", Convert.ToInt32(Dt.Rows[0][3]));
+                    frm.salesman.Text = Dt.Rows[0][4].ToString();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\nهذه الفاتورة لا تحتوي على مواد مباعة ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

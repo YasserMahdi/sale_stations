@@ -146,14 +146,17 @@ namespace sale_stations.BL
         }
 
         // also for printing orders
-        public DataTable getDirOrdrrDetails(int order_id)
+        public DataTable getDirOrdrrDetails(int order_id, int name)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[1];
+            SqlParameter[] param = new SqlParameter[2];
 
             param[0] = new SqlParameter("@order_id", SqlDbType.Int);
             param[0].Value = @order_id;
+
+            param[1] = new SqlParameter("@cus_id", SqlDbType.Int);
+            param[1].Value = name;
 
             dt = DAL.selectData("getDirOrdrrDetails", param);
             DAL.close();
@@ -162,10 +165,12 @@ namespace sale_stations.BL
             {
                 try
                 {
+                   
 
                     row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
                     row["السعر الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["السعر الكلي"]));
                     row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                    row["الدين السابق"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين السابق"]));
 
                 }
                 catch (Exception ex)
@@ -176,12 +181,72 @@ namespace sale_stations.BL
             return dt;
         }
 
+
+
+        public DataTable getDirOrdrrDetailsWithoutDebt (int order_id)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@order_id", SqlDbType.Int);
+            param[0].Value = @order_id;
+
+
+            dt = DAL.selectData("getDirOrdrrDetailsWithoutDebt", param);
+            DAL.close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+
+                    row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
+                    row["السعر الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["السعر الكلي"]));
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                    row["الدين السابق"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين السابق"]));
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return dt;
+        }
+
+
         public DataTable serachOrders()
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
 
             DataTable Dt = new DataTable();
             Dt = accessobject.selectData("serachOrders", null);
+            accessobject.close();
+
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return Dt;
+
+        }
+
+
+        public DataTable listDirOrder()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+            Dt = accessobject.selectData("listDirOrder", null);
             accessobject.close();
 
             foreach (DataRow row in Dt.Rows)
@@ -211,6 +276,37 @@ namespace sale_stations.BL
             param[0].Value = reference;
 
             Dt = accessobject.selectData("seach_single_oerder", param);
+            accessobject.close();
+            foreach (DataRow row in Dt.Rows)
+            {
+                try
+                {
+                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+
+            return Dt;
+
+        }
+
+
+        public DataTable searchDirOrders(string reference)
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+            accessobject.open();
+            DataTable Dt = new DataTable();
+
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@reference", SqlDbType.NVarChar, 64);
+            param[0].Value = reference;
+
+            Dt = accessobject.selectData("searchDirOrders", param);
             accessobject.close();
             foreach (DataRow row in Dt.Rows)
             {

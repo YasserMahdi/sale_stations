@@ -304,6 +304,18 @@ namespace sale_stations.BL
             dt = DAL.selectData("printDeptInfo", param);
             DAL.close();
 
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+                    row["اجمالي الديون"] = String.Format("{0:n0}", Convert.ToDouble(row["اجمالي الديون"]));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
             return dt;
         }
 

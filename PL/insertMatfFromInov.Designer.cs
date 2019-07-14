@@ -39,6 +39,7 @@
             this.buyCost = new System.Windows.Forms.TextBox();
             this.nameMtr = new System.Windows.Forms.TextBox();
             this.noMtr = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -131,11 +132,23 @@
             this.noMtr.Size = new System.Drawing.Size(224, 24);
             this.noMtr.TabIndex = 11;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label6.Location = new System.Drawing.Point(91, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 42);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "هذه المادة غير موجودة\r\nيرحى ادحال معلومات المادة";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // insertMatfFromInov
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 326);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -168,5 +181,6 @@
         public System.Windows.Forms.TextBox buyCost;
         public System.Windows.Forms.TextBox nameMtr;
         public System.Windows.Forms.TextBox noMtr;
+        private System.Windows.Forms.Label label6;
     }
 }

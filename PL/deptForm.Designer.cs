@@ -33,12 +33,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnPrintDeptInfo = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,6 +106,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات";
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.Location = new System.Drawing.Point(86, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 32);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "طباعة ديون الزبائن";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // btnPrintDeptInfo
             // 
             this.btnPrintDeptInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -160,17 +171,6 @@
             this.button1.Text = "حذف الدين";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.Location = new System.Drawing.Point(86, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 32);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "طباعة ديون الزبائن";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // deptForm
             // 

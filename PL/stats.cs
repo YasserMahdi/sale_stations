@@ -48,9 +48,6 @@ namespace sale_stations.PL
 
         }
 
-        private void txtSumDpt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -43,35 +43,12 @@ namespace sale_stations.PL
             PL.deptForm dpt = new PL.deptForm();
             dpt.ShowDialog();
         }
-
-        private void btnreport_Click(object sender, EventArgs e)
-        {
-            PL.stats frm = new stats();
-            frm.ShowDialog();
-        }
-
-       
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
             PL.fetchCustomer ftch = new PL.fetchCustomer();
             ftch.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            PL.FetchMatirial ftch = new PL.FetchMatirial();
-            ftch.Show();
-           
-        }
-
-        private void btninvoive_Click(object sender, EventArgs e)
-        {
-            PL.orderFrm ord = new PL.orderFrm();
-            
-            ord.Show();
-            
         }
 
         private void استعادةنسخةاحياطيةToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,9 +129,47 @@ namespace sale_stations.PL
             frm.ShowDialog();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PL.FetchMatirial ftch = new PL.FetchMatirial();
+            ftch.Show();
+        }
+
+        private void btnInvoive_Click_1(object sender, EventArgs e)
+        {
+            PL.orderFrm ord = new PL.orderFrm();
+
+            ord.Show();
+        }
+
+        private void bntReport_Click(object sender, EventArgs e)
+        {
+            PL.listOrders frm = new listOrders();
+            frm.ShowDialog();
+
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             PL.deptForm frm = new PL.deptForm();
+            frm.ShowDialog();
+        }
+
+        private void اجماليالديونToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.stats frm = new stats();
+            frm.ShowDialog();
+        }
+
+        private void القوائمالمدفوعةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.listDirOrder frm = new listDirOrder();
+            frm.ShowDialog();
+        }
+
+        private void القوائمالغيرمسددةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.listOrders frm = new listOrders();
             frm.ShowDialog();
         }
     }

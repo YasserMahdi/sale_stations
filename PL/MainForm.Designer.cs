@@ -32,6 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnInvoive = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -45,12 +46,13 @@
             this.استعلامعنالزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.التقاريرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اجماليالديونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.استعلامعنالقوائمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.القوائمالمدفوعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.القوائمالغيرمسددةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.اضافةزبونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الارباحوالخسائرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -62,7 +64,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(624, 128);
+            this.groupBox1.Location = new System.Drawing.Point(629, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 202);
             this.groupBox1.TabIndex = 11;
@@ -109,18 +111,54 @@
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.bunifuFlatButton1);
-            this.groupBox2.Location = new System.Drawing.Point(53, 128);
+            this.groupBox2.Location = new System.Drawing.Point(58, 156);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(275, 202);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الديون";
             // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 7;
+            this.bunifuFlatButton1.ButtonText = "     الديون";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 70D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(26, 102);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(227, 60);
+            this.bunifuFlatButton1.TabIndex = 20;
+            this.bunifuFlatButton1.Text = "     الديون";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.btnInvoive);
-            this.groupBox3.Location = new System.Drawing.Point(334, 128);
+            this.groupBox3.Location = new System.Drawing.Point(339, 156);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(284, 202);
             this.groupBox3.TabIndex = 13;
@@ -148,7 +186,7 @@
             this.btnInvoive.IconVisible = true;
             this.btnInvoive.IconZoom = 50D;
             this.btnInvoive.IsTab = false;
-            this.btnInvoive.Location = new System.Drawing.Point(27, 86);
+            this.btnInvoive.Location = new System.Drawing.Point(33, 102);
             this.btnInvoive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInvoive.Name = "btnInvoive";
             this.btnInvoive.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -227,6 +265,7 @@
             // الزبائنToolStripMenuItem
             // 
             this.الزبائنToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اضافةزبونToolStripMenuItem,
             this.استعلامعنالزبائنToolStripMenuItem});
             this.الزبائنToolStripMenuItem.Name = "الزبائنToolStripMenuItem";
             this.الزبائنToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
@@ -235,14 +274,15 @@
             // استعلامعنالزبائنToolStripMenuItem
             // 
             this.استعلامعنالزبائنToolStripMenuItem.Name = "استعلامعنالزبائنToolStripMenuItem";
-            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.استعلامعنالزبائنToolStripMenuItem.Text = "استعلام عن الزبائن";
+            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.استعلامعنالزبائنToolStripMenuItem.Text = "عرض الكل";
             this.استعلامعنالزبائنToolStripMenuItem.Click += new System.EventHandler(this.استعلامعنالزبائنToolStripMenuItem_Click);
             // 
             // التقاريرToolStripMenuItem
             // 
             this.التقاريرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اجماليالديونToolStripMenuItem});
+            this.اجماليالديونToolStripMenuItem,
+            this.الارباحوالخسائرToolStripMenuItem});
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
             this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.التقاريرToolStripMenuItem.Text = "التقارير";
@@ -254,41 +294,28 @@
             this.اجماليالديونToolStripMenuItem.Text = "اجمالي الديون";
             this.اجماليالديونToolStripMenuItem.Click += new System.EventHandler(this.اجماليالديونToolStripMenuItem_Click);
             // 
-            // bunifuFlatButton1
+            // استعلامعنالقوائمToolStripMenuItem
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 7;
-            this.bunifuFlatButton1.ButtonText = "     الديون";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 70D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(26, 102);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(227, 60);
-            this.bunifuFlatButton1.TabIndex = 20;
-            this.bunifuFlatButton1.Text = "     الديون";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.استعلامعنالقوائمToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.القوائمالمدفوعةToolStripMenuItem,
+            this.القوائمالغيرمسددةToolStripMenuItem});
+            this.استعلامعنالقوائمToolStripMenuItem.Name = "استعلامعنالقوائمToolStripMenuItem";
+            this.استعلامعنالقوائمToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.استعلامعنالقوائمToolStripMenuItem.Text = "استعلام عن القوائم";
+            // 
+            // القوائمالمدفوعةToolStripMenuItem
+            // 
+            this.القوائمالمدفوعةToolStripMenuItem.Name = "القوائمالمدفوعةToolStripMenuItem";
+            this.القوائمالمدفوعةToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.القوائمالمدفوعةToolStripMenuItem.Text = "القوائم المدفوعة";
+            this.القوائمالمدفوعةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالمدفوعةToolStripMenuItem_Click);
+            // 
+            // القوائمالغيرمسددةToolStripMenuItem
+            // 
+            this.القوائمالغيرمسددةToolStripMenuItem.Name = "القوائمالغيرمسددةToolStripMenuItem";
+            this.القوائمالغيرمسددةToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.القوائمالغيرمسددةToolStripMenuItem.Text = "القوائم الغير مسددة";
+            this.القوائمالغيرمسددةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالغيرمسددةToolStripMenuItem_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -306,28 +333,19 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(981, 24);
             this.bunifuGradientPanel1.TabIndex = 16;
             // 
-            // استعلامعنالقوائمToolStripMenuItem
+            // اضافةزبونToolStripMenuItem
             // 
-            this.استعلامعنالقوائمToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.القوائمالمدفوعةToolStripMenuItem,
-            this.القوائمالغيرمسددةToolStripMenuItem});
-            this.استعلامعنالقوائمToolStripMenuItem.Name = "استعلامعنالقوائمToolStripMenuItem";
-            this.استعلامعنالقوائمToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
-            this.استعلامعنالقوائمToolStripMenuItem.Text = "استعلام عن القوائم";
+            this.اضافةزبونToolStripMenuItem.Name = "اضافةزبونToolStripMenuItem";
+            this.اضافةزبونToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اضافةزبونToolStripMenuItem.Text = "اضافة زبون";
+            this.اضافةزبونToolStripMenuItem.Click += new System.EventHandler(this.اضافةزبونToolStripMenuItem_Click);
             // 
-            // القوائمالمدفوعةToolStripMenuItem
+            // الارباحوالخسائرToolStripMenuItem
             // 
-            this.القوائمالمدفوعةToolStripMenuItem.Name = "القوائمالمدفوعةToolStripMenuItem";
-            this.القوائمالمدفوعةToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.القوائمالمدفوعةToolStripMenuItem.Text = "القوائم المدفوعة";
-            this.القوائمالمدفوعةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالمدفوعةToolStripMenuItem_Click);
-            // 
-            // القوائمالغيرمسددةToolStripMenuItem
-            // 
-            this.القوائمالغيرمسددةToolStripMenuItem.Name = "القوائمالغيرمسددةToolStripMenuItem";
-            this.القوائمالغيرمسددةToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.القوائمالغيرمسددةToolStripMenuItem.Text = "القوائم الغير مسددة";
-            this.القوائمالغيرمسددةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالغيرمسددةToolStripMenuItem_Click);
+            this.الارباحوالخسائرToolStripMenuItem.Name = "الارباحوالخسائرToolStripMenuItem";
+            this.الارباحوالخسائرToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.الارباحوالخسائرToolStripMenuItem.Text = "الارباح و الخسائر";
+            this.الارباحوالخسائرToolStripMenuItem.Click += new System.EventHandler(this.الارباحوالخسائرToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -380,5 +398,7 @@
         private System.Windows.Forms.ToolStripMenuItem استعلامعنالقوائمToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem القوائمالمدفوعةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem القوائمالغيرمسددةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اضافةزبونToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الارباحوالخسائرToolStripMenuItem;
     }
 }

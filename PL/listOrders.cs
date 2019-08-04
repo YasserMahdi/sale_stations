@@ -68,14 +68,14 @@ namespace sale_stations.PL
         {
             try
             {
-                PL.updateOrders frm = new updateOrders();
+                PL.showInvoice frm = new showInvoice();
                 //Pass two variables   int customerid  and invoice id
                 DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 try
                 {
                     frm.invID.Text = Dt.Rows[0][0].ToString();
                     frm.cusname.Text = Dt.Rows[0][6].ToString();
-                    frm.txtDate.Text = Dt.Rows[0][2].ToString();
+                    frm.bunifuDatepicker1.Value =Convert.ToDateTime( Dt.Rows[0][2]);
                     frm.txttotal.Text =string.Format("{0:n}",Convert.ToInt32( Dt.Rows[0][3]));
                     frm.salesman.Text = Dt.Rows[0][4].ToString();
                     frm.ShowDialog();
@@ -97,14 +97,14 @@ namespace sale_stations.PL
         {
             try
             {
-                PL.updateOrders frm = new updateOrders();
+                PL.showInvoice frm = new showInvoice();
                 //Pass two variables   int customerid  and invoice id
                 DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 try
                 {
                     frm.invID.Text = Dt.Rows[0][0].ToString();
                     frm.cusname.Text = Dt.Rows[0][6].ToString();
-                    frm.txtDate.Text = Dt.Rows[0][2].ToString();
+                    frm.bunifuDatepicker1.Value =Convert.ToDateTime( Dt.Rows[0][2]);
                     frm.txttotal.Text = string.Format("{0:n}", Convert.ToInt32(Dt.Rows[0][3]));
                     frm.salesman.Text = Dt.Rows[0][4].ToString();
                     frm.ShowDialog();

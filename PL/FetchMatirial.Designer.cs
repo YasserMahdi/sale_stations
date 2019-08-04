@@ -35,8 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,33 +126,44 @@
             this.dataGridView1.Size = new System.Drawing.Size(1032, 282);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textSearch
-            // 
-            this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textSearch.Location = new System.Drawing.Point(267, 33);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(431, 24);
-            this.textSearch.TabIndex = 4;
-            this.textSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(714, 33);
+            this.label1.Location = new System.Drawing.Point(701, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "اسم الماده المراد البحث عنها";
+            // 
+            // textSearch
+            // 
+            this.textSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textSearch.HintForeColor = System.Drawing.Color.Empty;
+            this.textSearch.HintText = "";
+            this.textSearch.isPassword = false;
+            this.textSearch.LineFocusedColor = System.Drawing.Color.Blue;
+            this.textSearch.LineIdleColor = System.Drawing.Color.Gray;
+            this.textSearch.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.textSearch.LineThickness = 3;
+            this.textSearch.Location = new System.Drawing.Point(314, 13);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(370, 44);
+            this.textSearch.TabIndex = 8;
+            this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textSearch.OnValueChanged += new System.EventHandler(this.textSearch_OnValueChanged);
             // 
             // FetchMatirial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 526);
+            this.Controls.Add(this.textSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textSearch);
             this.Controls.Add(this.label1);
             this.Name = "FetchMatirial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -171,10 +182,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textSearch;
     }
 }

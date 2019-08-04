@@ -19,13 +19,6 @@ namespace sale_stations.PL
             this.dataGridView1.DataSource = mtr.getMatirialInfo();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = mtr.searchProduct(textSearch.Text);
-            this.dataGridView1.DataSource = dt;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -102,6 +95,11 @@ namespace sale_stations.PL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textSearch_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

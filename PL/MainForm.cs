@@ -85,12 +85,6 @@ namespace sale_stations.PL
             frm.ShowDialog();
         }
 
-        private void قائمةجديدةToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DirectSalesOrder frm = new DirectSalesOrder();
-            frm.ShowDialog();
-        }
-
         private void اضافةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PL.insertCustomer frm = new insertCustomer();
@@ -170,6 +164,18 @@ namespace sale_stations.PL
         private void القوائمالغيرمسددةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PL.listOrders frm = new listOrders();
+            frm.ShowDialog();
+        }
+
+        private void اضافةزبونToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.insertCustomer frm = new insertCustomer();
+            frm.ShowDialog();
+        }
+
+        private void الارباحوالخسائرToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BL.profits frm = new BL.profits();
             frm.ShowDialog();
         }
     }

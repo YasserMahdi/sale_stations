@@ -13,7 +13,7 @@ namespace sale_stations.PL
 {
     public partial class createBackup : Form
     {
-        SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS;database=sales_stations;integrated security=true");
+        SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS;database=AUTO_SALES;integrated security=true");
         SqlCommand cmd;
         public createBackup()
         {
@@ -34,7 +34,7 @@ namespace sale_stations.PL
             {
                 string filename = textpath.Text + "\\BACKUP" + DateTime.Now.ToShortDateString().Replace('/', '-')
                 + DateTime.Now.ToLongDateString().Replace('/', '-');
-                string query = "Backup Database sales_stations to Disk='" + filename + ".bak'";
+                string query = "Backup Database AUTO_SALES to Disk='" + filename + ".bak'";
                 cmd = new SqlCommand(query, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();

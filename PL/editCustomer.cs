@@ -13,7 +13,6 @@ namespace sale_stations.PL
     
     public partial class editCustomer : Form
     {
-        public string state = "null";
         BL.CustomerClass customer = new BL.CustomerClass();
         BL.CustomerClass cus = new BL.CustomerClass();
         public editCustomer()
@@ -25,7 +24,6 @@ namespace sale_stations.PL
         {
             customer.updateCustomerInfo(Convert.ToInt32(textBoxNO.Text), textBoxNmae.Text,textBoxPhone.Text);
             MessageBox.Show(" تم التحديث بنجاح"," التحديث",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            state = "update";
         }
     }
 }

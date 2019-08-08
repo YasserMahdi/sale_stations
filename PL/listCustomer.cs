@@ -13,10 +13,11 @@ namespace sale_stations.PL
     public partial class listCustomer : Form
     {
         BL.CustomerClass cus = new BL.CustomerClass();
+        public string State;
         public listCustomer()
         {
             InitializeComponent();
-            this.dataGridView1.DataSource = cus.getCustomerInfo();
+
         }
 
         private void searchbox_TextChanged(object sender, EventArgs e)
@@ -33,29 +34,22 @@ namespace sale_stations.PL
             this.Close();
         }
 
-        private void listCustomer_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            this.State = "sel";
             this.Close();
         }
 
-        private void listCustomer_FormClosed(object sender, FormClosedEventArgs e)
-        {
-                
-        }
+
 
         private void listCustomer_FormClosing(object sender, FormClosingEventArgs e)
         {
             return;
+        }
+
+        private void listCustomer_Load(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = cus.getCustomerInfo();
         }
     }
 }

@@ -57,14 +57,14 @@ namespace sale_stations.BL
             return dt;
         }
 
-        public void deletCustomer(int cus_no)
+        public void deleteCustomer(int cus_no)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@cus_no", SqlDbType.Int);
             param[0].Value = cus_no;
-            DAL.Executecmd("deletCustomer", param);
+            DAL.Executecmd("deleteCustomer", param);
             DAL.close();
         }
 
@@ -190,27 +190,6 @@ namespace sale_stations.BL
             DAL.Executecmd("updateOrinsertCustomerPhoneNumber", param);
             DAL.close();
         }
-
-
-
-
-        public DataTable getDeptByID( int customerid)
-        {
-            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
-            accessobject.open();
-            DataTable Dt = new DataTable();
-            accessobject.open();
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@ID", SqlDbType.Int);
-            param[0].Value = customerid;
-
-            Dt = accessobject.selectData("getDeptByID", param);
-            accessobject.close();
-
-            return Dt;
-
-        }
-
 
     }
 }

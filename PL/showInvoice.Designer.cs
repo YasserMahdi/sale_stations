@@ -38,13 +38,8 @@
             this.invID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.phone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cusname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,6 +52,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,7 +87,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.ButtonText = "خروج";
+            this.btnClose.ButtonText = "Close";
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.SeaGreen;
@@ -114,7 +114,7 @@
             this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPrint.BackColor = System.Drawing.SystemColors.Control;
             this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.ButtonText = "طباعة الفاتورة";
+            this.btnPrint.ButtonText = "Print";
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.SeaGreen;
@@ -143,7 +143,7 @@
             this.salesman.LineIdleColor = System.Drawing.Color.Gray;
             this.salesman.LineMouseHoverColor = System.Drawing.SystemColors.ActiveCaption;
             this.salesman.LineThickness = 3;
-            this.salesman.Location = new System.Drawing.Point(18, 139);
+            this.salesman.Location = new System.Drawing.Point(129, 139);
             this.salesman.Margin = new System.Windows.Forms.Padding(4);
             this.salesman.Name = "salesman";
             this.salesman.Size = new System.Drawing.Size(305, 44);
@@ -162,7 +162,7 @@
             this.invID.LineIdleColor = System.Drawing.Color.Gray;
             this.invID.LineMouseHoverColor = System.Drawing.SystemColors.ActiveCaption;
             this.invID.LineThickness = 3;
-            this.invID.Location = new System.Drawing.Point(18, 30);
+            this.invID.Location = new System.Drawing.Point(129, 30);
             this.invID.Margin = new System.Windows.Forms.Padding(4);
             this.invID.Name = "invID";
             this.invID.Size = new System.Drawing.Size(305, 44);
@@ -208,36 +208,12 @@
             this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
             this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(18, 87);
+            this.bunifuDatepicker1.Location = new System.Drawing.Point(129, 82);
             this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuDatepicker1.Name = "bunifuDatepicker1";
             this.bunifuDatepicker1.Size = new System.Drawing.Size(306, 44);
             this.bunifuDatepicker1.TabIndex = 23;
             this.bunifuDatepicker1.Value = new System.DateTime(2019, 7, 29, 23, 16, 50, 917);
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label13.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(346, 60);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(158, 23);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "المبلغ";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(17, 60);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(158, 23);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "سعر البيع";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // phone
             // 
@@ -251,7 +227,7 @@
             this.phone.LineIdleColor = System.Drawing.Color.Gray;
             this.phone.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.phone.LineThickness = 3;
-            this.phone.Location = new System.Drawing.Point(64, 95);
+            this.phone.Location = new System.Drawing.Point(126, 99);
             this.phone.Margin = new System.Windows.Forms.Padding(4);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(297, 44);
@@ -270,48 +246,12 @@
             this.cusname.LineIdleColor = System.Drawing.Color.Gray;
             this.cusname.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.cusname.LineThickness = 3;
-            this.cusname.Location = new System.Drawing.Point(62, 43);
+            this.cusname.Location = new System.Drawing.Point(126, 47);
             this.cusname.Margin = new System.Windows.Forms.Padding(4);
             this.cusname.Name = "cusname";
             this.cusname.Size = new System.Drawing.Size(297, 44);
             this.cusname.TabIndex = 12;
             this.cusname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(181, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(158, 23);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "الكمية";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(510, 60);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(493, 23);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "اسم المنتج";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(1009, 60);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 23);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "رقم المنتج";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuGradientPanel1
             // 
@@ -333,11 +273,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(388, 107);
+            this.label3.Location = new System.Drawing.Point(26, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
+            this.label3.Size = new System.Drawing.Size(37, 17);
             this.label3.TabIndex = 24;
-            this.label3.Text = "التاريخ";
+            this.label3.Text = "Date";
             // 
             // pictureBox1
             // 
@@ -353,7 +293,7 @@
             // txttotal
             // 
             this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txttotal.Location = new System.Drawing.Point(32, 666);
+            this.txttotal.Location = new System.Drawing.Point(91, 666);
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(234, 24);
             this.txttotal.TabIndex = 27;
@@ -362,45 +302,45 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(272, 669);
+            this.label8.Location = new System.Drawing.Point(34, 666);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 17);
+            this.label8.Size = new System.Drawing.Size(51, 17);
             this.label8.TabIndex = 25;
-            this.label8.Text = ": المبلغ الكلي";
+            this.label8.Text = "Total : ";
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(25, 296);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1217, 364);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "المنتجات";
+            this.groupBox3.Text = "Services";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(381, 122);
+            this.label7.Location = new System.Drawing.Point(19, 122);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 17);
+            this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 6;
-            this.label7.Text = "رقم الهاتف";
+            this.label7.Text = "Phone Number";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(379, 70);
+            this.label6.Location = new System.Drawing.Point(12, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 4;
-            this.label6.Text = "اسم الزبون";
+            this.label6.Text = "Customer Name";
             // 
             // groupBox2
             // 
@@ -413,25 +353,25 @@
             this.groupBox2.Size = new System.Drawing.Size(459, 200);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "معلومات الزبون";
+            this.groupBox2.Text = "Customer Info";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(364, 166);
+            this.label2.Location = new System.Drawing.Point(16, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 17);
+            this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "اسم البائع";
+            this.label2.Text = "Seller\'s name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 57);
+            this.label1.Location = new System.Drawing.Point(16, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "رقم الفاتورة";
+            this.label1.Text = "Receipt Number";
             // 
             // groupBox1
             // 
@@ -447,7 +387,67 @@
             this.groupBox1.Size = new System.Drawing.Size(508, 200);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "معلومات الفاتوره";
+            this.groupBox1.Text = "Receipt info";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(17, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(170, 23);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Total price";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(196, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(182, 23);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Quantity";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(384, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(175, 23);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Selling price";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(565, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(167, 23);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Purchasing Price";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(738, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(459, 23);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Service Name";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // showInvoice
             // 
@@ -488,13 +488,8 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox invID;
         public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView1;
         public Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
-        public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.Label label12;
         public Bunifu.Framework.UI.BunifuMaterialTextbox phone;
         public Bunifu.Framework.UI.BunifuMaterialTextbox cusname;
-        public System.Windows.Forms.Label label11;
-        public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.Label label9;
         public Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox pictureBox1;
@@ -507,5 +502,10 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -53,10 +53,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 26;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(776, 282);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // searchbox
@@ -80,7 +79,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listCustomer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.listCustomer_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.listCustomer_FormClosed);
             this.Load += new System.EventHandler(this.listCustomer_Load);
             this.DoubleClick += new System.EventHandler(this.listCustomer_DoubleClick);
             this.groupBox1.ResumeLayout(false);

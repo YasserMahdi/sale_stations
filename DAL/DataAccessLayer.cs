@@ -14,7 +14,8 @@ namespace sale_stations.DAL
         SqlConnection connectobject;
         public DataAccessLayer()
         {
-            connectobject = new SqlConnection(@"server=.\SQLEXPRESS;database=sales_stations;integrated security=true");
+            connectobject = new SqlConnection(@"server=" + Properties.Settings.Default.server + ";" +
+                "                   Database="+Properties.Settings.Default.database+";integrated security=true");
         }
 
         public void open()

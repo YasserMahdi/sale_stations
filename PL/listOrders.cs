@@ -25,26 +25,8 @@ namespace sale_stations.PL
 
 
         }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                // text box search 
-                DataTable dt = new DataTable();
-                dt = order.seach_single_oerder(txtSearch.Text);
-                this.dataGridView1.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-               MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+ 
+   
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,11 +40,7 @@ namespace sale_stations.PL
             this.dataGridView1.DataSource = order.serachOrders();
             
         }
-
-        private void button1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-          
-        }
+ 
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -92,8 +70,9 @@ namespace sale_stations.PL
             
            
         }
+ 
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
         {
             try
             {
@@ -103,16 +82,31 @@ namespace sale_stations.PL
                 try
                 {
                     frm.invID.Text = Dt.Rows[0][0].ToString();
-                    frm.cusname.Text = Dt.Rows[0][6].ToString();
-                    frm.bunifuDatepicker1.Value =Convert.ToDateTime( Dt.Rows[0][2]);
+                    frm.cusname.Text = Dt.Rows[0][1].ToString();
+                    frm.bunifuDatepicker1.Value = Convert.ToDateTime(Dt.Rows[0][2]);
                     frm.txttotal.Text = string.Format("{0:n}", Convert.ToInt32(Dt.Rows[0][3]));
                     frm.salesman.Text = Dt.Rows[0][4].ToString();
                     frm.ShowDialog();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + "\nهذه الفاتورة لا تحتوي على مواد مباعة ");
+                    MessageBox.Show(ex.Message);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtSearch_OnValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // text box search 
+                DataTable dt = new DataTable();
+                dt = order.seach_single_oerder(txtSearch.Text);
+                this.dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
             {

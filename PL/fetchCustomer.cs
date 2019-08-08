@@ -18,46 +18,31 @@ namespace sale_stations.PL
         public fetchCustomer()
         {
             InitializeComponent();
-            this.dataGridView1.DataSource = cus.getCustomerInfo();
-            
 
         }
 
-        private void searchbox_TextChanged(object sender, EventArgs e)
+
+        private void searchbox_OnValueChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             dt = cus.searchCustomer(searchbox.Text);
             this.dataGridView1.DataSource = dt;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            try
-            {
-                editCustomer edCus = new editCustomer();
-                edCus.textBoxNO.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                edCus.textBoxNmae.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                edCus.textBoxPhone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                edCus.ShowDialog();
-                if (edCus.state == "update")
-                {
-                    this.dataGridView1.DataSource = cus.getCustomerInfo();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            insertCustomer frm = new insertCustomer();
+            frm.ShowDialog();
+            this.dataGridView1.DataSource = cus.getCustomerInfo();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             try
             {
                 if (MessageBox.Show("هل تريد الحذف فعلا", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    cus.deletCustomer(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                    cus.deleteCustomer(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
                     MessageBox.Show("تم الحذف", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.dataGridView1.DataSource = cus.getCustomerInfo();
                 }
@@ -72,15 +57,16 @@ namespace sale_stations.PL
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            PL.editCustomer frm = new editCustomer();
+            frm.ShowDialog();
+            this.dataGridView1.DataSource = cus.getCustomerInfo();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void fetchCustomer_Load(object sender, EventArgs e)
         {
-            insertCustomer frm = new insertCustomer();
-            frm.ShowDialog();
+            this.dataGridView1.DataSource = cus.getCustomerInfo();
         }
     }
 }

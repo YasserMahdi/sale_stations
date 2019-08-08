@@ -25,26 +25,26 @@ namespace sale_stations.PL
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            try
-            {
-                REPORT.product_minu rpt = new REPORT.product_minu();
-                REPORT.frmReport frm = new REPORT.frmReport();
-                rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
-                frm.crystalReportViewer1.ReportSource = rpt;
-                //frm.ShowDialog();
-                frm.crystalReportViewer1.PrintReport();
+            //try
+            //{
+            //    REPORT.product_minu rpt = new REPORT.product_minu();
+            //    REPORT.frmReport frm = new REPORT.frmReport();
+            //    rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
+            //    frm.crystalReportViewer1.ReportSource = rpt;
+            //    //frm.ShowDialog();
+            //    frm.crystalReportViewer1.PrintReport();
 
 
 
-                //frm.crystalReportViewer1.PrintReport();
+            //    //frm.crystalReportViewer1.PrintReport();
 
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -20,30 +20,12 @@ namespace sale_stations.PL
             
         }
 
-        private void btnstore_Click(object sender, EventArgs e)
-        {
-            PL.insertMaterial addMaterial = new PL.insertMaterial();
-            addMaterial.Show();
-        }
-
-        private void btnsuplier_Click(object sender, EventArgs e)
-        {
-            PL.suppliers suplier = new PL.suppliers();
-            suplier.ShowDialog();
-        }
-
+  
         private void button2_Click(object sender, EventArgs e)
         {
             PL.insertCustomer insCus = new PL.insertCustomer();
             insCus.ShowDialog();
         }
-
-        private void btndept_Click(object sender, EventArgs e)
-        {
-            PL.deptForm dpt = new PL.deptForm();
-            dpt.ShowDialog();
-        }
-        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -53,7 +35,7 @@ namespace sale_stations.PL
 
         private void استعادةنسخةاحياطيةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PL.Resore rst = new Resore();
+            PL.Recovery rst = new Recovery();
             rst.ShowDialog();
         }
 
@@ -85,15 +67,7 @@ namespace sale_stations.PL
             frm.ShowDialog();
         }
 
-        private void اضافةToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PL.insertCustomer frm = new insertCustomer();
-        }
 
-        private void استعلامToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PL.fetchCustomer frm = new fetchCustomer();
-        }
 
         private void انشاءنسخةاحتياToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,7 +82,7 @@ namespace sale_stations.PL
 
         private void استعادةالنسخةالاحتياطيةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PL.Resore frm = new Resore();
+            PL.Recovery frm = new Recovery();
             frm.ShowDialog();
         }
 
@@ -117,15 +91,10 @@ namespace sale_stations.PL
 
         }
 
-        private void استعلامعنالزبائنToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fetchCustomer frm = new fetchCustomer();
-            frm.ShowDialog();
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            PL.FetchMatirial ftch = new PL.FetchMatirial();
+            PL.fetchCustomer ftch = new PL.fetchCustomer();
             ftch.Show();
         }
 
@@ -145,37 +114,24 @@ namespace sale_stations.PL
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            PL.deptForm frm = new PL.deptForm();
-            frm.ShowDialog();
-        }
-
-        private void اجماليالديونToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PL.stats frm = new stats();
-            frm.ShowDialog();
-        }
-
-        private void القوائمالمدفوعةToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PL.listDirOrder frm = new listDirOrder();
-            frm.ShowDialog();
-        }
-
-        private void القوائمالغيرمسددةToolStripMenuItem_Click(object sender, EventArgs e)
-        {
             PL.listOrders frm = new listOrders();
             frm.ShowDialog();
         }
 
-        private void اضافةزبونToolStripMenuItem_Click(object sender, EventArgs e)
+        private void الرئيسيةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PL.insertCustomer frm = new insertCustomer();
+
+        }
+
+        private void profitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.Profit frm = new Profit();
             frm.ShowDialog();
         }
 
-        private void الارباحوالخسائرToolStripMenuItem_Click(object sender, EventArgs e)
+        private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BL.profits frm = new BL.profits();
+            PL.config frm = new config();
             frm.ShowDialog();
         }
     }

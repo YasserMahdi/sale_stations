@@ -42,17 +42,12 @@
             this.استعادةالنسخةالاحتياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اغلاقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.استعلامعنالزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.التقاريرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.اجماليالديونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.استعلامعنالقوائمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.القوائمالمدفوعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.القوائمالغيرمسددةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.اضافةزبونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الارباحوالخسائرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,7 +64,7 @@
             this.groupBox1.Size = new System.Drawing.Size(299, 202);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "المواد و المخزن";
+            this.groupBox1.Text = "Cusromer";
             // 
             // button1
             // 
@@ -77,7 +72,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.BorderRadius = 7;
-            this.button1.ButtonText = "      المخزن";
+            this.button1.ButtonText = "     Customer";
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DisabledColor = System.Drawing.Color.Gray;
             this.button1.Iconcolor = System.Drawing.Color.Transparent;
@@ -90,7 +85,7 @@
             this.button1.IconRightVisible = true;
             this.button1.IconRightZoom = 0D;
             this.button1.IconVisible = true;
-            this.button1.IconZoom = 50D;
+            this.button1.IconZoom = 70D;
             this.button1.IsTab = false;
             this.button1.Location = new System.Drawing.Point(41, 102);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -101,7 +96,7 @@
             this.button1.selected = false;
             this.button1.Size = new System.Drawing.Size(228, 60);
             this.button1.TabIndex = 17;
-            this.button1.Text = "      المخزن";
+            this.button1.Text = "     Customer";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Textcolor = System.Drawing.Color.White;
             this.button1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,7 +111,7 @@
             this.groupBox2.Size = new System.Drawing.Size(275, 202);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "الديون";
+            this.groupBox2.Text = "Query";
             // 
             // bunifuFlatButton1
             // 
@@ -124,7 +119,7 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 7;
-            this.bunifuFlatButton1.ButtonText = "     الديون";
+            this.bunifuFlatButton1.ButtonText = "      Invoices sold";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
@@ -148,7 +143,7 @@
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(227, 60);
             this.bunifuFlatButton1.TabIndex = 20;
-            this.bunifuFlatButton1.Text = "     الديون";
+            this.bunifuFlatButton1.Text = "      Invoices sold";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +158,7 @@
             this.groupBox3.Size = new System.Drawing.Size(284, 202);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "المبيعات";
+            this.groupBox3.Text = "Invoices";
             // 
             // btnInvoive
             // 
@@ -171,7 +166,7 @@
             this.btnInvoive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnInvoive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInvoive.BorderRadius = 7;
-            this.btnInvoive.ButtonText = "      فاتورة جديدة";
+            this.btnInvoive.ButtonText = "     New Invoices";
             this.btnInvoive.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInvoive.DisabledColor = System.Drawing.Color.Gray;
             this.btnInvoive.Iconcolor = System.Drawing.Color.Transparent;
@@ -195,7 +190,7 @@
             this.btnInvoive.selected = false;
             this.btnInvoive.Size = new System.Drawing.Size(230, 61);
             this.btnInvoive.TabIndex = 18;
-            this.btnInvoive.Text = "      فاتورة جديدة";
+            this.btnInvoive.Text = "     New Invoices";
             this.btnInvoive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInvoive.Textcolor = System.Drawing.Color.White;
             this.btnInvoive.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,12 +202,9 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الرئيسيةToolStripMenuItem,
-            this.الزبائنToolStripMenuItem,
-            this.التقاريرToolStripMenuItem,
-            this.استعلامعنالقوائمToolStripMenuItem});
+            this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuStrip1.Size = new System.Drawing.Size(981, 28);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
@@ -224,98 +216,60 @@
             this.انشاءنسخةاحتياToolStripMenuItem,
             this.استعادةالنسخةالاحتياطيةToolStripMenuItem,
             this.تسجيلالخروجToolStripMenuItem,
+            this.settingToolStripMenuItem,
             this.اغلاقToolStripMenuItem});
             this.الرئيسيةToolStripMenuItem.Name = "الرئيسيةToolStripMenuItem";
-            this.الرئيسيةToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
-            this.الرئيسيةToolStripMenuItem.Text = "الرئيسية";
+            this.الرئيسيةToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.الرئيسيةToolStripMenuItem.Text = "File";
+            this.الرئيسيةToolStripMenuItem.Click += new System.EventHandler(this.الرئيسيةToolStripMenuItem_Click);
             // 
             // تسجيلالدخولToolStripMenuItem
             // 
             this.تسجيلالدخولToolStripMenuItem.Name = "تسجيلالدخولToolStripMenuItem";
-            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.تسجيلالدخولToolStripMenuItem.Text = "تسجيل الدخول";
+            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.تسجيلالدخولToolStripMenuItem.Text = "log in";
             // 
             // انشاءنسخةاحتياToolStripMenuItem
             // 
             this.انشاءنسخةاحتياToolStripMenuItem.Name = "انشاءنسخةاحتياToolStripMenuItem";
-            this.انشاءنسخةاحتياToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.انشاءنسخةاحتياToolStripMenuItem.Text = "انشاء نسخة احتياطية";
+            this.انشاءنسخةاحتياToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.انشاءنسخةاحتياToolStripMenuItem.Text = "Backup";
             this.انشاءنسخةاحتياToolStripMenuItem.Click += new System.EventHandler(this.انشاءنسخةاحتياToolStripMenuItem_Click);
             // 
             // استعادةالنسخةالاحتياطيةToolStripMenuItem
             // 
             this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Name = "استعادةالنسخةالاحتياطيةToolStripMenuItem";
-            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Text = "استعادة النسخة الاحتياطية";
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Text = "Restore a backup";
             this.استعادةالنسخةالاحتياطيةToolStripMenuItem.Click += new System.EventHandler(this.استعادةالنسخةالاحتياطيةToolStripMenuItem_Click);
             // 
             // تسجيلالخروجToolStripMenuItem
             // 
             this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
-            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.تسجيلالخروجToolStripMenuItem.Text = "Sign out";
             // 
             // اغلاقToolStripMenuItem
             // 
             this.اغلاقToolStripMenuItem.Name = "اغلاقToolStripMenuItem";
-            this.اغلاقToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.اغلاقToolStripMenuItem.Text = "اغلاق";
+            this.اغلاقToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اغلاقToolStripMenuItem.Text = "Close";
             this.اغلاقToolStripMenuItem.Click += new System.EventHandler(this.اغلاقToolStripMenuItem_Click);
             // 
-            // الزبائنToolStripMenuItem
+            // reportToolStripMenuItem
             // 
-            this.الزبائنToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اضافةزبونToolStripMenuItem,
-            this.استعلامعنالزبائنToolStripMenuItem});
-            this.الزبائنToolStripMenuItem.Name = "الزبائنToolStripMenuItem";
-            this.الزبائنToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.الزبائنToolStripMenuItem.Text = "الزبائن";
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profitsToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.reportToolStripMenuItem.Text = "Report";
             // 
-            // استعلامعنالزبائنToolStripMenuItem
+            // profitsToolStripMenuItem
             // 
-            this.استعلامعنالزبائنToolStripMenuItem.Name = "استعلامعنالزبائنToolStripMenuItem";
-            this.استعلامعنالزبائنToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.استعلامعنالزبائنToolStripMenuItem.Text = "عرض الكل";
-            this.استعلامعنالزبائنToolStripMenuItem.Click += new System.EventHandler(this.استعلامعنالزبائنToolStripMenuItem_Click);
-            // 
-            // التقاريرToolStripMenuItem
-            // 
-            this.التقاريرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اجماليالديونToolStripMenuItem,
-            this.الارباحوالخسائرToolStripMenuItem});
-            this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
-            this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.التقاريرToolStripMenuItem.Text = "التقارير";
-            // 
-            // اجماليالديونToolStripMenuItem
-            // 
-            this.اجماليالديونToolStripMenuItem.Name = "اجماليالديونToolStripMenuItem";
-            this.اجماليالديونToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
-            this.اجماليالديونToolStripMenuItem.Text = "اجمالي الديون";
-            this.اجماليالديونToolStripMenuItem.Click += new System.EventHandler(this.اجماليالديونToolStripMenuItem_Click);
-            // 
-            // استعلامعنالقوائمToolStripMenuItem
-            // 
-            this.استعلامعنالقوائمToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.القوائمالمدفوعةToolStripMenuItem,
-            this.القوائمالغيرمسددةToolStripMenuItem});
-            this.استعلامعنالقوائمToolStripMenuItem.Name = "استعلامعنالقوائمToolStripMenuItem";
-            this.استعلامعنالقوائمToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
-            this.استعلامعنالقوائمToolStripMenuItem.Text = "استعلام عن القوائم";
-            // 
-            // القوائمالمدفوعةToolStripMenuItem
-            // 
-            this.القوائمالمدفوعةToolStripMenuItem.Name = "القوائمالمدفوعةToolStripMenuItem";
-            this.القوائمالمدفوعةToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.القوائمالمدفوعةToolStripMenuItem.Text = "القوائم المدفوعة";
-            this.القوائمالمدفوعةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالمدفوعةToolStripMenuItem_Click);
-            // 
-            // القوائمالغيرمسددةToolStripMenuItem
-            // 
-            this.القوائمالغيرمسددةToolStripMenuItem.Name = "القوائمالغيرمسددةToolStripMenuItem";
-            this.القوائمالغيرمسددةToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.القوائمالغيرمسددةToolStripMenuItem.Text = "القوائم الغير مسددة";
-            this.القوائمالغيرمسددةToolStripMenuItem.Click += new System.EventHandler(this.القوائمالغيرمسددةToolStripMenuItem_Click);
+            this.profitsToolStripMenuItem.Name = "profitsToolStripMenuItem";
+            this.profitsToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.profitsToolStripMenuItem.Text = "Profits";
+            this.profitsToolStripMenuItem.Click += new System.EventHandler(this.profitsToolStripMenuItem_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -333,19 +287,20 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(981, 24);
             this.bunifuGradientPanel1.TabIndex = 16;
             // 
-            // اضافةزبونToolStripMenuItem
+            // settingToolStripMenuItem
             // 
-            this.اضافةزبونToolStripMenuItem.Name = "اضافةزبونToolStripMenuItem";
-            this.اضافةزبونToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.اضافةزبونToolStripMenuItem.Text = "اضافة زبون";
-            this.اضافةزبونToolStripMenuItem.Click += new System.EventHandler(this.اضافةزبونToolStripMenuItem_Click);
+            this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectionSettingsToolStripMenuItem});
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.settingToolStripMenuItem.Text = "setting";
             // 
-            // الارباحوالخسائرToolStripMenuItem
+            // connectionSettingsToolStripMenuItem
             // 
-            this.الارباحوالخسائرToolStripMenuItem.Name = "الارباحوالخسائرToolStripMenuItem";
-            this.الارباحوالخسائرToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.الارباحوالخسائرToolStripMenuItem.Text = "الارباح و الخسائر";
-            this.الارباحوالخسائرToolStripMenuItem.Click += new System.EventHandler(this.الارباحوالخسائرToolStripMenuItem_Click);
+            this.connectionSettingsToolStripMenuItem.Name = "connectionSettingsToolStripMenuItem";
+            this.connectionSettingsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.connectionSettingsToolStripMenuItem.Text = "Connection Settings";
+            this.connectionSettingsToolStripMenuItem.Click += new System.EventHandler(this.connectionSettingsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -386,19 +341,14 @@
         private System.Windows.Forms.ToolStripMenuItem استعادةالنسخةالاحتياطيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تسجيلالخروجToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اغلاقToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الزبائنToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem استعلامعنالزبائنToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuFlatButton button1;
         private Bunifu.Framework.UI.BunifuFlatButton btnInvoive;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.ToolStripMenuItem التقاريرToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem اجماليالديونToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem استعلامعنالقوائمToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem القوائمالمدفوعةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem القوائمالغيرمسددةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem اضافةزبونToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الارباحوالخسائرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectionSettingsToolStripMenuItem;
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sale_stations.PL
 {
-    public partial class repayment : Form
+    public partial class repayment : MetroFramework.Forms.MetroForm
     {
         public string state = "null";
         BL.Dept_class dpt = new BL.Dept_class();

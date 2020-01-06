@@ -178,5 +178,22 @@ namespace sale_stations.PL
             BL.profits frm = new BL.profits();
             frm.ShowDialog();
         }
+
+        private void تشغيلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.countProfit = "run";
+            MessageBox.Show("تم تشغيل عملية حساب الارباح", "حساب الارباح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void ايقافToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.countProfit = "stop";
+            MessageBox.Show("تم ايقاف تشغيل عملية حساب الارباح", "حساب الارباح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void اعداداتالاتصالToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

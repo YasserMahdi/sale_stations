@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sale_stations.BL
 {
-    public partial class profits : Form
+    public partial class profits : MetroFramework.Forms.MetroForm
     {
         BL.Report rpt = new Report();
         public profits()

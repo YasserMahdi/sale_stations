@@ -189,6 +189,16 @@ namespace sale_stations.BL
             return dt;
         }
 
-
+        public DataTable getSuggest(string txtSearch)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ref", SqlDbType.NVarChar, 50);
+            param[0].Value = txtSearch;
+            dt = DAL.selectData("getSuggest", param);
+            DAL.close();
+            return dt;
+        }
     }
 }

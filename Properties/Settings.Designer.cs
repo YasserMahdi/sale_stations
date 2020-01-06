@@ -22,5 +22,41 @@ namespace sale_stations.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\SQLEXPRESS")]
+        public string Server {
+            get {
+                return ((string)(this["Server"]));
+            }
+            set {
+                this["Server"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sales_stations")]
+        public string Datebase {
+            get {
+                return ((string)(this["Datebase"]));
+            }
+            set {
+                this["Datebase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("run")]
+        public string countProfit {
+            get {
+                return ((string)(this["countProfit"]));
+            }
+            set {
+                this["countProfit"] = value;
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sale_stations.PL
 {
-    public partial class stats : Form
+    public partial class stats : MetroFramework.Forms.MetroForm
     {
         BL.Dept_class dpt = new BL.Dept_class();
         DataTable Dt;

@@ -382,6 +382,35 @@ namespace sale_stations.BL
             return dt;
         }
 
+        public DataTable showDirInvoiceDit(int invID)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@invID", SqlDbType.Int);
+            param[0].Value = invID;
+
+            dt = DAL.selectData("showDirInvoiceDit", param);
+            DAL.close();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    row["سعر البيع"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر البيع"]));
+                    row["المبلغ"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ"]));
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return dt;
+        }
+
 
         public void dir_add_order(string customername, string inv_no, string saleman, double total_ammount)
         {

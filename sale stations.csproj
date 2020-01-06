@@ -48,6 +48,15 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\Documents\UI\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\Documents\UI\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\..\Documents\UI\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -79,88 +88,88 @@
     <Compile Include="BL\supplierClass.cs" />
     <Compile Include="BL\LoginClass.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
-    <Compile Include="PL\createAccount.cs">
+    <Compile Include="PL\admin\createAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\createAccount.Designer.cs">
+    <Compile Include="PL\admin\createAccount.Designer.cs">
       <DependentUpon>createAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\createBackup.cs">
+    <Compile Include="PL\admin\createBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\createBackup.Designer.cs">
+    <Compile Include="PL\admin\createBackup.Designer.cs">
       <DependentUpon>createBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\deptForm.cs">
+    <Compile Include="PL\debt\deptForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\deptForm.Designer.cs">
+    <Compile Include="PL\debt\deptForm.Designer.cs">
       <DependentUpon>deptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\editCustomer.cs">
+    <Compile Include="PL\customer\editCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\editCustomer.Designer.cs">
+    <Compile Include="PL\customer\editCustomer.Designer.cs">
       <DependentUpon>editCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\editDeptInfo.cs">
+    <Compile Include="PL\debt\editDeptInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\editDeptInfo.Designer.cs">
+    <Compile Include="PL\debt\editDeptInfo.Designer.cs">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\FetchMatirial.cs">
+    <Compile Include="PL\stock\FetchMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FetchMatirial.designer.cs">
+    <Compile Include="PL\stock\FetchMatirial.designer.cs">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\insertMaterial.cs">
+    <Compile Include="PL\stock\insertMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\insertMaterial.Designer.cs">
+    <Compile Include="PL\stock\insertMaterial.Designer.cs">
       <DependentUpon>insertMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\insertMatfFromInov.cs">
+    <Compile Include="PL\stock\insertMatfFromInov.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\insertMatfFromInov.Designer.cs">
+    <Compile Include="PL\stock\insertMatfFromInov.Designer.cs">
       <DependentUpon>insertMatfFromInov.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\listDirOrder.cs">
+    <Compile Include="PL\invoice\listDirOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\listDirOrder.Designer.cs">
+    <Compile Include="PL\invoice\listDirOrder.Designer.cs">
       <DependentUpon>listDirOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\listMatirial.cs">
+    <Compile Include="PL\stock\listMatirial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\listMatirial.Designer.cs">
+    <Compile Include="PL\stock\listMatirial.Designer.cs">
       <DependentUpon>listMatirial.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\fetchCustomer.cs">
+    <Compile Include="PL\customer\fetchCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\fetchCustomer.Designer.cs">
+    <Compile Include="PL\customer\fetchCustomer.Designer.cs">
       <DependentUpon>fetchCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\insertCustomer.cs">
+    <Compile Include="PL\customer\insertCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\insertCustomer.Designer.cs">
+    <Compile Include="PL\customer\insertCustomer.Designer.cs">
       <DependentUpon>insertCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\listCustomer.cs">
+    <Compile Include="PL\customer\listCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\listCustomer.Designer.cs">
+    <Compile Include="PL\customer\listCustomer.Designer.cs">
       <DependentUpon>listCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\listOrders.cs">
+    <Compile Include="PL\invoice\listOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\listOrders.Designer.cs">
+    <Compile Include="PL\invoice\listOrders.Designer.cs">
       <DependentUpon>listOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\login.cs">
@@ -175,16 +184,16 @@
     <Compile Include="PL\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\newDept.cs">
+    <Compile Include="PL\debt\newDept.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\newDept.Designer.cs">
+    <Compile Include="PL\debt\newDept.Designer.cs">
       <DependentUpon>newDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\orderFrm.cs">
+    <Compile Include="PL\invoice\orderFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\orderFrm.Designer.cs">
+    <Compile Include="PL\invoice\orderFrm.Designer.cs">
       <DependentUpon>orderFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\repayment.cs">
@@ -193,22 +202,28 @@
     <Compile Include="PL\repayment.Designer.cs">
       <DependentUpon>repayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Resore.cs">
+    <Compile Include="PL\admin\Resore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\Resore.Designer.cs">
+    <Compile Include="PL\admin\Resore.Designer.cs">
       <DependentUpon>Resore.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\showDeptHistory.cs">
+    <Compile Include="PL\debt\showDeptHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\showDeptHistory.Designer.cs">
+    <Compile Include="PL\debt\showDeptHistory.Designer.cs">
       <DependentUpon>showDeptHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\showInvoice.cs">
+    <Compile Include="PL\invoice\showDirInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\showInvoice.Designer.cs">
+    <Compile Include="PL\invoice\showDirInvoice.Designer.cs">
+      <DependentUpon>showDirInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\invoice\showInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\invoice\showInvoice.Designer.cs">
       <DependentUpon>showInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\stats.cs">
@@ -261,49 +276,55 @@
       <DependentUpon>product_minu.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="setting\config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setting\config.Designer.cs">
+      <DependentUpon>config.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PL\profits.resx">
       <DependentUpon>profits.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\createAccount.resx">
+    <EmbeddedResource Include="PL\admin\createAccount.resx">
       <DependentUpon>createAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\createBackup.resx">
+    <EmbeddedResource Include="PL\admin\createBackup.resx">
       <DependentUpon>createBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\deptForm.resx">
+    <EmbeddedResource Include="PL\debt\deptForm.resx">
       <DependentUpon>deptForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\editCustomer.resx">
+    <EmbeddedResource Include="PL\customer\editCustomer.resx">
       <DependentUpon>editCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\editDeptInfo.resx">
+    <EmbeddedResource Include="PL\debt\editDeptInfo.resx">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FetchMatirial.resx">
+    <EmbeddedResource Include="PL\stock\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\insertMaterial.resx">
+    <EmbeddedResource Include="PL\stock\insertMaterial.resx">
       <DependentUpon>insertMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\insertMatfFromInov.resx">
+    <EmbeddedResource Include="PL\stock\insertMatfFromInov.resx">
       <DependentUpon>insertMatfFromInov.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\listDirOrder.resx">
+    <EmbeddedResource Include="PL\invoice\listDirOrder.resx">
       <DependentUpon>listDirOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\listMatirial.resx">
+    <EmbeddedResource Include="PL\stock\listMatirial.resx">
       <DependentUpon>listMatirial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\fetchCustomer.resx">
+    <EmbeddedResource Include="PL\customer\fetchCustomer.resx">
       <DependentUpon>fetchCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\insertCustomer.resx">
+    <EmbeddedResource Include="PL\customer\insertCustomer.resx">
       <DependentUpon>insertCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\listCustomer.resx">
+    <EmbeddedResource Include="PL\customer\listCustomer.resx">
       <DependentUpon>listCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\listOrders.resx">
+    <EmbeddedResource Include="PL\invoice\listOrders.resx">
       <DependentUpon>listOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\login.resx">
@@ -312,22 +333,25 @@
     <EmbeddedResource Include="PL\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\newDept.resx">
+    <EmbeddedResource Include="PL\debt\newDept.resx">
       <DependentUpon>newDept.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\orderFrm.resx">
+    <EmbeddedResource Include="PL\invoice\orderFrm.resx">
       <DependentUpon>orderFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\repayment.resx">
       <DependentUpon>repayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Resore.resx">
+    <EmbeddedResource Include="PL\admin\Resore.resx">
       <DependentUpon>Resore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\showDeptHistory.resx">
+    <EmbeddedResource Include="PL\debt\showDeptHistory.resx">
       <DependentUpon>showDeptHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\showInvoice.resx">
+    <EmbeddedResource Include="PL\invoice\showDirInvoice.resx">
+      <DependentUpon>showDirInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\invoice\showInvoice.resx">
       <DependentUpon>showInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\stats.resx">
@@ -368,6 +392,9 @@
     <EmbeddedResource Include="REPORT\product_minu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>product_minu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="setting\config.resx">
+      <DependentUpon>config.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

@@ -37,6 +37,8 @@
             this.btnRep = new System.Windows.Forms.Button();
             this.textDept = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.TxtNote = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNo
@@ -90,7 +92,7 @@
             // 
             // btnRep
             // 
-            this.btnRep.Location = new System.Drawing.Point(159, 254);
+            this.btnRep.Location = new System.Drawing.Point(159, 282);
             this.btnRep.Name = "btnRep";
             this.btnRep.Size = new System.Drawing.Size(311, 28);
             this.btnRep.TabIndex = 6;
@@ -114,11 +116,29 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "الدين الحالي";
             // 
+            // TxtNote
+            // 
+            this.TxtNote.Location = new System.Drawing.Point(159, 252);
+            this.TxtNote.Name = "TxtNote";
+            this.TxtNote.Size = new System.Drawing.Size(311, 24);
+            this.TxtNote.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(476, 259);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "الملاحظات";
+            // 
             // repayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 399);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TxtNote);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textDept);
             this.Controls.Add(this.btnRep);
@@ -129,7 +149,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNo);
             this.Name = "repayment";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "repayment";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,5 +166,7 @@
         public System.Windows.Forms.Button btnRep;
         public System.Windows.Forms.TextBox textDept;
         public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox TxtNote;
+        public System.Windows.Forms.Label label5;
     }
 }

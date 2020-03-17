@@ -39,10 +39,15 @@ namespace sale_stations.PL
         {
             PL.showDirInvoice frm = new showDirInvoice();
             frm.invID.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            frm.cusname.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            frm.salesman.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.cusname.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            frm.salesman.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
             frm.txttotal.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
             frm.ShowDialog();
+        }
+
+        private void listDirOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

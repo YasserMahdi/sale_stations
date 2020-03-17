@@ -13,6 +13,7 @@ namespace sale_stations.PL
     public partial class showDirInvoice : MetroFramework.Forms.MetroForm
     {
         BL.orderClass order = new BL.orderClass();
+        BL.CustomerClass cusobject = new BL.CustomerClass();
         public showDirInvoice()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace sale_stations.PL
 
         private void showDirInvoice_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = order.showDirInvoiceDit(Convert.ToInt32(invID.Text));
+            this.dataGridView1.DataSource = order.showOrderDit(Convert.ToInt32(invID.Text));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -55,5 +56,38 @@ namespace sale_stations.PL
         private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
                     }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //int lasto = Convert.ToInt32(order.getLastInvoiceForPrint().Rows[0][0]);
+             
+                //DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
+                //int lastN = Convert.ToInt32(DtName.Rows[0][0]);
+
+                //REPORT.printDirSale rpt = new REPORT.printDirSale();
+                //REPORT.frmReport frm = new REPORT.frmReport();
+                //rpt.SetDataSource(order.getDirOrdrrDetails(lasto, lastN));
+                //frm.crystalReportViewer1.ReportSource = rpt;
+                //frm.ShowDialog();
+                //frm.crystalReportViewer1.PrintReport();
+
+                try
+                {
+                    REPORT.product_minu rpt = new REPORT.product_minu();
+                    REPORT.frmReport frm = new REPORT.frmReport();
+                    rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
+                    frm.crystalReportViewer1.ReportSource = rpt;
+                    frm.ShowDialog();
+                    //frm.crystalReportViewer1.PrintReport();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+             
+            
+        }
     }
 }

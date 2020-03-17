@@ -32,6 +32,35 @@ namespace sale_stations.BL
 
         }
 
+        public DataTable PrintRep(string CutomerId ,string CustomerName , double Amount , string Note)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[4];
+
+            param[0] = new SqlParameter("@iD", SqlDbType.Int);
+            param[0].Value = CutomerId;
+
+            param[1] = new SqlParameter("@cus_name", SqlDbType.NVarChar,50);
+            param[1].Value = CustomerName;
+
+            param[2] = new SqlParameter("@amount", SqlDbType.Decimal);
+            param[2].Value = Amount;
+
+            param[3] = new SqlParameter("@note", SqlDbType.NVarChar,128);
+            param[3].Value = CutomerId;
+
+            dt = DAL.selectData("print_rep", param);
+            DAL.close();    
+
+    
+
+            return dt;
+
+        }
+         
+
+
         public DataTable searchCusForDeptList( string name)
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
@@ -70,11 +99,11 @@ namespace sale_stations.BL
         /// <returns></returns>
  
 
-        public void setOrderDepts(int customerid, double dept)
+        public void setOrderDepts(int customerid, double dept,string identity)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerid;
@@ -85,12 +114,35 @@ namespace sale_stations.BL
             param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
 
+            param[3] = new SqlParameter("@id", SqlDbType.NVarChar,50);
+            param[3].Value = identity;
 
             DAL.Executecmd("setOrderDepts", param);
             DAL.close();
         }
 
 
+        public void setZeroDepts(int customerid, double dept, string identity)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[4];
+
+            param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
+            param[0].Value = customerid;
+
+            param[1] = new SqlParameter("@depts", SqlDbType.Money);
+            param[1].Value = dept;
+
+            param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
+            param[2].Value = DateTime.Now;
+
+            param[3] = new SqlParameter("@id", SqlDbType.NVarChar, 50);
+            param[3].Value = identity;
+
+            DAL.Executecmd("setOrderDepts", param);
+            DAL.close();
+        }
         public DataTable cheackDept(int customerID)
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
@@ -148,7 +200,7 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@customer_id", SqlDbType.Int);
             param[0].Value = customerID;
@@ -158,6 +210,9 @@ namespace sale_stations.BL
 
             param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
+
+            param[3] = new SqlParameter("@id", SqlDbType.NVarChar,50);
+            param[3].Value = " ";
 
 
 
@@ -225,11 +280,11 @@ namespace sale_stations.BL
         }
         */
 
-        public void repayment(int cusID, double rep)
+        public void repayment(int cusID, double rep ,string Note)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@customerID", SqlDbType.Int);
             param[0].Value = cusID;
@@ -239,6 +294,9 @@ namespace sale_stations.BL
 
             param[2] = new SqlParameter("@dateOfDept", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
+
+            param[3] = new SqlParameter("@note", SqlDbType.NVarChar,128);
+            param[3].Value = Note;
 
 
             DAL.Executecmd("repayment", param);
@@ -323,7 +381,7 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[1];
+        
 
 
             dt = DAL.selectData("printALLdebt",null);
@@ -332,6 +390,22 @@ namespace sale_stations.BL
             return dt;
         }
 
+
+        public DataTable GetFinalDebtForReceipt(string Cid)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@cid", SqlDbType.NVarChar,50);
+            param[0].Value = Cid;
+
+
+            dt = DAL.selectData("get_final_debt_for_receipt", param);
+            DAL.close();
+
+            return dt;
+        }
 
 
 

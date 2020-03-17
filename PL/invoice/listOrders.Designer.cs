@@ -68,8 +68,8 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dataGridView1);
             this.Name = "listOrders";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listOrders";
+            this.Load += new System.EventHandler(this.listOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

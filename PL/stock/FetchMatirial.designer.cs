@@ -147,7 +147,7 @@
             this.textSearch.LineIdleColor = System.Drawing.Color.Gray;
             this.textSearch.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.textSearch.LineThickness = 3;
-            this.textSearch.Location = new System.Drawing.Point(314, 47);
+            this.textSearch.Location = new System.Drawing.Point(379, 47);
             this.textSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(370, 44);

@@ -27,7 +27,7 @@ namespace sale_stations.PL
             try
             {
                 
-                string query = "ALTER Database sales_stations SET OFFLINE WITH ROLLBACK IMMEDIATE ; Restore Database sales_stations from Disk='" + textpath.Text + "'";
+                string query = "ALTER Database sales_db SET OFFLINE WITH ROLLBACK IMMEDIATE ; Restore Database sales_db from Disk='" + textpath.Text + "'";
                 cmd = new SqlCommand(query, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();

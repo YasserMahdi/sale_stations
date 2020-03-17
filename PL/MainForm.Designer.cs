@@ -52,7 +52,6 @@
             this.استعلامعنالزبائنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.التقاريرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اجماليالديونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الارباحوالخسائرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.استعلامعنالقوائمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.القوائمالمدفوعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.القوائمالغيرمسددةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -273,7 +272,7 @@
             // اعداداتالاتصالToolStripMenuItem
             // 
             this.اعداداتالاتصالToolStripMenuItem.Name = "اعداداتالاتصالToolStripMenuItem";
-            this.اعداداتالاتصالToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اعداداتالاتصالToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.اعداداتالاتصالToolStripMenuItem.Text = "اعدادات الاتصال";
             this.اعداداتالاتصالToolStripMenuItem.Click += new System.EventHandler(this.اعداداتالاتصالToolStripMenuItem_Click);
             // 
@@ -283,7 +282,7 @@
             this.تشغيلToolStripMenuItem,
             this.ايقافToolStripMenuItem});
             this.حسابالارباحToolStripMenuItem.Name = "حسابالارباحToolStripMenuItem";
-            this.حسابالارباحToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.حسابالارباحToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.حسابالارباحToolStripMenuItem.Text = "حساب الارباح";
             // 
             // تشغيلToolStripMenuItem
@@ -333,8 +332,7 @@
             // التقاريرToolStripMenuItem
             // 
             this.التقاريرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اجماليالديونToolStripMenuItem,
-            this.الارباحوالخسائرToolStripMenuItem});
+            this.اجماليالديونToolStripMenuItem});
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
             this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.التقاريرToolStripMenuItem.Text = "التقارير";
@@ -342,16 +340,9 @@
             // اجماليالديونToolStripMenuItem
             // 
             this.اجماليالديونToolStripMenuItem.Name = "اجماليالديونToolStripMenuItem";
-            this.اجماليالديونToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.اجماليالديونToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.اجماليالديونToolStripMenuItem.Text = "اجمالي الديون";
             this.اجماليالديونToolStripMenuItem.Click += new System.EventHandler(this.اجماليالديونToolStripMenuItem_Click);
-            // 
-            // الارباحوالخسائرToolStripMenuItem
-            // 
-            this.الارباحوالخسائرToolStripMenuItem.Name = "الارباحوالخسائرToolStripMenuItem";
-            this.الارباحوالخسائرToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-            this.الارباحوالخسائرToolStripMenuItem.Text = "الارباح و الخسائر";
-            this.الارباحوالخسائرToolStripMenuItem.Click += new System.EventHandler(this.الارباحوالخسائرToolStripMenuItem_Click);
             // 
             // استعلامعنالقوائمToolStripMenuItem
             // 
@@ -444,7 +435,6 @@
         private System.Windows.Forms.ToolStripMenuItem القوائمالمدفوعةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem القوائمالغيرمسددةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةزبونToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الارباحوالخسائرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اعداداتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اعداداتالاتصالToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حسابالارباحToolStripMenuItem;

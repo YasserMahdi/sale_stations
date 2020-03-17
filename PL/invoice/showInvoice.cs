@@ -31,15 +31,9 @@ namespace sale_stations.PL
                 REPORT.frmReport frm = new REPORT.frmReport();
                 rpt.SetDataSource(order.getOrdrrDetails(Convert.ToInt32(invID.Text)));
                 frm.crystalReportViewer1.ReportSource = rpt;
-                //frm.ShowDialog();
-                frm.crystalReportViewer1.PrintReport();
-
-
-
+                frm.ShowDialog();
                 //frm.crystalReportViewer1.PrintReport();
-
-
-
+ 
             }
             catch (Exception ex)
             {

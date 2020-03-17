@@ -119,5 +119,10 @@ namespace sale_stations.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void listOrders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

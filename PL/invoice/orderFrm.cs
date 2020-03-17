@@ -20,7 +20,57 @@ namespace sale_stations.PL
         public string VarinvoiceNo;
 
 
+        void PrintFunct()
+        {
+            //get the last order
 
+            int lasto = Convert.ToInt32(ord.getLastInvoiceForPrint().Rows[0][0]);
+            //string state = ord.getLastInvoiceForPrint().Rows[0][1].ToString();
+            //if (state == "NO")
+            //{
+                try
+                {
+                    REPORT.product_minu rpt = new REPORT.product_minu();
+                    REPORT.frmReport frm = new REPORT.frmReport();
+                    rpt.SetDataSource(ord.getOrdrrDetails(lasto ));
+                    frm.crystalReportViewer1.ReportSource = rpt;
+
+                    frm.ShowDialog();
+                    //frm.crystalReportViewer1.PrintReport();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            //}
+            //else if (state == "YES")
+            //{
+            //    try
+            //    {
+            //        DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
+            //        int lastN = Convert.ToInt32(DtName.Rows[0][0]);
+
+            //        REPORT.printDirSale rpt = new REPORT.printDirSale();
+            //        REPORT.frmReport frm = new REPORT.frmReport();
+            //        rpt.SetDataSource(ord.getDirOrdrrDetails(lasto,lastN));
+            //        frm.crystalReportViewer1.ReportSource = rpt;
+            //        frm.ShowDialog();
+            //        //frm.crystalReportViewer1.PrintReport();
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //REPORT.printDirSale rpt = new REPORT.printDirSale();
+            //        //REPORT.frmReport frm = new REPORT.frmReport();
+            //        //rpt.SetDataSource(ord.getDirOrdrrDetailsWithoutDebt(lasto));
+            //        //frm.crystalReportViewer1.ReportSource = rpt;
+            //        ////frm.ShowDialog();
+            //        //frm.crystalReportViewer1.PrintReport();
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+        }
         void calculateAmount()
         {
             if (matQte.Text != string.Empty && matPrice.Text != string.Empty)
@@ -28,7 +78,7 @@ namespace sale_stations.PL
                 try
                 {
 
-                    matAmaunt.Text = string.Format("{0:n0}", Convert.ToDouble(((Convert.ToDouble(matPrice.Text) * Convert.ToInt32(matQte.Text))).ToString()));
+                    matAmaunt.Text =((Convert.ToDouble(matPrice.Text) * Convert.ToDouble(matQte.Text))).ToString();
                 }
                 catch (Exception ex)
                 {
@@ -47,14 +97,21 @@ namespace sale_stations.PL
 
         void createColumns()
         {
-            dt.Columns.Add("Column1"); //رقم المادة
-            dt.Columns.Add("Column2");// اسم المادة
-            dt.Columns.Add("Column3");//  qte
-            dt.Columns.Add("Column4");// price
-            dt.Columns.Add("Column5");// total amount
+            try
+            {
+                dt.Columns.Add("Column1"); //رقم المادة
+                dt.Columns.Add("Column2");// اسم المادة
+                dt.Columns.Add("Column3");//  qte
+                dt.Columns.Add("Column4");// price
+                dt.Columns.Add("Column5");// total amount
 
 
-            this.dataGridView1.DataSource = dt;
+                this.dataGridView1.DataSource = dt;
+            }
+            catch
+            {
+                return;
+            }
         }
 
 
@@ -77,14 +134,14 @@ namespace sale_stations.PL
 
                 if (AmountReceived.Text == string.Empty)
                 {
-                    remainingAmount.Text = String.Format("{0:n0}", Convert.ToInt32(totalamount));
+                    remainingAmount.Text = String.Format("{0:n0}", Convert.ToDouble(totalamount));
                 }
                 else
                 {
-                    int rReceived;
-                    int total = Convert.ToInt32(totalamount);
-                    int.TryParse(AmountReceived.Text, out rReceived);
-                    int ramaning = (total - rReceived);
+                    Double rReceived;
+                    Double total = Convert.ToDouble(totalamount);
+                    Double.TryParse(AmountReceived.Text, out rReceived);
+                    Double ramaning = (total - rReceived);
                     rRemaining = ramaning.ToString();
 
                     remainingAmount.Text = String.Format("{0:n0}", ramaning);
@@ -240,7 +297,7 @@ namespace sale_stations.PL
                                where row.Cells[4].FormattedValue.ToString() != string.Empty
                                select (Convert.ToDouble(row.Cells[4].FormattedValue))).Sum().ToString();
 
-                txttotal.Text = String.Format("{0:n0}", Convert.ToInt32(totalamount));
+                txttotal.Text = String.Format("{0:n}", Convert.ToDouble(totalamount));
 
 
 
@@ -277,8 +334,8 @@ namespace sale_stations.PL
             {
                 matno.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 matName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                matQte.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                matPrice.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                matQte.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                matPrice.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
                 matQte.Focus();
             }
@@ -299,53 +356,7 @@ namespace sale_stations.PL
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //get the last order
-
-            int lasto = Convert.ToInt32(ord.getLastInvoiceForPrint().Rows[0][0]);
-            string state = ord.getLastInvoiceForPrint().Rows[0][1].ToString();
-            if (state == "NO")
-            {
-                try
-                {
-                    REPORT.product_minu rpt = new REPORT.product_minu();
-                    REPORT.frmReport frm = new REPORT.frmReport();
-                    rpt.SetDataSource(ord.getOrdrrDetails(lasto));
-                    frm.crystalReportViewer1.ReportSource = rpt;
-
-                    frm.ShowDialog();
-                    frm.crystalReportViewer1.PrintReport();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-            else if (state == "YES")
-            {
-                try
-                {
-                    DataTable DtName = cusobject.gitCustomerIdByName(cusname.Text);
-                    int lastN = Convert.ToInt32(DtName.Rows[0][0]);
-
-                    REPORT.printDirSale rpt = new REPORT.printDirSale();
-                    REPORT.frmReport frm = new REPORT.frmReport();
-                    rpt.SetDataSource(ord.getDirOrdrrDetails(lasto, lastN));
-                    frm.crystalReportViewer1.ReportSource = rpt;
-                    frm.ShowDialog();
-                    frm.crystalReportViewer1.PrintReport();
-
-                }
-                catch (Exception ex)
-                {
-                    REPORT.printDirSale rpt = new REPORT.printDirSale();
-                    REPORT.frmReport frm = new REPORT.frmReport();
-                    rpt.SetDataSource(ord.getDirOrdrrDetailsWithoutDebt(lasto));
-                    frm.crystalReportViewer1.ReportSource = rpt;
-                    //frm.ShowDialog();
-                    frm.crystalReportViewer1.PrintReport();
-                }
-            }
+            this.Close();
 
 
         }
@@ -643,6 +654,7 @@ namespace sale_stations.PL
             {
 
                 //this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                this.TxtCustomerID.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 this.cusname.Text = cus.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 this.phone.Text = cus.dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
@@ -675,6 +687,8 @@ namespace sale_stations.PL
                 this.AmountReceived.Clear();
                 this.remainingAmount.Clear();
                 this.dataGridView1.DataSource = null;
+                invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+                createColumns();
             }
             catch (ArgumentNullException)
             {
@@ -727,7 +741,8 @@ namespace sale_stations.PL
 
 
                             // save informations of the head of invoicev
-                            ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining));
+                            ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining)
+                                ,this.cusname.Text.ToString());
 
                             //save products info 
 
@@ -735,8 +750,8 @@ namespace sale_stations.PL
                             {
 
 
-                                ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
+                                ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32(invoiceNo.Text),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
 
                             }
 
@@ -748,7 +763,7 @@ namespace sale_stations.PL
                             //}
                             //if (DtForCheack.Rows.Count <= 0)
 
-                            dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining));
+                            dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining),invoiceNo.Text);
                             // this for test -> MessageBox.Show("new dept inserted");
 
 
@@ -774,7 +789,8 @@ namespace sale_stations.PL
 
                         // save informations of the head of invoice
 
-                        ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining));
+                        ord.add_order(Convert.ToInt32(DtName.Rows[0][0]), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount), Convert.ToDouble(rRemaining)
+                            ,this.cusname.Text.ToString());
 
 
 
@@ -783,10 +799,8 @@ namespace sale_stations.PL
                         {
 
 
-                            ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
-                            Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
-                            Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
-
+                            ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32(invoiceNo.Text),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
 
                         }
 
@@ -796,21 +810,27 @@ namespace sale_stations.PL
 
                         //  }
                         //if (DtForCheack.Rows.Count <= 0)
-                        dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining));
+                        dpt.setOrderDepts(Convert.ToInt32(DtName.Rows[0][0]), Convert.ToDouble(rRemaining),invoiceNo.Text);
                         // this for test -> MessageBox.Show("new dept inserted");
 
 
 
                         MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                        if (MessageBox.Show("تم حفظ الفاتورة و الدين هل تريد طباعة الفاتورة", "الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            PrintFunct();
+                        }
                     }
 
 
                 }
+                
+                
+
             }
             else
             {
-                // for saving order with out costomer imfo
+                // for saving order with out customer info
                 if (invoiceNo.Text == string.Empty)
                 {
                     MessageBox.Show("الرجاء ادخال رقم القائمة", " تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -836,42 +856,50 @@ namespace sale_stations.PL
                 {
                     try
                     {
-                        ord.dir_add_order(cusname.Text, invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount));
+                        ord.add_order(Convert.ToInt32(TxtCustomerID.Text), invoiceNo.Text, salesman.Text, Convert.ToDouble(totalamount),0.0,this.cusname.Text.ToString());
 
                         for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                         {
-                            ord.dir_add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), Convert.ToInt32(invoiceNo.Text),
+                            ord.add_order_detail(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32(invoiceNo.Text),
                                 Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value), Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value.ToString()));
                         }
-                        MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //MessageBox.Show("تمت عملية الحفظ بنجاح", "عملية الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        if (MessageBox.Show("تم الحفظ , هل تريد طباعة الفاتورة", "الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            PrintFunct();
+                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
+                    
                 }
 
                 // end
+
+                
             }
 
             invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
-            if (Properties.Settings.Default.countProfit == "run")
-            {
-                BL.Report rpt = new BL.Report();
-                double Monthly_disbursements = 0.0;
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                {
+            //if (Properties.Settings.Default.countProfit == "run")
+            //{
+            //    BL.Report rpt = new BL.Report();
+            //    double Monthly_disbursements = 0.0;
+            //    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            //    {
 
-                    Monthly_disbursements += Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value) *
-                        Convert.ToInt32(rpt.get_purchasing_price(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)).Rows[0][0]);
+            //        Monthly_disbursements += Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value) *
+            //            Convert.ToInt32(rpt.get_purchasing_price(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)).Rows[0][0]);
 
-                }
+            //    }
 
-                rpt.set_new_month();
-                DataTable lastMonth = rpt.sel_last_month();
-                rpt.set_Revenue(Convert.ToInt32(lastMonth.Rows[0][0]), Convert.ToDouble(totalamount));
-                rpt.set_Disbursements(Convert.ToInt32(lastMonth.Rows[0][0]), Monthly_disbursements);
-            }
+            //    //rpt.set_new_month();
+            //    //DataTable lastMonth = rpt.sel_last_month();
+            //    //rpt.set_Revenue(Convert.ToInt32(lastMonth.Rows[0][0]), Convert.ToDouble(totalamount));
+            //    //rpt.set_Disbursements(Convert.ToInt32(lastMonth.Rows[0][0]), Monthly_disbursements);
+            //}
+            
 
         }
 

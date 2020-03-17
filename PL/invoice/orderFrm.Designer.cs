@@ -39,13 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtOldDept = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.phone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtOldDept = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cusname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.TxtCustomerID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.remainingAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnPrint = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.button3 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -180,13 +180,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtOldDept);
             this.groupBox2.Controls.Add(this.phone);
+            this.groupBox2.Controls.Add(this.txtOldDept);
             this.groupBox2.Controls.Add(this.cusname);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.TxtCustomerID);
             this.groupBox2.Location = new System.Drawing.Point(207, 86);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(459, 200);
@@ -194,6 +195,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "معلومات الزبون";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // phone
+            // 
+            this.phone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.phone.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.phone.HintForeColor = System.Drawing.Color.Empty;
+            this.phone.HintText = "";
+            this.phone.isPassword = false;
+            this.phone.LineFocusedColor = System.Drawing.Color.Blue;
+            this.phone.LineIdleColor = System.Drawing.Color.Gray;
+            this.phone.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.phone.LineThickness = 3;
+            this.phone.Location = new System.Drawing.Point(69, 95);
+            this.phone.Margin = new System.Windows.Forms.Padding(4);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(297, 44);
+            this.phone.TabIndex = 13;
+            this.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtOldDept
             // 
@@ -214,25 +234,6 @@
             this.txtOldDept.TabIndex = 14;
             this.txtOldDept.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // phone
-            // 
-            this.phone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.phone.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.phone.HintForeColor = System.Drawing.Color.Empty;
-            this.phone.HintText = "";
-            this.phone.isPassword = false;
-            this.phone.LineFocusedColor = System.Drawing.Color.Blue;
-            this.phone.LineIdleColor = System.Drawing.Color.Gray;
-            this.phone.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.phone.LineThickness = 3;
-            this.phone.Location = new System.Drawing.Point(64, 95);
-            this.phone.Margin = new System.Windows.Forms.Padding(4);
-            this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(297, 44);
-            this.phone.TabIndex = 13;
-            this.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // cusname
             // 
             this.cusname.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -245,7 +246,7 @@
             this.cusname.LineIdleColor = System.Drawing.Color.Gray;
             this.cusname.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.cusname.LineThickness = 3;
-            this.cusname.Location = new System.Drawing.Point(62, 43);
+            this.cusname.Location = new System.Drawing.Point(69, 43);
             this.cusname.Margin = new System.Windows.Forms.Padding(4);
             this.cusname.Name = "cusname";
             this.cusname.Size = new System.Drawing.Size(297, 44);
@@ -291,6 +292,25 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "اسم الزبون";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // TxtCustomerID
+            // 
+            this.TxtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtCustomerID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TxtCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtCustomerID.HintForeColor = System.Drawing.Color.Empty;
+            this.TxtCustomerID.HintText = "";
+            this.TxtCustomerID.isPassword = false;
+            this.TxtCustomerID.LineFocusedColor = System.Drawing.Color.Blue;
+            this.TxtCustomerID.LineIdleColor = System.Drawing.Color.Gray;
+            this.TxtCustomerID.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.TxtCustomerID.LineThickness = 3;
+            this.TxtCustomerID.Location = new System.Drawing.Point(69, 43);
+            this.TxtCustomerID.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCustomerID.Name = "TxtCustomerID";
+            this.TxtCustomerID.Size = new System.Drawing.Size(297, 44);
+            this.TxtCustomerID.TabIndex = 15;
+            this.TxtCustomerID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // groupBox3
             // 
@@ -571,44 +591,15 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.btnClose);
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.btnPrint);
             this.groupBox4.Controls.Add(this.btnSave);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(248, 766);
+            this.groupBox4.Location = new System.Drawing.Point(393, 686);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(811, 78);
+            this.groupBox4.Size = new System.Drawing.Size(600, 78);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.ActiveBorderThickness = 1;
-            this.btnClose.ActiveCornerRadius = 20;
-            this.btnClose.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnClose.ActiveForecolor = System.Drawing.Color.White;
-            this.btnClose.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.ButtonText = "خروج";
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnClose.IdleBorderThickness = 1;
-            this.btnClose.IdleCornerRadius = 20;
-            this.btnClose.IdleFillColor = System.Drawing.Color.White;
-            this.btnClose.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnClose.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClose.Location = new System.Drawing.Point(35, 25);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(181, 41);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
@@ -617,10 +608,9 @@
             this.btnPrint.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnPrint.ActiveForecolor = System.Drawing.Color.White;
             this.btnPrint.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.ButtonText = "طباعة الفاتورة";
+            this.btnPrint.ButtonText = "خروج";
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.SeaGreen;
@@ -629,7 +619,7 @@
             this.btnPrint.IdleFillColor = System.Drawing.Color.White;
             this.btnPrint.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnPrint.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnPrint.Location = new System.Drawing.Point(226, 25);
+            this.btnPrint.Location = new System.Drawing.Point(17, 25);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(5);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(181, 41);
@@ -644,7 +634,6 @@
             this.btnSave.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnSave.ActiveForecolor = System.Drawing.Color.White;
             this.btnSave.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.ButtonText = "حفظ الفاتورة";
@@ -656,7 +645,7 @@
             this.btnSave.IdleFillColor = System.Drawing.Color.White;
             this.btnSave.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnSave.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.Location = new System.Drawing.Point(417, 25);
+            this.btnSave.Location = new System.Drawing.Point(208, 25);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(181, 41);
@@ -671,7 +660,6 @@
             this.button3.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.button3.ActiveForecolor = System.Drawing.Color.White;
             this.button3.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.ButtonText = "فاتورة جديده";
@@ -683,7 +671,7 @@
             this.button3.IdleFillColor = System.Drawing.Color.White;
             this.button3.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.button3.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.button3.Location = new System.Drawing.Point(608, 25);
+            this.button3.Location = new System.Drawing.Point(399, 25);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(181, 41);
@@ -767,6 +755,6 @@
         public Bunifu.Framework.UI.BunifuThinButton2 button3;
         public Bunifu.Framework.UI.BunifuThinButton2 btnSave;
         public Bunifu.Framework.UI.BunifuThinButton2 btnPrint;
-        public Bunifu.Framework.UI.BunifuThinButton2 btnClose;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox TxtCustomerID;
     }
 }

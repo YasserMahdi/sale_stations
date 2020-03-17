@@ -200,5 +200,16 @@ namespace sale_stations.BL
             DAL.close();
             return dt;
         }
+
+        public DataTable AutoIncrease()
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+             
+            dt = DAL.selectData("auto_increase", null);
+            DAL.close();
+            return dt;
+        }
     }
 }

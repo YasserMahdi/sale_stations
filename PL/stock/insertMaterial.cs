@@ -37,6 +37,16 @@ namespace sale_stations.PL
                     this.qte.Clear();
                     caseOf = "insert";
 
+
+
+                    try
+                    {
+                        this.noMtr.Text = Mat.AutoIncrease().Rows[0][0].ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {
@@ -85,7 +95,16 @@ namespace sale_stations.PL
 
         private void insertMaterial_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (state == "add")
+                {
+                    this.noMtr.Text = Mat.AutoIncrease().Rows[0][0].ToString();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

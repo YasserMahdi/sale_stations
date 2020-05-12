@@ -109,6 +109,10 @@ namespace sale_stations.PL
 
         }
 
-        
+        private void BtnOffer_Click(object sender, EventArgs e)
+        {
+            PL.stock.Offer frm = new stock.Offer();
+            frm.ShowDialog();
+        }
     }
 }

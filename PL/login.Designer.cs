@@ -32,6 +32,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -66,17 +67,26 @@
             this.password.TabIndex = 3;
             this.password.Text = "الرقم السري";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(131, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(332, 28);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "تسجيل الدخول";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 331);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,5 +99,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label password;
+        private System.Windows.Forms.Button button1;
     }
 }

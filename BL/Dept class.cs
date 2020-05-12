@@ -36,7 +36,7 @@ namespace sale_stations.BL
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DataTable dt = new DataTable();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[5];
 
             param[0] = new SqlParameter("@iD", SqlDbType.Int);
             param[0].Value = CutomerId;
@@ -49,6 +49,9 @@ namespace sale_stations.BL
 
             param[3] = new SqlParameter("@note", SqlDbType.NVarChar,128);
             param[3].Value = CutomerId;
+
+            param[4] = new SqlParameter("@r_date", SqlDbType.DateTime);
+            param[4].Value = DateTime.Now;
 
             dt = DAL.selectData("print_rep", param);
             DAL.close();    
@@ -90,6 +93,46 @@ namespace sale_stations.BL
 
         }
 
+        public string Now()
+        {
+            return DateTime.Now.ToString();
+        }
+
+        public string RemainingDebt(string text)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@customer_id", SqlDbType.NVarChar,10);
+            param[0].Value = text;
+
+
+            dt = DAL.selectData("remaining_debt", param);
+            DAL.close();
+
+
+
+            return dt.Rows[0][0].ToString();
+        }
+
+        public string ReceiptNo()
+        {
+            DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
+
+            DataTable Dt = new DataTable();
+
+            //  DataRow Dr ;
+            Dt = accessobject.selectData("receiptno", null);
+            //  DataTable DtF = Dt;
+            accessobject.close();
+
+
+
+
+            return Dt.Rows[0][0].ToString() ;
+        }
+
 
 
         /// <summary>
@@ -97,7 +140,7 @@ namespace sale_stations.BL
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
- 
+
 
         public void setOrderDepts(int customerid, double dept,string identity)
         {

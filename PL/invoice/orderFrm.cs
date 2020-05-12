@@ -882,6 +882,16 @@ namespace sale_stations.PL
             }
 
             invoiceNo.Text = ord.getLastInvoice().Rows[0][0].ToString();
+
+
+            BL.CashBox.SetDate mnth = new BL.CashBox.SetDate();
+            mnth.set_new_month();
+            DataTable LastMonth = mnth.sel_last_month();
+            BL.CashBox.SetCash cash = new BL.CashBox.SetCash();
+            cash.Set(Convert.ToInt32(this.AmountReceived.Text), this.bunifuDatepicker1.Value.Date, this.invoiceNo.Text,
+                LastMonth.Rows[0][0].ToString());
+
+
             //if (Properties.Settings.Default.countProfit == "run")
             //{
             //    BL.Report rpt = new BL.Report();
@@ -899,13 +909,22 @@ namespace sale_stations.PL
             //    //rpt.set_Revenue(Convert.ToInt32(lastMonth.Rows[0][0]), Convert.ToDouble(totalamount));
             //    //rpt.set_Disbursements(Convert.ToInt32(lastMonth.Rows[0][0]), Monthly_disbursements);
             //}
-            
+
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_RowsRemoved_1(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            totalamount = (from DataGridViewRow row in dataGridView1.Rows
+                           where row.Cells[4].FormattedValue.ToString() != string.Empty
+                           select (Convert.ToDouble(row.Cells[4].FormattedValue))).Sum().ToString();
+
+            txttotal.Text = String.Format("{0:n}", Convert.ToDouble(totalamount));
         }
     }
 }

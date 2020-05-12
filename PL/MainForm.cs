@@ -195,5 +195,42 @@ namespace sale_stations.PL
         {
 
         }
+
+        private void القيودToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.CashBox.Box frm = new CashBox.Box();
+            frm.ShowDialog();
+        }
+
+        private void تسجيلالدخولToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            login frm = new login();
+            frm.ShowDialog();
+        }
+
+        private void الايصالاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PL.receipt frm = new receipt();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PL.FetchMatirial ftch = new PL.FetchMatirial();
+            ftch.Show();
+        }
+
+        private void btnInvoive_Click(object sender, EventArgs e)
+        {
+            PL.orderFrm ord = new PL.orderFrm();
+
+            ord.Show();
+        }
+
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            PL.deptForm frm = new PL.deptForm();
+            frm.ShowDialog();
+        }
     }
 }

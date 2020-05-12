@@ -37,6 +37,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.BtnOffer = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -45,6 +46,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.Controls.Add(this.BtnOffer);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button2);
@@ -59,7 +61,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.Location = new System.Drawing.Point(228, 47);
+            this.button3.Location = new System.Drawing.Point(147, 46);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 32);
             this.button3.TabIndex = 4;
@@ -70,7 +72,7 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.Location = new System.Drawing.Point(690, 47);
+            this.button4.Location = new System.Drawing.Point(763, 46);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(148, 32);
             this.button4.TabIndex = 3;
@@ -81,7 +83,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Location = new System.Drawing.Point(382, 47);
+            this.button2.Location = new System.Drawing.Point(455, 46);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 32);
             this.button2.TabIndex = 1;
@@ -92,7 +94,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(536, 47);
+            this.button1.Location = new System.Drawing.Point(609, 46);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 32);
             this.button1.TabIndex = 0;
@@ -155,6 +157,17 @@
             this.textSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textSearch.OnValueChanged += new System.EventHandler(this.textSearch_OnValueChanged);
             // 
+            // BtnOffer
+            // 
+            this.BtnOffer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnOffer.Location = new System.Drawing.Point(301, 46);
+            this.BtnOffer.Name = "BtnOffer";
+            this.BtnOffer.Size = new System.Drawing.Size(148, 32);
+            this.BtnOffer.TabIndex = 5;
+            this.BtnOffer.Text = "عرض اسعار";
+            this.BtnOffer.UseVisualStyleBackColor = true;
+            this.BtnOffer.Click += new System.EventHandler(this.BtnOffer_Click);
+            // 
             // FetchMatirial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.Button button3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button BtnOffer;
     }
 }

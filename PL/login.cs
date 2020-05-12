@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sale_stations.PL
 {
-    public partial class login : Form
+    public partial class login : MetroFramework.Forms.MetroForm
     {
         public login()
         {

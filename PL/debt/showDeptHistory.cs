@@ -45,7 +45,7 @@ namespace sale_stations.PL
             {
             }
                 MessageBox.Show(this.dataGridView1.CurrentRow.Cells[4].Value.ToString()
-                    ,"سداد",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ,"الملاحظات",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -22,6 +22,22 @@ namespace sale_stations.BL
 
         }
 
+        public DataTable sel_all_invo_with_id(int customerID)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@customer", SqlDbType.Int);
+            param[0].Value =customerID;
+
+            DataTable Dt = new DataTable();
+            Dt = DAL.selectData("sel_all_invo", param);
+            DAL.close();
+
+            return Dt;
+        }
+
         public DataTable getLastInvoiceForPrint()
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
@@ -67,6 +83,32 @@ namespace sale_stations.BL
 
 
             DAL.Executecmd("add_order", param);
+            DAL.close();
+        }
+
+        public void update_order(string inv_no, double total_ammount , double debt,string CusId,double OldDebt)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[5];
+
+            param[0] = new SqlParameter("@inv_no", SqlDbType.Int);
+            param[0].Value = Convert.ToInt32(inv_no);
+
+            param[1] = new SqlParameter("@total_amount", SqlDbType.Money);
+            param[1].Value = total_ammount;
+
+            param[2] = new SqlParameter("@debt", SqlDbType.Money);
+            param[2].Value = debt;
+
+            param[3] = new SqlParameter("@cus_id", SqlDbType.NVarChar,10);
+            param[3].Value = CusId;
+
+            param[4] = new SqlParameter("@olddebt", SqlDbType.Decimal);
+            param[4].Value = OldDebt;
+
+
+            DAL.Executecmd("update_order", param);
             DAL.close();
         }
 

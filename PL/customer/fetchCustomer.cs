@@ -82,5 +82,13 @@ namespace sale_stations.PL
             insertCustomer frm = new insertCustomer();
             frm.ShowDialog();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            PL.customer.AccountStatement account = new customer.AccountStatement(
+                this.dataGridView1.CurrentRow.Cells[0].Value.ToString()
+                );
+            account.ShowDialog();
+        }
     }
 }

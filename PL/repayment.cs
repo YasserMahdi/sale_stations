@@ -41,13 +41,23 @@ namespace sale_stations.PL
 
                 try
                 {
-                    if (MessageBox.Show("تم حفظ الفاتورة و الدين هل تريد طباعة الفاتورة", "الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("هل تريد طباعة الايصال", "الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
-                        REPORT.Pay rpt = new REPORT.Pay();
+                        REPORT.receipt rpt = new REPORT.receipt();
                         REPORT.frmReport frm = new REPORT.frmReport();
-                        rpt.SetDataSource(dpt.PrintRep(this.txtNo.Text
-                            , this.txtName.Text, Convert.ToDouble(this.txtRep.Text), this.TxtNote.Text));
+                        //rpt.SetDataSource(dpt.PrintRep(this.txtNo.Text
+                        //    , this.txtName.Text, Convert.ToDouble(this.txtRep.Text), this.TxtNote.Text));
+                        Offers ds = new Offers();
+                        DataRow dr = ds.Tables[1].NewRow();
+                        dr["id"] = dpt.ReceiptNo();
+                        dr["name"] = this.txtName.Text.ToString();
+                        dr["recived"] = this.txtRep.Text.ToString();
+                        dr["remaning"] = dpt.RemainingDebt(txtNo.Text);
+                        dr["date"] = dpt.Now();
+                        dr["note"] = TxtNote.Text;
+                        ds.Tables[1].Rows.Add(dr);
+                        rpt.SetDataSource(ds.Tables[1]);
                         frm.crystalReportViewer1.ReportSource = rpt;
 
                         frm.ShowDialog();

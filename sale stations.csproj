@@ -73,11 +73,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CashBox\GetCash.cs" />
+    <Compile Include="BL\CashBox\retrive\order.cs" />
+    <Compile Include="BL\CashBox\SetCash.cs" />
+    <Compile Include="BL\CashBox\SetDate.cs" />
     <Compile Include="BL\CustomerClass.cs" />
     <Compile Include="BL\Dept class.cs" />
     <Compile Include="BL\MaterialClass.cs" />
     <Compile Include="BL\mutualFunctions.cs" />
     <Compile Include="BL\orderClass.cs" />
+    <Compile Include="Offers.cs">
+      <DependentUpon>Offers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Offers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Offers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PL\CashBox\Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\CashBox\Box.Designer.cs">
+      <DependentUpon>Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\CashBox\Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\CashBox\Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\customer\AccountStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\customer\AccountStatement.Designer.cs">
+      <DependentUpon>AccountStatement.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\profits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +147,12 @@
     </Compile>
     <Compile Include="PL\debt\editDeptInfo.Designer.cs">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\receipt.Designer.cs">
+      <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\stock\FetchMatirial.cs">
       <SubType>Form</SubType>
@@ -232,6 +268,12 @@
     <Compile Include="PL\stats.Designer.cs">
       <DependentUpon>stats.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\stock\Offer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\stock\Offer.Designer.cs">
+      <DependentUpon>Offer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +287,12 @@
     </Compile>
     <Compile Include="REPORT\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\Offers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Offers.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="REPORT\Pay.cs">
       <AutoGen>True</AutoGen>
@@ -282,12 +330,27 @@
       <DependentUpon>product_minu.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORT\receipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>receipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="setting\config.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="setting\config.Designer.cs">
       <DependentUpon>config.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\CashBox\Box.resx">
+      <DependentUpon>Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\CashBox\Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\customer\AccountStatement.resx">
+      <DependentUpon>AccountStatement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\profits.resx">
       <DependentUpon>profits.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\debt\editDeptInfo.resx">
       <DependentUpon>editDeptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\receipt.resx">
+      <DependentUpon>receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\stock\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
@@ -363,6 +429,9 @@
     <EmbeddedResource Include="PL\stats.resx">
       <DependentUpon>stats.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\stock\Offer.resx">
+      <DependentUpon>Offer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +447,10 @@
     </Compile>
     <EmbeddedResource Include="REPORT\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\Offers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Offers.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORT\Pay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -403,10 +476,25 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>product_minu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\receipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>receipt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="setting\config.resx">
       <DependentUpon>config.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Offers.xsc">
+      <DependentUpon>Offers.xsd</DependentUpon>
+    </None>
+    <None Include="Offers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Offers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Offers.xss">
+      <DependentUpon>Offers.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

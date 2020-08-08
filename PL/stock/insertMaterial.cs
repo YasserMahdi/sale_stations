@@ -16,10 +16,19 @@ namespace sale_stations.PL
         public string state ="add";
         public string isUpdate = "false";
         public string caseOf = "null";
+        public int Identity;
+        public string CatName;
         BL.MaterialClass Mat = new BL.MaterialClass();
         public insertMaterial()
         {
             InitializeComponent();
+        }
+
+        public insertMaterial(int identity,string CatName)
+        {
+            InitializeComponent();
+            this.Identity = identity;
+            this.CatName = CatName;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,7 +37,7 @@ namespace sale_stations.PL
             {
                 if (state =="add")
                 {
-                    Mat.insertMtr(Convert.ToDouble(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
+                    Mat.insertMtr(Convert.ToDouble(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text),Identity);
                     //MessageBox.Show("تمت الاضافة بناح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.noMtr.Clear();
                     this.nameMtr.Clear();
@@ -50,7 +59,7 @@ namespace sale_stations.PL
                 }
                 else
                 {
-                    Mat.updateMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
+                    Mat.updateMtr(Convert.ToInt32(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text), Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text),Identity);
                     MessageBox.Show("تمت التحديث بناح", "التحديث ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.noMtr.Clear();
                     this.nameMtr.Clear();
@@ -100,11 +109,62 @@ namespace sale_stations.PL
                 if (state == "add")
                 {
                     this.noMtr.Text = Mat.AutoIncrease().Rows[0][0].ToString();
+                    this.TxtCategory.Text = CatName;
                 }
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void nameMtr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buyCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saleCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qte_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noMtr_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

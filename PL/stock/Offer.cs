@@ -116,6 +116,7 @@ namespace sale_stations.PL.stock
             rpt.SetDataSource(ds.Tables[0]);
             frm.crystalReportViewer1.ReportSource = rpt;
             frm.ShowDialog();
+            
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace sale_stations.PL
     {
         BL.Dept_class dpt = new BL.Dept_class();
         BL.CustomerClass cus = new BL.CustomerClass();
+        BL.RepamentClass rep = new BL.RepamentClass();
 
 
         public deptForm()
@@ -126,6 +127,7 @@ namespace sale_stations.PL
                 rpt.txtNo.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 rpt.txtName.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 rpt.textDept.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                rpt.temp = Convert.ToInt32(rep.GetFinalValueOfDebt(Convert.ToInt32(rpt.txtNo.Text)).Rows[0][0]);
                 rpt.ShowDialog();
                 if (rpt.state == "update")
                 {

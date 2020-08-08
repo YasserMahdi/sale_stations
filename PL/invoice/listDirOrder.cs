@@ -49,5 +49,10 @@ namespace sale_stations.PL
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,11 +10,11 @@ namespace sale_stations.BL
 {
     class MaterialClass
     {
-        public void insertMtr(Double noMtr,string nameMtr, Double buyPrice, Double salePrice,int quantity)
+        public void insertMtr(Double noMtr,string nameMtr, Double buyPrice, Double salePrice,int quantity,int Identity)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
 
             param[0] = new SqlParameter("@mat_no", SqlDbType.Int);
             param[0].Value = noMtr;
@@ -31,8 +31,27 @@ namespace sale_stations.BL
             param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
             param[4].Value = quantity;
 
+            param[5] = new SqlParameter("@identity", SqlDbType.Int);
+            param[5].Value = Identity;
+
             DAL.Executecmd("insertMatirials", param);
             DAL.close();
+        }
+
+        public DataTable GetOneGategory(int id)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            DAL.open();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@cat_id", SqlDbType.Int);
+            param[0].Value = id;
+
+
+            DataTable Dt = new DataTable();
+            Dt = DAL.selectData("get_by_cat", param);
+            DAL.close();
+            return Dt;
         }
 
         public DataTable getMatirialInfo()
@@ -114,11 +133,11 @@ namespace sale_stations.BL
             return dt;
         }
 
-        public void updateMtr(int noMtr, string nameMtr, Double buyPrice, Double salePrice, int quantity)
+        public void updateMtr(int noMtr, string nameMtr, Double buyPrice, Double salePrice, int quantity,int identity)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
 
             param[0] = new SqlParameter("@mat_no", SqlDbType.Int);
             param[0].Value = noMtr;
@@ -134,6 +153,9 @@ namespace sale_stations.BL
 
             param[4] = new SqlParameter("@Quantity", SqlDbType.Int);
             param[4].Value = quantity;
+
+            param[5] = new SqlParameter("@identity", SqlDbType.Int);
+            param[5].Value =identity ;
 
             DAL.Executecmd("updateMatirial", param);
             DAL.close();

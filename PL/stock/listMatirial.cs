@@ -23,6 +23,22 @@ namespace sale_stations.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            try
+            {
+                
+                PL.orderFrm frm = PL.orderFrm.GetInstance();
+                frm.clearBoxes();
+                frm.matno.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.matName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.matPrice.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                frm.matQte.Focus();
+
+            }
+            catch
+            {
+               
+
+            }
             this.Close();
         }
 

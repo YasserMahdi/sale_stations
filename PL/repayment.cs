@@ -14,6 +14,9 @@ namespace sale_stations.PL
     {
         public string state = "null";
         BL.Dept_class dpt = new BL.Dept_class();
+        BL.RepamentClass rep = new BL.RepamentClass();
+
+        public int temp;
 
         void PrintRep()
         {
@@ -29,15 +32,31 @@ namespace sale_stations.PL
 
         private void btnRep_Click(object sender, EventArgs e)
         {
+
             try
             {
-                dpt.repayment(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text), TxtNote.Text);
-                MessageBox.Show(txtName.Text + " تم تحديث حالة الدين الخاصة بـ ", "سداد الديون ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                state = "update";
-                //if (MessageBox.Show("تمت عملية السداد بنجاح هل تريد طباعة وصل قبض", "الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //{
+                if (temp == 0)
+                {
+                    MessageBox.Show("لا يوجد دين", "السداد", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                //}
+                }
+                else if (temp < Convert.ToInt32(txtRep.Text))
+                {
+
+                    MessageBox.Show(" تم ادخال مبلغ اكبر من قيمة الدين", "السداد", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+
+                    rep.processOnDebtRepaymentForInvoice(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text));
+
+                    dpt.repayment(Convert.ToInt32(txtNo.Text), Convert.ToDouble(txtRep.Text), TxtNote.Text);
+                    MessageBox.Show(txtName.Text + " تم تحديث حالة الدين الخاصة بـ ", "سداد الديون ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    state = "update";
+
+
+                }
+
 
                 try
                 {
@@ -68,11 +87,14 @@ namespace sale_stations.PL
                 {
                     MessageBox.Show(ex.Message);
                 }
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void txtRep_KeyPress(object sender, KeyPressEventArgs e)

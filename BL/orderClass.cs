@@ -50,11 +50,11 @@ namespace sale_stations.BL
 
         }
 
-        public void add_order(int customerID, string inv_no, string saleman, double total_ammount, double dept , string CustomerName)
+        public void add_order(int customerID, string inv_no, string saleman, double total_ammount, double dept , string CustomerName,string shapping,string isCashed)
         {
             DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
             DAL.open();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[9];
 
             param[0] = new SqlParameter("@inv_no", SqlDbType.Int);
             param[0].Value =Convert.ToInt32(inv_no);
@@ -77,6 +77,15 @@ namespace sale_stations.BL
 
             param[6] = new SqlParameter("@name", SqlDbType.NVarChar,50);
             param[6].Value = CustomerName;
+
+            
+            param[7] = new SqlParameter("@shapping", SqlDbType.Int);
+            param[7].Value = Convert.ToInt16(shapping);
+
+
+                   
+            param[8] = new SqlParameter("@isCashed", SqlDbType.NVarChar,4);
+            param[8].Value = isCashed;
 
 
 
@@ -181,16 +190,25 @@ namespace sale_stations.BL
             {
                 try
                 {
-                     
+                    if (Convert.ToDouble(row["الدين الحالي"]).Equals(0))
+                    {
+                        row["نوع الدفع"] = "واصل نقدا ";
+                    }
+                    else
+                    {
+                        row["نوع الدفع"] = "آجل";
+                    }
                     row["السعر الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["السعر الكلي"]));
-                    row["المبلغ الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الكلي"]));
                     row["سعر المفرد"] = String.Format("{0:n0}", Convert.ToDouble(row["سعر المفرد"]));
+                    row["مجموع القائمة"] = String.Format("{0:n0}", Convert.ToDouble(row["مجموع القائمة"]));
                     row["الدين السابق"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين السابق"]));
                     row["الدين الحالي"] = String.Format("{0:n0}", Convert.ToDouble(row["الدين الحالي"]));
                     row["اجمالي الديون"] = String.Format("{0:n0}", Convert.ToDouble(row["اجمالي الديون"]));
                     row["المبلغ الواصل"] = String.Format("{0:n0}", Convert.ToDouble(row["المبلغ الواصل"]));
+                    row["المجموع الكلي"] = String.Format("{0:n0}", Convert.ToDouble(row["المجموع الكلي"]));
+                   
 
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -337,12 +355,12 @@ namespace sale_stations.BL
         }
 
 
-        public DataTable serachOrders()
+        public DataTable ReturnAllOrders()
         {
             DAL.DataAccessLayer accessobject = new DAL.DataAccessLayer();
 
             DataTable Dt = new DataTable();
-            Dt = accessobject.selectData("serachOrders", null);
+            Dt = accessobject.selectData("return_all_orders", null);
             accessobject.close();
 
             foreach (DataRow row in Dt.Rows)

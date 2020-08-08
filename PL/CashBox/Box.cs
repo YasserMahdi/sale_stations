@@ -22,14 +22,16 @@ namespace sale_stations.PL.CashBox
             try
             {
                 BL.CashBox.GetCash get = new BL.CashBox.GetCash();
-                this.bunifuCustomDataGrid1.DataSource = get.sel_all_month();
+                this.dataGridView1.DataSource = get.sel_all_month();
+                this.dataGridView1.Columns[0].Visible = false;
+
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void bunifuCustomDataGrid1_DoubleClick(object sender, EventArgs e)
         {
-            PL.CashBox.Details frm = new Details(this.bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString());
+            PL.CashBox.Details frm = new Details(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
             frm.ShowDialog();
 
         }

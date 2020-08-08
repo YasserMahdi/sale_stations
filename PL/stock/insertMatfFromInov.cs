@@ -20,9 +20,9 @@ namespace sale_stations.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mat.insertMtr(Convert.ToDouble(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text),
-                Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
-            this.Close();
+            //Mat.insertMtr(Convert.ToDouble(noMtr.Text), nameMtr.Text, Convert.ToDouble(buyCost.Text),
+            //    Convert.ToDouble(saleCost.Text), Convert.ToInt32(qte.Text));
+            //this.Close();
         }
     }
 }

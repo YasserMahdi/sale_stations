@@ -45,6 +45,19 @@ namespace sale_stations.PL
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            try
+            {
+                PL.orderFrm frm = PL.orderFrm.GetInstance();
+                //this.cusNo.Text = cus.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.TxtCustomerID.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.cusname.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.phone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+            }
+            catch (Exception)
+            {
+                return;
+            }
             this.Close();
         }
 

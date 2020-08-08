@@ -14,7 +14,7 @@ namespace sale_stations.DAL
         SqlConnection connectobject;
         public DataAccessLayer()
         {
-            connectobject = new SqlConnection(@"server=.\SQLEXPRESS;database=sales_db;integrated security=true");
+            connectobject = new SqlConnection(@"server=.\SQLEXPRESS;database=altaai_db;integrated security=true");
         }
 
         public void open()
@@ -69,6 +69,29 @@ namespace sale_stations.DAL
                 }
             }
             sqlcmd.ExecuteNonQuery();
+        }
+
+
+        public SqlDataReader reader(string stored_procedure, SqlParameter[] parametersars)
+        {
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.CommandText = stored_procedure;
+            sqlcmd.Connection = connectobject;
+            if (parametersars != null)
+            {
+                for (int i = 0; i < parametersars.Length; ++i)
+                {
+
+                    sqlcmd.Parameters.Add(parametersars[i]);
+                }
+
+            }
+            open();
+            SqlDataReader dr = sqlcmd.ExecuteReader();
+            
+            return dr;
+
         }
 
     }

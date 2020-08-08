@@ -28,9 +28,11 @@ namespace sale_stations.PL.CashBox
             try
             {
                 BL.CashBox.GetCash get = new BL.CashBox.GetCash();
-                this.bunifuCustomDataGrid1.DataSource = get.sel_chas(Convert.ToInt32(Month));
+                this.dataGridView1.DataSource = get.sel_chas(Convert.ToInt32(Month));
 
                 this.textBox1.Text = get.sel_sumation(Convert.ToInt16(Month)).Rows[0][0].ToString();
+                this.dataGridView1.Columns[3].Visible = false;
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

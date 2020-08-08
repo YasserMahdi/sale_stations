@@ -20,7 +20,7 @@ namespace sale_stations.PL
         {
 
             InitializeComponent();
-            this.dataGridView1.DataSource = order.serachOrders();
+           
             txtSearch.Focus();
 
 
@@ -41,28 +41,7 @@ namespace sale_stations.PL
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            this.dataGridView1.DataSource= order.getNotCashedOrder();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-            this.dataGridView1.DataSource = order.serachOrders();
-            
-        }
-
-        private void button1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-          
-        }
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -97,6 +76,7 @@ namespace sale_stations.PL
         {
             try
             {
+                
                 PL.showInvoice frm = new showInvoice();
                 //Pass two variables   int customerid  and invoice id
                 DataTable Dt = order.showOrderinfo(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
@@ -122,7 +102,7 @@ namespace sale_stations.PL
 
         private void listOrders_Load(object sender, EventArgs e)
         {
-
+            this.dataGridView1.DataSource = order.ReturnAllOrders(); 
         }
     }
 }

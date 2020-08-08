@@ -22,7 +22,7 @@ namespace sale_stations.BL.CashBox
             param[1] = new SqlParameter("@month", SqlDbType.Int);
             param[1].Value = DateTime.Now.Month;
 
-            param[2] = new SqlParameter("@date_of_insert", SqlDbType.Date);
+            param[2] = new SqlParameter("@date_of_insert", SqlDbType.DateTime);
             param[2].Value = DateTime.Now;
 
             accessobject.open();

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>sale_stations</RootNamespace>
     <AssemblyName>sale stations</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -48,14 +48,14 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\Documents\UI\MetroFramework.dll</HintPath>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\..\..\Documents\UI\MetroFramework.Design.dll</HintPath>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\..\..\..\Documents\UI\MetroFramework.Fonts.dll</HintPath>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,11 +77,16 @@
     <Compile Include="BL\CashBox\retrive\order.cs" />
     <Compile Include="BL\CashBox\SetCash.cs" />
     <Compile Include="BL\CashBox\SetDate.cs" />
+    <Compile Include="BL\CategoriesClass.cs" />
     <Compile Include="BL\CustomerClass.cs" />
+    <Compile Include="BL\DataModel.cs" />
     <Compile Include="BL\Dept class.cs" />
+    <Compile Include="BL\InvoiceReturnClass.cs" />
     <Compile Include="BL\MaterialClass.cs" />
     <Compile Include="BL\mutualFunctions.cs" />
     <Compile Include="BL\orderClass.cs" />
+    <Compile Include="BL\RepamentClass.cs" />
+    <Compile Include="BL\wharehouse.cs" />
     <Compile Include="Offers.cs">
       <DependentUpon>Offers.xsd</DependentUpon>
     </Compile>
@@ -107,6 +112,24 @@
     </Compile>
     <Compile Include="PL\customer\AccountStatement.Designer.cs">
       <DependentUpon>AccountStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\invoice\InvoiceReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\invoice\InvoiceReturn.Designer.cs">
+      <DependentUpon>InvoiceReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\invoice\InvoiveReturnFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\invoice\InvoiveReturnFrm.Designer.cs">
+      <DependentUpon>InvoiveReturnFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\profits.cs">
       <SubType>Form</SubType>
@@ -153,6 +176,24 @@
     </Compile>
     <Compile Include="PL\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\stock\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\stock\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\stock\Categories\InsertCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\stock\Categories\InsertCategory.Designer.cs">
+      <DependentUpon>InsertCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\stock\FetchMatirial.cs">
       <SubType>Form</SubType>
@@ -274,6 +315,18 @@
     <Compile Include="PL\stock\Offer.Designer.cs">
       <DependentUpon>Offer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\stock\Warehouse Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\stock\Warehouse Entry.Designer.cs">
+      <DependentUpon>Warehouse Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\stock\WarehouseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\stock\WarehouseControl.Designer.cs">
+      <DependentUpon>WarehouseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +404,15 @@
     <EmbeddedResource Include="PL\customer\AccountStatement.resx">
       <DependentUpon>AccountStatement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\invoice\InvoiceReturn.resx">
+      <DependentUpon>InvoiceReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\invoice\InvoiveReturnFrm.resx">
+      <DependentUpon>InvoiveReturnFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\profits.resx">
       <DependentUpon>profits.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +433,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\receipt.resx">
       <DependentUpon>receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\stock\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\stock\Categories\InsertCategory.resx">
+      <DependentUpon>InsertCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\stock\FetchMatirial.resx">
       <DependentUpon>FetchMatirial.cs</DependentUpon>
@@ -431,6 +502,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\stock\Offer.resx">
       <DependentUpon>Offer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\stock\Warehouse Entry.resx">
+      <DependentUpon>Warehouse Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\stock\WarehouseControl.resx">
+      <DependentUpon>WarehouseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>
@@ -495,6 +572,7 @@
     <None Include="Offers.xss">
       <DependentUpon>Offers.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

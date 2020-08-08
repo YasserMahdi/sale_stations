@@ -12,11 +12,39 @@ namespace sale_stations.PL
 {
     public partial class FetchMatirial : MetroFramework.Forms.MetroForm
     {
+        private string Flag;
+        private int Identity;
+        private string CatName;
+        string Kind;
         BL.MaterialClass mtr = new BL.MaterialClass();
+        BL.wharehouse wharehouse = new BL.wharehouse();
         public FetchMatirial()
         {
             InitializeComponent();
             this.dataGridView1.DataSource = mtr.getMatirialInfo();
+        }
+        public FetchMatirial(string kind)
+        {
+            InitializeComponent();
+            this.Kind = kind;
+            if(Kind == "Missing")
+            {
+                this.dataGridView1.DataSource = wharehouse.WharehowsMissingItems();
+            }
+ 
+        }
+        public FetchMatirial(string Flag ,int id ,string CatName)
+        {
+            InitializeComponent();
+            this.Flag = Flag;
+            this.Identity = id;
+            this.CatName = CatName;
+            if (this.Flag == "by category")
+            {
+                this.dataGridView1.DataSource = mtr.GetOneGategory(Identity);
+            }
+            //this.dataGridView1.DataSource = mtr.getMatirialInfo();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,7 +99,7 @@ namespace sale_stations.PL
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PL.insertMaterial frm = new insertMaterial();
+            PL.insertMaterial frm = new insertMaterial(Convert.ToInt16(Identity),CatName);
 
             frm.ShowDialog();
             if (frm.caseOf == "insert")

@@ -122,3 +122,150 @@ C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-MithamVersion\ob
 C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-MithamVersion\obj\Debug\sale_stations.PL.customer.AccountStatement.resources
 C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-MithamVersion\obj\Debug\sale_stations.PL.stock.Offer.resources
 C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-MithamVersion\obj\Debug\sale_stations.PL.receipt.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\sale stations.exe.config
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\sale stations.exe
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\sale stations.pdb
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\FlashControlV71.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\stdole.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.csprojAssemblyReference.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.CashBox.Box.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.CashBox.Details.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.customer.AccountStatement.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.BL.profits.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.createAccount.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.createBackup.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.deptForm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.editCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.editDeptInfo.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.receipt.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.FetchMatirial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.insertMaterial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.insertMatfFromInov.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.listDirOrder.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.listMatirial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.fetchCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.insertCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.listCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.listOrders.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.login.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.MainForm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.newDept.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.orderFrm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.repayment.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.Resore.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.showDeptHistory.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.showDirInvoice.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.showInvoice.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stats.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stock.Offer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.suppliers.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.Properties.Resources.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.REPORT.frmReport.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.setting.config.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.csproj.GenerateResource.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.csproj.CopyComplete
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.exe
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale stations.pdb
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.MainFrm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stock.Category.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stock.Categories.InsertCategory.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stock.Warehouse_Entry.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.stock.WarehouseControl.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.invoice.InvoiceReturn.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\MetroFramework.Design.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\MetroFramework.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\sale_stations-altaai\obj\Debug\sale_stations.PL.SplashScreen.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\sale stations.exe.config
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\sale stations.exe
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\sale stations.pdb
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\FlashControlV71.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\stdole.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.csprojAssemblyReference.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.CashBox.Box.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.CashBox.Details.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.customer.AccountStatement.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.invoice.InvoiceReturn.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.MainFrm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.BL.profits.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.createAccount.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.createBackup.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.deptForm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.editCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.editDeptInfo.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.receipt.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.SplashScreen.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stock.Category.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stock.Categories.InsertCategory.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.FetchMatirial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.insertMaterial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.insertMatfFromInov.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.listDirOrder.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.listMatirial.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.fetchCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.insertCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.listCustomer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.listOrders.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.login.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.MainForm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.newDept.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.orderFrm.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.repayment.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.Resore.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.showDeptHistory.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.showDirInvoice.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.showInvoice.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stats.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stock.Offer.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stock.Warehouse_Entry.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.stock.WarehouseControl.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.suppliers.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.Properties.Resources.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.REPORT.frmReport.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.setting.config.resources
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.csproj.GenerateResource.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.csproj.CopyComplete
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.exe
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale stations.pdb
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\MetroFramework.Design.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\MetroFramework.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\HP\Downloads\sale_stations-MithamVersion\altaai\sale_stations\obj\Debug\sale_stations.PL.invoice.InvoiveReturnFrm.resources
